@@ -6,10 +6,10 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <div className="nav mt-5 mx-3">
+      <div className="nav mt-5 mx-sm-5">
         {/* <p className="text-right pr-5">a</p> */}
         <div className="container">
-          <div className="row py-2 px-2">
+          <div className="row py-sm-2 px-sm-2">
             <Link className="nav-item col-3" to="/" >Home</Link>
             <Link className="nav-item col-3" to="/about">About</Link>
             <Link className="nav-item col-3" to="/blog/10">Work</Link>

@@ -1,85 +1,218 @@
 @charset "UTF-8";
 /* small screen */
-body h1 {
+h1 {
   font-size: 30px;
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: 0.25em;
 }
 
-body ul {
+ul {
   list-style: none;
 }
 
-body a {
+a {
   text-decoration: none;
 }
 
-body .nav {
+.nav {
   background: #838380;
   color: white;
   border-radius: 10px;
 }
 
-body .nav .nav-item {
-  color: white;
+.nav .nav-item {
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
   padding: 10px 5px;
-  font-size: 24px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  font-family: "Itim", cursive;
+  color: #fff;
 }
 
-body .nav .nav-item:hover {
+.nav .nav-item:hover {
   background: #dce684;
   color: blueviolet;
-  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none;
 }
 
-body footer {
+footer {
   background: #cfe6f1;
 }
 
-body footer ul {
+footer ul {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-body footer ul li {
+footer ul li {
   padding-right: 20px;
 }
 
-body footer ul li a .fa-github {
+footer ul li a .fa-github {
   color: black;
 }
 
-body footer ul li a .fa-twitter {
+footer ul li a .fa-twitter {
   color: skyblue;
 }
 
-body footer ul li a .fa-instagram {
+footer ul li a .fa-instagram {
   color: purple;
 }
 
-body footer ul li a .fa-youtube {
+footer ul li a .fa-youtube {
   color: red;
 }
 
-body footer ul li a:hover {
+footer ul li a:hover {
   -webkit-transition: 2s;
   transition: 2s;
   opacity: 0.5;
 }
 
-body footer p a {
+footer p a {
   font-size: 20px;
   color: #00be39;
 }
 
-body footer p a:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
-  color: #7d1fd4;
+footer p a:hover {
+  background: #fff;
+  color: blueviolet;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   text-decoration: none;
+}
+
+/* 地域紹介 */
+.work .work-item {
+  width: 80%;
+  background: #575e4a;
+  color: white;
+  border-radius: 10px;
+}
+
+.work .work-item img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.work .work-item h3 a {
+  color: #bdebcb;
+}
+
+.work .work-item h3 a:hover {
+  background: white;
+  color: blueviolet;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none;
+}
+
+.work .work-item p {
+  text-align: justify;
+}
+
+.work .work-item .work-modal {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(209, 197, 197, 0.6);
+  color: #f56f6f;
+  border-radius: 10px;
+}
+
+.work .work-item .work-modal .modalin {
+  top: 30%;
+  right: 0;
+  left: 0;
+  width: 65%;
+  background: rgba(244, 248, 231, 0.6);
+  color: #f56f6f;
+  border-radius: 10px;
+}
+
+.work .work-item .work-modal .modalin span {
+  cursor: pointer;
+}
+
+.work .work-item .work-modal .modalin p {
+  font-size: 20px;
+}
+
+/* お問い合わせ */
+.contact {
+  background: #e6e6b4;
+  color: #2c2b2b;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contact .textline {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.contact .conect {
+  display: inline;
+}
+
+.contact .error-message {
+  color: #ff4d75;
+  margin: 0 auto 10px;
+}
+
+.contact input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.contact .submit {
+  background: #6666ff;
+  color: #ffffff;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 12pt;
+  margin: 20px auto;
+  padding: 16px 83px;
+  line-height: 1em;
+  /* 1行の高さ  */
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  /* なめらか変化 */
+  -webkit-box-shadow: 3px 3px 6px #666666;
+          box-shadow: 3px 3px 6px #666666;
+  cursor: pointer;
+}
+
+.contact .submit:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.contact .submit-m {
+  background: rgba(48, 214, 184, 0.16);
+  color: #524f4f;
+  border-radius: 30px;
+  padding: 20px 30px;
+  border: 1px dashed #dd4b11;
+}
+
+.contact .submit-m p {
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+
+.contact .submit-m span {
+  color: #883ddd;
+  font-size: 20px;
 }
 
 .App-logo {
@@ -189,110 +322,10 @@ body footer p a:hover {
   margin-right: 10px;
 }
 
-/* 地域紹介 */
-.work .work-item p {
-  text-align: justify;
-}
-
-.work .work-item img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.work .work-item .city-modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.work .work-item .city-modal .modalin {
-  position: absolute;
-  top: 30%;
-  right: 0;
-  left: 0;
-  width: 85%;
-  padding-bottom: 60px;
-  margin: auto;
-  border-radius: 8px;
-}
-
-/* お問い合わせ */
-.contact {
-  background: #e6e6b4;
-  color: #2c2b2b;
-  border-radius: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.contact .textline {
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.contact .conect {
-  display: inline;
-}
-
-.contact .error-message {
-  color: #ff4d75;
-  margin: 0 auto 10px;
-}
-
-.contact input[type="radio"] {
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-.contact .submit {
-  background: #6666ff;
-  color: #ffffff;
-  border-radius: 10px;
-  display: inline-block;
-  font-size: 12pt;
-  margin: 20px auto;
-  padding: 16px 83px;
-  line-height: 1em;
-  /* 1行の高さ  */
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  /* なめらか変化 */
-  -webkit-box-shadow: 3px 3px 6px #666666;
-          box-shadow: 3px 3px 6px #666666;
-  cursor: pointer;
-}
-
-.contact .submit:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.contact .submit-m {
-  background: rgba(48, 214, 184, 0.16);
-  color: #524f4f;
-  border-radius: 30px;
-  padding: 20px 30px;
-  border: 1px dashed #dd4b11;
-}
-
-.contact .submit-m p {
-  margin-bottom: 0;
-  text-decoration: underline;
-}
-
-.contact .submit-m span {
-  color: #883ddd;
-  font-size: 20px;
-}
-
 /* medium screen */
-@media (min-width: 550px) {
-  .work .container {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+@media (min-width: 576px) {
+  .nav .nav-item {
+    font-size: 30px;
   }
 }
 /*# sourceMappingURL=App.css.map */

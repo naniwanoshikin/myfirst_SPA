@@ -58,7 +58,9 @@ const Work = props => {
       <Nav />
       <h1 id="city" className="mt-5">記事紹介</h1>
       <p style={{ color: "red" }}>{id}番目の記事です</p>
-      <MyWork />
+      <div className="container px-0 py-4">
+        <MyWork />
+      </div>
       <Footer />
     </div>
   )
