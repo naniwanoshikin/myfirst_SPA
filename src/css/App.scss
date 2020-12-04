@@ -1,0 +1,290 @@
+// 背景, p, circle
+@mixin bcr($b: #eee, $c: #fff, $r: 0px) {
+  background: $b;
+  color: $c;
+  // padding: $p;
+  border-radius: $r;
+  @content;
+}
+// 幅・高さ
+@mixin wh($w: 50px, $h: 50px) {
+  width: $w;
+  height: $h;
+  @content;
+}
+// リンクの色
+@mixin acolor($c: #fff) {
+  color: $c;
+  &:hover {
+    transition: 1s;
+    color: rgb(125, 31, 212);
+    text-decoration: none;
+  }
+}
+// 写真・説明
+@mixin imgcss {
+  img {
+    width: 90%;
+    border-radius: 10px;
+    vertical-align: bottom;
+  }
+  .tex {
+    padding: 0 30px;
+    p {
+      text-align: justify;
+    }
+  }
+}
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* small screen */
+body {
+  h1 {
+    font-size: 30px; //
+    text-align: center;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    letter-spacing: 0.25em;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  // ナビ
+  .nav {
+    @include bcr($b: rgb(131, 131, 128), $c: white, $r: 10px);
+    .nav-item {
+      color: white;
+      padding: 10px 5px;
+      font-size: 24px;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      &:hover {
+        @include bcr($b: rgb(220, 230, 132), $c: blueviolet, $r: 5px);
+      }
+    }
+  }
+  // フッター
+  footer {
+    background: rgb(207, 230, 241);
+    ul {
+      display: inline-flex;
+      li {
+        padding-right: 20px;
+        a {
+          .fa-github {
+            color: black;
+          }
+          .fa-twitter {
+            color: skyblue;
+          }
+          .fa-instagram {
+            color: purple;
+          }
+          .fa-youtube {
+            color: red;
+          }
+          &:hover {
+            transition: 2s;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    p {
+      a {
+        font-size: 20px;
+        @include acolor($c: rgb(0, 190, 57));
+      }
+    }
+  }
+}
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// Todo管理アプリ React.js
+.todo {
+  // width: calc(230px + 20%);
+  background: rgba(32, 238, 200, 0.4);
+  border-radius: 20px;
+  h3 {
+    // My todos
+    font-size: 30px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    border-bottom: 1px solid #e1f00f;
+    // margin-top: 0;
+    span {
+      // (3/9)とか
+      color: #ccc;
+      font-size: 24px;
+      margin-left: 10px;
+    }
+    button {
+      // パージボタン
+      float: right;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+  }
+  form {
+    input {
+      // 追加ボタン
+      border-radius: 10px;
+      font-size: 16px;
+    }
+  }
+  ul {
+    li {
+      // リスト
+      line-height: 1.4;
+      font-size: 20px;
+      .cmd {
+        // 削除ボタン
+        font-size: 18px;
+        cursor: pointer;
+        color: rgb(28, 24, 233);
+        margin-left: 5px;
+      }
+      .done {
+        // ✔︎したタイトル
+        text-decoration: line-through;
+        color: #bbb;
+      }
+    }
+  }
+  input[type="text"] {
+    // 入力欄の横
+    padding: 2px;
+    margin-right: 10px;
+  }
+  input[type="checkbox"] {
+    // ✔️の横
+    margin-right: 10px;
+  }
+}
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* 地域紹介 */
+.work {
+  // 個々ワークス
+  .work-item {
+    p {
+      text-align: justify;
+    }
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .city-modal {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      .modalin {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        left: 0;
+        width: 85%;
+        padding-bottom: 60px;
+        margin: auto;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* お問い合わせ */
+.contact {
+  @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 10px);
+  // border: 1px solid rgb(41, 52, 218);
+  // テキスト枠
+  box-sizing: border-box;
+  .textline {
+    padding: 10px;
+    border-radius: 8px;
+  }
+  // 連絡方法
+  .conect {
+    display: inline;
+  }
+  // 未入力
+  .error-message {
+    color: #ff4d75;
+    margin: 0 auto 10px;
+  }
+  input[type="radio"] {
+    // ✔️の横
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+  // 送信・確認ボタン
+  .submit {
+    @include bcr($b: #6666ff, $c: #ffffff, $r: 10px);
+    display: inline-block;
+    font-size: 12pt;
+    margin: 20px auto;
+    padding: 16px 83px;
+    line-height: 1em; /* 1行の高さ  */
+    transition: 0.2s; /* なめらか変化 */
+    box-shadow: 3px 3px 6px #666666;
+    cursor: pointer;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  // 送信完了
+  .submit-m {
+    @include bcr($b: rgba(48, 214, 184, 0.16), $c: #524f4f, $r: 30px);
+    padding: 20px 30px;
+    border: 1px dashed #dd4b11;
+    p {
+      margin-bottom: 0;
+      text-decoration: underline;
+    }
+    span {
+      color: #883ddd;
+      font-size: 20px;
+    }
+  }
+}
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+/* medium screen */
+@media (min-width: 550px) {
+  .work {
+    .container {
+      flex-wrap: wrap;
+    }
+  }
+}
