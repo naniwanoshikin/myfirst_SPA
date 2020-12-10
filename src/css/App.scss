@@ -13,11 +13,11 @@
   @content;
 }
 // リンクの色
-@mixin acolor($a: #fff, $b: #eee, $c: #ccc) {
-  color: $a;
+@mixin acolor($c: #ccc, $bh: #eee, $ch: #fff) {
+  color: $c;
   &:hover {
-    background: $b;
-    color: $c;
+    background: $bh;
+    color: $ch;
     transition: 0.5s;
     text-decoration: none;
   }
@@ -40,9 +40,10 @@
 /* small screen */
 // body {
 h1 {
-  font-size: 30px;
+  font-size: 34px;
   text-align: center;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Boogaloo", cursive;
   letter-spacing: 0.25em;
 }
 ul {
@@ -51,19 +52,19 @@ ul {
 a {
   text-decoration: none;
 }
-// ナビ
+// ナビ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .nav {
-  @include bcr($b: rgb(131, 131, 128), $c: white, $r: 10px);
+  @include bcr($b: rgb(199, 187, 187), $r: 10px);
+  // border-bottom: 1px solid rgb(41, 52, 218);
   .nav-item {
     transform: rotate(5deg);
-    padding: 10px 5px;
+    padding: 10px 0px;
     font-size: 20px;
-    // font-family: 'Boogaloo', cursive;
     font-family: "Itim", cursive;
-    @include acolor($a: #fff, $b: rgb(220, 230, 132), $c: blueviolet);
+    @include acolor($c: rgb(0, 0, 0), $bh: rgb(220, 230, 132), $ch: blueviolet);
   }
 }
-// フッター
+// フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 footer {
   background: rgb(207, 230, 241);
   ul {
@@ -93,31 +94,30 @@ footer {
   p {
     a {
       font-size: 20px;
-      @include acolor($a: rgb(0, 190, 57), $b: #fff, $c: blueviolet);
+      @include acolor($c: rgb(0, 190, 57), $bh: #fff, $ch: blueviolet);
     }
   }
 }
 // }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-/* 地域紹介 */
+// ワークス ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .work {
   // 個々ワークス
   .work-item {
     width: 80%;
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
-    img {
-      width: 100%;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    h3 {
-      a {
-        @include acolor($a: rgb(189, 235, 203), $b: rgb(255, 255, 255), $c: blueviolet);
-      }
-    }
     p {
       text-align: justify;
+      font-size: 16px;
+    }
+    a > img {
+      cursor: pointer;
+    }
+    h4 {
+      border-radius: 5px;
+      @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
+      display: inline-block;
+      cursor: pointer;
     }
     .work-modal {
       top: 0;
@@ -142,12 +142,9 @@ footer {
     }
   }
 }
-
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-/* お問い合わせ */
+// お問い合わせ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .contact {
   @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 10px);
-  // border: 1px solid rgb(41, 52, 218);
   // テキスト枠
   box-sizing: border-box;
   .textline {
@@ -199,7 +196,7 @@ footer {
   }
 }
 
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ホーム ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -290,6 +287,13 @@ footer {
     // ✔️の横
     margin-right: 10px;
   }
+}
+
+// RDB用
+th,
+td {
+  font-size: 20px;
+  border-bottom: 1px solid gray;
 }
 
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝

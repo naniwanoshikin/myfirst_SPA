@@ -9,7 +9,7 @@ function Graph() {
       {
         label: '@ 2020.9',
         data: [55, 30, 30, 5, 20, 10,],
-        backgroundColor: 'rgba(246, 255, 0, 0.2)',
+        backgroundColor: 'rgba(246, 255, 0, 0.1)',
         borderColor: 'yellow',
         borderWidth: 1,
         // fill: false,
@@ -20,8 +20,8 @@ function Graph() {
       {
         label: '@ 2020.10',
         data: [60, 35, 40, 10, 30, 20,],
-        backgroundColor: 'rgba(0, 255, 10, 0.2)',
-        borderColor: 'green',
+        backgroundColor: 'rgba(255, 70, 0, 0.2)',
+        borderColor: 'orange',
         borderWidth: 1,
         // fill: false,
         // lineTension: 0,
@@ -31,8 +31,9 @@ function Graph() {
       {
         label: '@ 2020.11',
         data: [65, 50, 55, 20, 30, 25,],
-        backgroundColor: 'rgba(255, 0, 0, 0.2)',
-        borderColor: 'red',
+
+        backgroundColor: 'rgba(0, 255, 10, 0.2)',
+        borderColor: 'green',
         borderWidth: 1,
         // fill: false,
         // lineTension: 0,
@@ -41,9 +42,10 @@ function Graph() {
       },
       {
         label: '@ 2020.12',
-        data: [70, 55, 60, 30, 30, 25,],
-        backgroundColor: 'rgba(255, 0, 0, 0.2)',
-        borderColor: 'orange',
+        data: [70, 55, 60, 35, 35, 30,],
+        backgroundColor: 'rgba(255, 0, 0, 0.3)',
+        borderColor: 'red',
+
         borderWidth: 1,
         // fill: false,
         // lineTension: 0,

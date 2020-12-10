@@ -18,7 +18,7 @@ class TheWork extends React.Component {
     if (this.state.isModalOpen) {
       modal = (
         <div className="work-modal text-center position-fixed">
-          <div className="modalin position-absolute p-4 pb-5 mx-auto bg-light">
+          <div className="modalin position-absolute mx-auto p-4 pb-5 bg-light">
             <h3>{this.props.name}
               <span className="float-right" onClick={() => { this.handleClose() }}><i className="fas fa-undo-alt text-info"></i></span>
             </h3>
@@ -28,13 +28,13 @@ class TheWork extends React.Component {
       )
     }
     return (
-      <div className="work-item mb-4 pb-4 mx-auto px-0 col-sm-5">
-        <img src={this.props.img}
-          onClick={() => { this.handleWork() }}
-        />
-        <h3 className="my-4 px-3">
-          <a href={this.props.link}>{this.props.id}. {this.props.name}</a>
-        </h3>
+      <div className="work-item mb-5 mx-auto pb-4 px-0 col-sm-5">
+        <p className="px-4 py-1 my-0">{this.props.date}</p>
+        <a href={this.props.link} target="_blank" rel="noreferrer noopener">
+          <img src={this.props.img} alt="my work" className="w-100" />
+        </a>
+        <h4 className="my-3 px-2" onClick={() => { this.handleWork() }}>
+          {this.props.id + 1}. {this.props.name}</h4>
         <p className="px-4">{this.props.intro}</p>
         {modal}
       </div>

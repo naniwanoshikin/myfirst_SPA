@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /* small screen */
 h1 {
-  font-size: 30px;
+  font-size: 34px;
   text-align: center;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Boogaloo", cursive;
   letter-spacing: 0.25em;
 }
 
@@ -16,18 +16,18 @@ a {
 }
 
 .nav {
-  background: #838380;
-  color: white;
+  background: #c7bbbb;
+  color: #fff;
   border-radius: 10px;
 }
 
 .nav .nav-item {
   -webkit-transform: rotate(5deg);
           transform: rotate(5deg);
-  padding: 10px 5px;
+  padding: 10px 0px;
   font-size: 20px;
   font-family: "Itim", cursive;
-  color: #fff;
+  color: black;
 }
 
 .nav .nav-item:hover {
@@ -87,7 +87,6 @@ footer p a:hover {
   text-decoration: none;
 }
 
-/* 地域紹介 */
 .work .work-item {
   width: 80%;
   background: #575e4a;
@@ -95,26 +94,28 @@ footer p a:hover {
   border-radius: 10px;
 }
 
-.work .work-item img {
-  width: 100%;
-  border-radius: 10px;
+.work .work-item p {
+  text-align: justify;
+  font-size: 16px;
+}
+
+.work .work-item a > img {
   cursor: pointer;
 }
 
-.work .work-item h3 a {
+.work .work-item h4 {
+  border-radius: 5px;
   color: #bdebcb;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.work .work-item h3 a:hover {
+.work .work-item h4:hover {
   background: white;
   color: blueviolet;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none;
-}
-
-.work .work-item p {
-  text-align: justify;
 }
 
 .work .work-item .work-modal {
@@ -146,7 +147,6 @@ footer p a:hover {
   font-size: 20px;
 }
 
-/* お問い合わせ */
 .contact {
   background: #e6e6b4;
   color: #2c2b2b;
@@ -320,6 +320,12 @@ footer p a:hover {
 
 .todo input[type="checkbox"] {
   margin-right: 10px;
+}
+
+th,
+td {
+  font-size: 20px;
+  border-bottom: 1px solid gray;
 }
 
 /* medium screen */

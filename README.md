@@ -7,7 +7,7 @@ SPAポートフォリオを作りました。
 各ページに飛びます。
 
 # Hosting
-* firebase 8.17.0
+* firebase 8.18.1
 * URL: https://spapf-24842.web.app/
 
 # 実装機能
@@ -19,14 +19,16 @@ SPAポートフォリオを作りました。
 - HTML & CSS
 - Sass
 - Bootstrap 4.5.0
-<!-- - JavaScript （Todolist, 英訳機能） -->
+<!-- - JavaScript （英訳機能） -->
 - node.js 14.8.0
 - npm 6.14.9
-- React.js
-- Chart.js
+- React 16.13.1
+- Chart.js 2.9.3
 - Git, Github
 
 # Future Tasks
+* デザイン
 * 削除機能（firestore）
 * バリデーション（お問い合わせ部）
+* Slack（お問い合わせ部）
 <!-- * 非同期通信 -->

@@ -1,7 +1,7 @@
 import React from 'react';
-// Todo管理アプリ機能
+// Todoアプリ
 
-// li要素の中身の初期状態
+// <li>中身の初期状態
 const todos = [
   // {id: 0, title: 'Task 0', isDone: false},
   // {id: 1, title: 'Task 1', isDone: false},

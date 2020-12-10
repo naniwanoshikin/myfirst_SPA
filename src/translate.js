@@ -57,7 +57,7 @@
     new Toenglish('trash', 'JScripts'), // 15 <a>
     new Toenglish('town', 'THE TOWN'), // 16 地域紹介
     new Toenglish('see2', 'Please click below.'), // 17 <p>
-    new Toenglish('contact', 'CONTACT'), // 18 お問い合わせ
+    new Toenglish('contact', 'CONTACTAAAA'), // 18 お問い合わせ
     new Toenglish('free', 'Please feel free to contact us!'), // 19 <p>
   ];
 
@@ -125,5 +125,5 @@
     Tojapanese.syutu();
   });
 
-  export default Toenglish;
+  // export default Toenglish;
 }
