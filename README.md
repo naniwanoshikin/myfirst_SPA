@@ -1,13 +1,13 @@
 # SPA_portfolio
 ```
-SPAポートフォリオを作りました。
+SPAポートフォリオを作成しました。
 ```
 ![AF5A3F24-FD0D-4A3A-8794-F9C7631C4213_1_105_c](https://user-images.githubusercontent.com/67915047/101193629-36622100-36a0-11eb-95e0-8105d97df2f5.jpeg)
 # description
 各ページに飛びます。
 
 # Hosting
-* firebase 8.18.1
+* firebase 8.19.0
 * URL: https://spapf-24842.web.app/
 
 # 実装機能

@@ -5,8 +5,8 @@ const langage = ['HTML CSS', 'Sass', 'JS', 'Bootstrap', 'React', 'git',];
 const skills = [
   { data: [55, 30, 30, 10, 20, 5,], label: "2020.9", bgc: "rgba(246, 255, 0, 0.1)", bc: "yellow", bw: 1 },
   { data: [60, 35, 40, 20, 30, 10,], label: "2020.10", bgc: "rgba(255, 70, 0, 0.2)", bc: "orange", bw: 1 },
-  { data: [65, 50, 55, 20, 30, 20,], label: "2020.11", bgc: "rgba(0, 255, 10, 0.2)", bc: "green", bw: 1 },
-  { data: [70, 55, 60, 30, 35, 35,], label: "2020.12", bgc: "rgba(255, 0, 0, 0.3)", bc: "red", bw: 1 },
+  { data: [65, 50, 55, 20, 30, 25,], label: "2020.11", bgc: "rgba(0, 255, 10, 0.2)", bc: "green", bw: 1 },
+  { data: [70, 55, 60, 35, 40, 35,], label: "2020.12", bgc: "rgba(255, 0, 0, 0.3)", bc: "red", bw: 1 },
   { data: [90, 85, 90, 80, 70, 80,], label: "2021.9", bgc: "rgba(0, 0, 255, 0)", bc: "blue", bw: 0.5 },
 ]
 

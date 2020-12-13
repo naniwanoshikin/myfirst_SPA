@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="pt-5 pb-4 text-center">
-      <ul className="pl-3">
+      <ul className="d-inline-flex pl-3">
         <li>
           <a href="https://github.com/naniwanoshikin/shikichanpower.github.io/blob/master/index.html" target="_blank" rel="noreferrer noopener">
             <span className="faa-parent animated-hover">

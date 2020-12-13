@@ -41,12 +41,6 @@ footer {
   background: #cfe6f1;
 }
 
-footer ul {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
 footer ul li {
   padding-right: 20px;
 }
@@ -74,8 +68,8 @@ footer ul li a:hover {
 }
 
 footer p a {
-  font-size: 20px;
   color: #00be39;
+  font-size: 20px;
 }
 
 footer p a:hover {
@@ -108,9 +102,8 @@ footer p a:hover {
 }
 
 .work .work-item h5 {
-  border-radius: 5px;
   color: #bdebcb;
-  display: inline-block;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -164,12 +157,7 @@ footer p a:hover {
 
 .contact .error-message {
   color: #ff4d75;
-  margin: 0 auto 10px;
-}
-
-.contact input[type="radio"] {
-  margin-left: 10px;
-  margin-right: 5px;
+  margin: 5px auto 0px;
 }
 
 .contact .submitbtn {
@@ -177,7 +165,7 @@ footer p a:hover {
   color: #ffffff;
   border-radius: 10px;
   margin: 20px auto;
-  padding: 12px 35px;
+  padding: 10px 30px;
   line-height: 1em;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -197,11 +185,12 @@ footer p a:hover {
   color: #524f4f;
   border-radius: 20px;
   border: 1px dashed #dd4b11;
-  width: 95%;
+  width: 90%;
 }
 
 .contact ul .answer {
   color: #883ddd;
+  font-size: 20px;
 }
 
 .App-logo {

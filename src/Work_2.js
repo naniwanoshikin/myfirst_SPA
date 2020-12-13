@@ -30,7 +30,7 @@ class TheWork extends React.Component {
     return (
       <div className="work-item mb-5 mx-auto pb-4 px-0 col-sm-5">
         <p className="px-4 pb-0 pt-2 pb-1 my-0 text-right">{this.props.date}</p>
-        <h5 className="px-3 mb-3" onClick={() => { this.handleWork() }}>
+        <h5 className="d-inline-block px-3 mb-3" onClick={() => { this.handleWork() }}>
           {this.props.name}</h5>
         <a href={this.props.link} target="_blank" rel="noreferrer noopener">
           <img src={this.props.img} alt="my work" width="100" height="280" className="w-100" />

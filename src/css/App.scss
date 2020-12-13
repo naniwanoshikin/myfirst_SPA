@@ -68,7 +68,6 @@ a {
 footer {
   background: rgb(207, 230, 241);
   ul {
-    display: inline-flex;
     li {
       padding-right: 20px;
       a {
@@ -93,8 +92,8 @@ footer {
   }
   p {
     a {
-      font-size: 20px;
       @include acolor($c: rgb(0, 190, 57), $bh: #fff, $ch: blueviolet);
+      font-size: 20px;
     }
   }
 }
@@ -123,9 +122,8 @@ footer {
       cursor: pointer;
     }
     h5 {
-      border-radius: 5px;
       @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
-      display: inline-block;
+      border-radius: 5px;
       cursor: pointer;
     }
     .work-modal {
@@ -162,18 +160,13 @@ footer {
   // 未入力
   .error-message {
     color: #ff4d75;
-    margin: 0 auto 10px;
-  }
-  input[type="radio"] {
-    // ✔️の横
-    margin-left: 10px;
-    margin-right: 5px;
+    margin: 5px auto 0px;
   }
   // 確認・送信ボタン
   .submitbtn {
     @include bcr($b: #6666ff, $c: #ffffff, $r: 10px);
     margin: 20px auto;
-    padding: 12px 35px;
+    padding: 10px 30px;
     line-height: 1em;
     transition: 0.2s;
     box-shadow: 3px 3px 6px #666666;
@@ -187,9 +180,10 @@ footer {
   ul {
     @include bcr($b: rgba(48, 214, 184, 0.16), $c: #524f4f, $r: 20px);
     border: 1px dashed #dd4b11;
-    width: 95%;
+    width: 90%;
     .answer {
       color: #883ddd;
+      font-size: 20px;
     }
   }
 }
