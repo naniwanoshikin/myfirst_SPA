@@ -58,11 +58,34 @@ const Home = () => {
 // About
 const About = () => {
   return (
-    <div className="text-center">
+    <div className="about text-center">
       <Nav />
       <h1 className="mt-5">About</h1>
       <p>自己紹介です。</p>
-      <Graph />
+      <div className="container my-3">
+        <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>SHIKITTI</td>
+            </tr>
+            <tr>
+              <td>From</td>
+              <td>OSAKA</td>
+            </tr>
+            <tr>
+              <td>Hobby</td>
+              <td>picture</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>2020/6 プログラミング開始</li>
+        </ul>
+      </div>
+      <div className="my-4">
+        <Graph />
+      </div>
       <Footer />
     </div>
   )

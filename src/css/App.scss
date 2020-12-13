@@ -100,7 +100,16 @@ footer {
 }
 // }
 
-// ワークス ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ABOUT ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.about {
+  // RDB用
+  table th,
+  table td {
+    font-size: 14px;
+    // border-bottom: 1px solid gray;
+  }
+}
+// WORKs ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .work {
   // 個々ワークス
   .work-item {
@@ -113,7 +122,7 @@ footer {
     a > img {
       cursor: pointer;
     }
-    h4 {
+    h5 {
       border-radius: 5px;
       @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
       display: inline-block;
@@ -130,7 +139,7 @@ footer {
         top: 30%;
         right: 0;
         left: 0;
-        width: 65%;
+        width: 95%;
         @include bcr($b: rgba(244, 248, 231, 0.6), $c: rgb(245, 111, 111), $r: 10px);
         span {
           cursor: pointer;
@@ -144,16 +153,11 @@ footer {
 }
 // お問い合わせ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .contact {
-  @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 10px);
+  @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 0px);
   // テキスト枠
-  box-sizing: border-box;
   .textline {
     padding: 10px;
     border-radius: 8px;
-  }
-  // 連絡方法
-  .conect {
-    display: inline;
   }
   // 未入力
   .error-message {
@@ -165,33 +169,27 @@ footer {
     margin-left: 10px;
     margin-right: 5px;
   }
-  // 送信・確認ボタン
-  .submit {
+  // 確認・送信ボタン
+  .submitbtn {
     @include bcr($b: #6666ff, $c: #ffffff, $r: 10px);
-    display: inline-block;
-    font-size: 12pt;
     margin: 20px auto;
-    padding: 16px 83px;
-    line-height: 1em; /* 1行の高さ  */
-    transition: 0.2s; /* なめらか変化 */
+    padding: 12px 35px;
+    line-height: 1em;
+    transition: 0.2s;
     box-shadow: 3px 3px 6px #666666;
+    display: inline-block;
     cursor: pointer;
     &:hover {
       box-shadow: none;
     }
   }
-  // 送信完了
-  .submit-m {
-    @include bcr($b: rgba(48, 214, 184, 0.16), $c: #524f4f, $r: 30px);
-    padding: 20px 30px;
+  // 確認画面
+  ul {
+    @include bcr($b: rgba(48, 214, 184, 0.16), $c: #524f4f, $r: 20px);
     border: 1px dashed #dd4b11;
-    p {
-      margin-bottom: 0;
-      text-decoration: underline;
-    }
-    span {
+    width: 95%;
+    .answer {
       color: #883ddd;
-      font-size: 20px;
     }
   }
 }
@@ -262,7 +260,7 @@ footer {
   ul {
     li {
       // リスト
-      line-height: 1.4;
+      line-height: 1.4; // 行高さ
       font-size: 20px;
       .cmd {
         // 削除ボタン
@@ -289,19 +287,26 @@ footer {
   }
 }
 
-// RDB用
-th,
-td {
-  font-size: 20px;
-  border-bottom: 1px solid gray;
-}
-
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 /* medium screen */
 @media (min-width: 576px) {
   .nav {
     .nav-item {
       font-size: 30px;
+    }
+  }
+  .work {
+    .work-item {
+      .work-modal {
+        .modalin {
+          width: 60%;
+        }
+      }
+    }
+  }
+  .contact {
+    ul {
+      width: 45%;
     }
   }
 }

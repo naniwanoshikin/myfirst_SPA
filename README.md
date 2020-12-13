@@ -12,14 +12,15 @@ SPAポートフォリオを作りました。
 
 # 実装機能
 ```
-
+お問い合わせ：
+Validation
+Slack通知機能
 ```
 
 # 使用技術
 - HTML & CSS
 - Sass
 - Bootstrap 4.5.0
-<!-- - JavaScript （英訳機能） -->
 - node.js 14.8.0
 - npm 6.14.9
 - React 16.13.1
@@ -27,8 +28,8 @@ SPAポートフォリオを作りました。
 - Git, Github
 
 # Future Tasks
-* デザイン
-* 削除機能（firestore）
-* バリデーション（お問い合わせ部）
-* Slack（お問い合わせ部）
+* Home部 デザイン
+* Contact部 修正した時、radioだけ値が消える
+<!-- * 削除機能（firestore） -->
 <!-- * 非同期通信 -->
+<!-- - JavaScript （英訳機能） -->

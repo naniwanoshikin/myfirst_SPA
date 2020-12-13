@@ -1,64 +1,62 @@
 import React from 'react';
-import { Radar } from 'react-chartjs-2'; // グラフ
+import { Radar } from 'react-chartjs-2';
 
-function Graph() {
+const langage = ['HTML CSS', 'Sass', 'JS', 'Bootstrap', 'React', 'git',];
+const skills = [
+  { data: [55, 30, 30, 10, 20, 5,], label: "2020.9", bgc: "rgba(246, 255, 0, 0.1)", bc: "yellow", bw: 1 },
+  { data: [60, 35, 40, 20, 30, 10,], label: "2020.10", bgc: "rgba(255, 70, 0, 0.2)", bc: "orange", bw: 1 },
+  { data: [65, 50, 55, 20, 30, 20,], label: "2020.11", bgc: "rgba(0, 255, 10, 0.2)", bc: "green", bw: 1 },
+  { data: [70, 55, 60, 30, 35, 35,], label: "2020.12", bgc: "rgba(255, 0, 0, 0.3)", bc: "red", bw: 1 },
+  { data: [90, 85, 90, 80, 70, 80,], label: "2021.9", bgc: "rgba(0, 0, 255, 0)", bc: "blue", bw: 0.5 },
+]
+
+const Graph = () => {
   // 値
   const data = {
-    labels: ['HTML CSS', 'Sass', 'JScript', 'git', 'React', 'Bootstrap',],
+    labels: langage,
     datasets: [
       {
-        label: '@ 2020.9',
-        data: [55, 30, 30, 5, 20, 10,],
-        backgroundColor: 'rgba(246, 255, 0, 0.1)',
-        borderColor: 'yellow',
-        borderWidth: 1,
+        label: skills[0].label,
+        data: skills[0].data,
+        backgroundColor: skills[0].bgc,
+        borderColor: skills[0].bc,
+        borderWidth: skills[0].bw,
+        pointRadius: 0,
         // fill: false,
         // lineTension: 0,
         // pointStyle: 'rect',
-        pointRadius: 0,
-      },
-      {
-        label: '@ 2020.10',
-        data: [60, 35, 40, 10, 30, 20,],
-        backgroundColor: 'rgba(255, 70, 0, 0.2)',
-        borderColor: 'orange',
-        borderWidth: 1,
-        // fill: false,
-        // lineTension: 0,
-        // pointStyle: 'rect',
-        pointRadius: 0,
-      },
-      {
-        label: '@ 2020.11',
-        data: [65, 50, 55, 20, 30, 25,],
-
-        backgroundColor: 'rgba(0, 255, 10, 0.2)',
-        borderColor: 'green',
-        borderWidth: 1,
-        // fill: false,
-        // lineTension: 0,
-        // pointStyle: 'rect',
-        pointRadius: 0,
-      },
-      {
-        label: '@ 2020.12',
-        data: [70, 55, 60, 35, 35, 30,],
-        backgroundColor: 'rgba(255, 0, 0, 0.3)',
-        borderColor: 'red',
-
-        borderWidth: 1,
-        // fill: false,
-        // lineTension: 0,
-        // pointStyle: 'rect',
-        pointRadius: 0,
-      },
-      {
-        label: '@ 2021.9',
-        data: [90, 85, 90, 80, 70, 50,],
-        backgroundColor: 'rgba(0, 0, 255, 0)',
-        borderColor: 'blue',
-        borderWidth: 0.5,
         // pointStyle: 'triangle',
+      },
+      {
+        label: skills[1].label,
+        data: skills[1].data,
+        backgroundColor: skills[1].bgc,
+        borderColor: skills[1].bc,
+        borderWidth: skills[1].bw,
+        pointRadius: 0,
+      },
+      {
+        label: skills[2].label,
+        data: skills[2].data,
+        backgroundColor: skills[2].bgc,
+        borderColor: skills[2].bc,
+        borderWidth: skills[2].bw,
+        pointRadius: 0,
+      },
+      {
+        label: skills[3].label,
+        data: skills[3].data,
+        backgroundColor: skills[3].bgc,
+        borderColor: skills[3].bc,
+        borderWidth: skills[3].bw,
+        pointRadius: 0,
+      },
+      {
+        label: skills[4].label,
+        data: skills[4].data,
+        backgroundColor: skills[4].bgc,
+        borderColor: skills[4].bc,
+        borderWidth: skills[4].bw,
         pointRadius: 0,
       }
     ]
@@ -99,10 +97,17 @@ function Graph() {
         fontSize: 18,
       }
     },
+    maintainAspectRatio: false, // heightのみ指定
+    // responsive: false, // width指定
   };
   return (
     <div>
-      <Radar data={data} options={options} />
+      <Radar
+        data={data}
+        options={options}
+        // width={300}
+        height={350}
+      />
     </div>
   );
 };
