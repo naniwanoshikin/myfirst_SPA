@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* small screen */
 h1 {
   font-size: 34px;
@@ -21,12 +22,12 @@ a {
 }
 
 .nav .nav-item {
-  -webkit-transform: rotate(5deg);
-          transform: rotate(5deg);
+  color: black;
+  -webkit-transform: rotate(3deg);
+          transform: rotate(3deg);
   padding: 10px 0px;
   font-size: 20px;
   font-family: "Itim", cursive;
-  color: black;
 }
 
 .nav .nav-item:hover {
@@ -83,6 +84,14 @@ footer p a:hover {
 .about table th,
 .about table td {
   font-size: 14px;
+}
+
+.about ul {
+  padding-left: 16%;
+}
+
+.about ul li {
+  text-align: left;
 }
 
 .work .work-item {
@@ -148,6 +157,23 @@ footer p a:hover {
   background: #e6e6b4;
   color: #2c2b2b;
   border-radius: 0px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.contact ul {
+  background: rgba(48, 214, 184, 0.16);
+  color: #524f4f;
+  border-radius: 20px;
+  border: 1px dashed #dd4b11;
+  width: 90%;
+}
+
+.contact ul .answer {
+  color: #883ddd;
+  font-size: 18px;
 }
 
 .contact .textline {
@@ -156,7 +182,7 @@ footer p a:hover {
 }
 
 .contact .error-message {
-  color: #ff4d75;
+  color: #fa204f;
   margin: 5px auto 0px;
 }
 
@@ -180,17 +206,45 @@ footer p a:hover {
           box-shadow: none;
 }
 
-.contact ul {
-  background: rgba(48, 214, 184, 0.16);
-  color: #524f4f;
-  border-radius: 20px;
-  border: 1px dashed #dd4b11;
-  width: 90%;
+.contact .radio > label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 28px;
 }
 
-.contact ul .answer {
-  color: #883ddd;
-  font-size: 20px;
+.contact .radio > label span {
+  background: white;
+  color: #fff;
+  border-radius: 30%;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 2px;
+  /* 上からの位置 */
+  left: 4px;
+  border: solid 2px #727983;
+  /* 選択時に重ねる円（透明にしておく） */
+}
+
+.contact .radio > label span:after {
+  background: #a539ee;
+  color: #fff;
+  border-radius: 40%;
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  opacity: 0;
+}
+
+.contact .radio > label input {
+  display: none;
+}
+
+.contact .radio > label input:checked + span:after {
+  opacity: 1;
 }
 
 .App-logo {

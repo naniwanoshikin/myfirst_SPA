@@ -57,11 +57,11 @@ a {
   @include bcr($b: rgb(199, 187, 187), $r: 10px);
   // border-bottom: 1px solid rgb(41, 52, 218);
   .nav-item {
-    transform: rotate(5deg);
+    @include acolor($c: rgb(0, 0, 0), $bh: rgb(220, 230, 132), $ch: blueviolet);
+    transform: rotate(3deg);
     padding: 10px 0px;
     font-size: 20px;
     font-family: "Itim", cursive;
-    @include acolor($c: rgb(0, 0, 0), $bh: rgb(220, 230, 132), $ch: blueviolet);
   }
 }
 // フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -106,6 +106,12 @@ footer {
   table td {
     font-size: 14px;
     // border-bottom: 1px solid gray;
+  }
+  ul {
+    padding-left: 16%;
+    li {
+      text-align: left;
+    }
   }
 }
 // WORKs ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -152,6 +158,17 @@ footer {
 // お問い合わせ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .contact {
   @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 0px);
+  user-select: none;
+  // 確認画面
+  ul {
+    @include bcr($b: rgba(48, 214, 184, 0.16), $c: #524f4f, $r: 20px);
+    border: 1px dashed #dd4b11;
+    width: 90%;
+    .answer {
+      color: #883ddd;
+      font-size: 18px;
+    }
+  }
   // テキスト枠
   .textline {
     padding: 10px;
@@ -159,7 +176,7 @@ footer {
   }
   // 未入力
   .error-message {
-    color: #ff4d75;
+    color: #fa204f;
     margin: 5px auto 0px;
   }
   // 確認・送信ボタン
@@ -176,14 +193,36 @@ footer {
       box-shadow: none;
     }
   }
-  // 確認画面
-  ul {
-    @include bcr($b: rgba(48, 214, 184, 0.16), $c: #524f4f, $r: 20px);
-    border: 1px dashed #dd4b11;
-    width: 90%;
-    .answer {
-      color: #883ddd;
-      font-size: 20px;
+  // ラジオボタン
+  .radio > label {
+    cursor: pointer;
+    position: relative;
+    padding-left: 28px;
+    span {
+      // 円形
+      @include bcr($b: rgb(255, 255, 255), $r: 30%);
+      @include wh($w: 18px, $h: 18px);
+      position: absolute;
+      top: 2px; /* 上からの位置 */
+      left: 4px;
+      border: solid 2px #727983;
+      /* 選択時に重ねる円（透明にしておく） */
+      &:after {
+        @include bcr($b: #a539ee, $r: 40%);
+        content: "";
+        position: absolute;
+        top: 2px;
+        bottom: 2px;
+        left: 2px;
+        right: 2px;
+        opacity: 0;
+      }
+    }
+    input {
+      display: none;
+      &:checked + span:after {
+        opacity: 1;
+      }
     }
   }
 }

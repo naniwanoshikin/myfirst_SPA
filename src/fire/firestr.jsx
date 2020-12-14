@@ -4,6 +4,7 @@ import 'firebase/app'
 import 'firebase/firestore'
 import PoseList from './poselist';
 import Likelist from './likelist';
+import Todo from './Todo'; // Todolist
 
 // Initialize Firebase: プロジェクト設定
 const config = {
@@ -115,6 +116,7 @@ class Sampledb extends React.Component {
         <PoseList />
         {/* いいねボタン */}
         <Likelist count={this.state.count} />
+        <Todo />
       </div>
     );
   }

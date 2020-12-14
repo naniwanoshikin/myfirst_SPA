@@ -4,7 +4,6 @@ import Nav from './Nav';
 import Footer from './Foot';
 import logo from './img/logo.svg'; // ロゴ
 import Translate from './translater'; // Translate
-import Todo from './Todo'; // Todolist
 import Graph from './Graph'; // Chart.js
 import MyWork from './Work_1'; // Works
 import Contactform from './Contact'; // ContactForm
@@ -48,7 +47,6 @@ const Home = () => {
       <h1 className="mt-5" >HELLO WORLD</h1>
       <header className="App-header">
         <Translate />
-        <Todo />
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <Footer />
@@ -62,7 +60,7 @@ const About = () => {
       <Nav />
       <h1 className="mt-5">About</h1>
       <p>自己紹介です。</p>
-      <div className="container my-3">
+      <div className="container py-2 bg-warning">
         <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
           <tbody>
             <tr>
@@ -81,9 +79,10 @@ const About = () => {
         </table>
         <ul>
           <li>2020/6 プログラミング開始</li>
+          <li>2020/8 ポートフォリオ作成開始</li>
         </ul>
       </div>
-      <div className="my-4">
+      <div className="py-4 bg-warning">
         <Graph />
       </div>
       <Footer />
