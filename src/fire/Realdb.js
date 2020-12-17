@@ -4,7 +4,7 @@ import 'firebase/app'
 import 'firebase/database'
 
 // ナビ構成
-class Sampledb extends React.Component {
+class Bookdb extends React.Component {
   style = {
     fontSize: "70px",
   }
@@ -57,4 +57,4 @@ class Sampledb extends React.Component {
   }
 }
 
-export default Sampledb;
+export default Bookdb;

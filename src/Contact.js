@@ -1,16 +1,23 @@
 import React from 'react';
 
-// 前後スペース削除
-// (@param, @return) = (空白ありstring, 空白なしstring)
+// スペース削除
+// (@param, @return) = (string, 前後スペースなしstring)
 function spa(string) {
-  return string.replace(/^[ |　]+|[ |　]+$/g, ''); // sの代わりに半角スペース入れた
+  return string.replace(/^[ |　]+|[ |　]+$/g, ''); // sだと半角スペースが適用されず,,
 }
-// emailアドレスチェック用
+// a@g.com形式であればtrue
 // (@param, @return) = (string, bool)
 function ad(string) {
   const reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
   return reg.test(string);
 }
+
+// check状態をstate保持したかったがうまく変更できず
+const radioitems = [ // radioボタン
+  { id: 0, check: false, input: "社員", output: "社員" },
+  { id: 1, check: false, input: "アルバイト", output: "アルバイト" },
+  { id: 2, check: false, input: "無職", output: "無職" },
+];
 
 class Contactform extends React.Component {
   constructor(props) {
@@ -18,7 +25,7 @@ class Contactform extends React.Component {
     this.state = {
       name: "",
       mail: "",
-      age: '未回答',
+      age: '',
       radio: "",
       content: "",
       hasNameError: false,
@@ -33,7 +40,7 @@ class Contactform extends React.Component {
     const inputValue = e.target.value;
     this.setState({
       name: inputValue, // string
-      hasNameError: spa(inputValue) === "", // 未入力（true）
+      hasNameError: spa(inputValue) === "", // bool （未入力だとtrue）
     });
   }
   handleMail(e) { // emailを入力した時
@@ -57,16 +64,20 @@ class Contactform extends React.Component {
       hasAgeError: inputValue === "",
     });
   }
-  handleRadio(e) { // ラジオボタンを選択した時
-    const inputValue = e.target.value;
+  handleRadio(ee) { // ラジオボタンを選択した時
+    const inputValue = ee.input;
+    // console.log(ee.id);
+    // console.log(ee.check);
+    // console.log(inputValue); // 選択した値
+    // console.log(this.state.radio); // 保持している値
     this.setState({
       radio: inputValue,
-      hasRadioError: inputValue === "",
+      hasRadioError: inputValue === "",  // →checkでboolしたい。
     });
   }
-  handleConfirm(e) { // 確認ボタン押した時、未入力ならエラーメッセージを表示
+  handleConfirm(e) { // 確認ボタン押した時、
     e.preventDefault();
-    if (!this.state.name) {
+    if (!this.state.name) { // 未入力ならエラーメッセージを表示
       this.setState({ hasNameError: true });
     }
     if (!this.state.mail) {
@@ -75,10 +86,11 @@ class Contactform extends React.Component {
     if (!this.state.content) {
       this.setState({ hasContentError: true });
     }
-    if (!this.state.age.checked) {
-      this.setState({ hasAgeError: true });
+    if (!this.state.age) {
+      this.setState({ hasAgeError: true, age: "未回答" });
     }
     if (!this.state.radio) {
+      console.log('not radio value');
       this.setState({ hasRadioError: true });
     }
     if (!this.state.name || !ad(this.state.mail) || !this.state.radio || !this.state.content) {
@@ -88,7 +100,7 @@ class Contactform extends React.Component {
   }
   handleFix(e) { // 修正ボタン押した時、
     e.preventDefault();
-    this.setState({ isSubmitted: false }); // 画面戻す
+    this.setState({ isSubmitted: false });
   }
   handleSubmit = (e) => { // 送信ボタン押した時、
     e.preventDefault();
@@ -97,7 +109,7 @@ class Contactform extends React.Component {
     const content = spa(this.state.content);
     const age = this.state.age;
     const radio = this.state.radio;
-    const WEBHOOK_url = "https://hooks.slack.com/services/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";
+    const WEBHOOK_url = "https://hooks.slack.com/services/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";
     const payload = {
       text: '★New Message★\n'
         + 'お名前: ' + name + '\n'
@@ -121,7 +133,7 @@ class Contactform extends React.Component {
         isSubmitted: false,
       })
     })
-    console.log('ok');
+    console.log('sent for slack!');
   }
   render() {
     let NameError; // 名前エラー
@@ -139,48 +151,44 @@ class Contactform extends React.Component {
         <p className="error-message">※アドレスが未入力です</p>
       );
     }
-    if (this.state.mail) { // 入力されていても、形式が違う時、
-      if (!ad(this.state.mail)) {
-        console.log('not adress');
-        MailError = (
-          <p className="error-message">※正しい形式にしてください</p>
-        );
-      }
+    if (this.state.mail && !ad(this.state.mail)) { // 入力していても形式が違う時、
+      MailError = (
+        <p className="error-message">※正しい形式にしてください</p>
+      );
+      // console.log('format adress!');
     }
     if (this.state.hasAgeError) {
       AgeError = (
         <p className="error-message">※選択されていません</p>
       );
+      // console.log('age not selected');
     }
     if (this.state.hasRadioError) {
       RadioError = (
         <p className="error-message">※直近の状況を選択してください</p>
       );
+      console.log('radio not selected');
     }
     if (this.state.hasContentError) {
       ContentError = (
         <p className="error-message">※希望事項を入力してください</p>
       );
     }
-    const confirmform = [ // 確認画面リスト
-      { output: [spa(this.state.name)], input: "お名前" },
-      { output: [spa(this.state.mail)], input: "アドレス" },
-      { output: [this.state.age], input: "年齢" },
-      { output: [this.state.radio], input: "職業" },
-      { output: [spa(this.state.content)], input: "内容" },
+    const confirmform = [ // 確認画面リスト（順番どおり）
+      { input: "お名前", output: [spa(this.state.name)] },
+      { input: "Email", output: [spa(this.state.mail)] },
+      { input: "年齢", output: [this.state.age] },
+      { input: "職業", output: [this.state.radio] },
+      { input: "内容", output: [spa(this.state.content)] },
     ];
-    const ageform = [ // 年齢 checkbox
-      { output: "回答しない", input: "-" },
-      { output: "16~25歳", input: "16-25歳" },
-      { output: "26~35歳", input: "26-35歳" },
-      { output: "36~45歳", input: "36-45歳" },
-      { output: "46~歳", input: "46-歳" },
+    const ageitems = [ // checkbox
+      { input: "-", output: "回答しない" },
+      { input: "16-25歳", output: "16~25歳" },
+      { input: "26-35歳", output: "26~35歳" },
+      { input: "36-45歳", output: "36~45歳" },
+      { input: "46-歳", output: "46~歳" },
     ];
-    const radioform = [ // radioボタン
-      { output: "社員。", input: "社員" },
-      { output: "アルバイト。", input: "アルバイト" },
-      { output: "無職。", input: "無職" },
-    ];
+
     return (
       <div className="contact py-5 mt-3">
         {this.state.isSubmitted // （三項演算子）
@@ -229,17 +237,17 @@ class Contactform extends React.Component {
                   <label htmlFor="email" className="bg-warning px-1 py-1 rounded">Email（必須）</label>
                   <input type="text" id="email" placeholder="aichi@gmail.com"
                     className="textline ml-3" autoComplete="off"
-                    value={this.state.email} onChange={(e) => { this.handleMail(e) }}
+                    value={this.state.mail} onChange={(e) => { this.handleMail(e) }}
                   />
                   {MailError}
                 </div>
                 {/* 年齢 */}
                 <div className="bg-white mt-3">
-                  <label className="bg-primary mr-3 px-1 py-1 rounded">年齢（任意）</label>
+                  <label className="bg-info mr-3 px-1 py-1 rounded">年齢（任意）</label>
                   <select name="age" className="textline ml-3"
                     value={this.state.age} onChange={(e) => { this.handleAge(e) }}
                   >
-                    {ageform.map((ee, i) => {
+                    {ageitems.map((ee, i) => {
                       return (
                         <option key={i} value={ee.output}>{ee.input}</option>
                       )
@@ -248,22 +256,23 @@ class Contactform extends React.Component {
                   {AgeError}
                 </div>
                 {/* 連絡方法 */}
-                <div className="radio d-inline-block text-left mt-3 mb-1 bg-white">
+                <div className="radio d-inline-block text-left mt-3 bg-white">
                   <p className="d-sm-inline-flex mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
-                  {radioform.map((ee, i) => {
+                  {radioitems.map((item, i) => {
                     return (
                       <label className="my-radio ml-3 my-2" key={i}>
                         <input type="radio" name="abcde" className="mr-1"
-                          value={ee.output} onChange={(e) => { this.handleRadio(e) }}
+                          value={item.output} onChange={() => { this.handleRadio(item) }}
+                        // checked={item.check} // うまく保持できず
                         />
-                        {ee.input}<span>{/* 円 */}</span>
+                        {item.input}<span>{/* 円 */}</span>
                       </label>
                     )
                   })}
                   {RadioError}
                 </div>
               </div>
-              <div className="d-inline-block bg-white">
+              <div className="d-inline-block bg-white mt-3">
                 {/* 内容 */}
                 <label className="d-inline-block my-2 px-2 bg-warning py-1 rounded">お問い合わせ内容（必須）</label><br />
                 <textarea

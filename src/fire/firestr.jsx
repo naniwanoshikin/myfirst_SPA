@@ -1,125 +1,209 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/firestore'
+import config from './config';
 import PoseList from './poselist';
 import Likelist from './likelist';
-import Todo from './Todo'; // Todolist
-
-// Initialize Firebase: プロジェクト設定
-const config = {
-  // apiKey: "AIzaSyB14-DG8sd3KtcC6ECNLKLR7HrrKNphRZQ", // auth用
-  // authDomain: "spapf-24842.firebaseapp.com",
-  // databaseURL: "https://spapf-24842.firebaseio.com",
-  projectId: "spapf-24842", //
-  // storageBucket: "spapf-24842.appspot.com",
-  // messagingSenderId: "408425213048", // プロジェクト番号 ※流出禁物
-  // appId: "1:65211879909:web:3ae38ef1cdcb2e01fe5f0c",
-  // measurementId: "G-8GSGZQ44ST"
-};
-firebase.initializeApp(config); // 初期化
-
 
 // firebase使用
+firebase.initializeApp(config);
 const db = firebase.firestore();
 const collection = db.collection('users');
-const _users = [];
 
-function handleFetch() {
-  // const [users, setUsers] = userState([]);
-  collection
-    .where('age', '<=', 30) // 条件
-    .limit(2)
-    .get()
-    .then(snapshot => {    // 非同期処理
-      snapshot.forEach(doc => {
-        _users.push({
-          userId: doc.id,
-          ...doc.data(),
-        });
-        console.log(doc.id, ':', doc.data());
-      })
-    });
-  // console.log('ok');
-  // this.setState(_users);
+// ライフサイクルメソッド
+// カウントアップ
+// componentDidMount() {
+//   document.getElementById('counter').addEventListener('click', this.countUp)
+// }
+// componentDidUpdate() {
+//   if (this.state.count > 10) {
+//     this.setState({count: 0});
+//   }
+// }
+// componentWillUnmount() {
+//   document.getElementById('counter').removeEventListener('click', this.countUp)
+// }
+// countUp = () => {
+//   this.setState({count: this.state.count + 1});
+// }
 
-  // const userList = users.map(user => {
-  //   return (
-  //     <li key={user.userId}>{user.name}:{user.age}, {user.locate}</li>
-  //   );
-  // });
+// constructor(props) {
+//   super(props);
+//   this.state = {
+//     // users: auser,
+//     userName: '',
+//     count: 0,
+//   };
+// };
 
-}
+const Sampledb = () => {
 
-class Sampledb extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: _users,
-      userName: '',
-      count: 0,
-    };
-  };
+  // 表示
+  const [users, setUsers] = useState([]);
+  const userList = users.map(user => {
+    return (
+      <li key={user.userId}>
+        {/* {user.userId.substr(0, 3)} */}
+        {user.name}({user.age})-{user.locate}
+      </li>
+    );
+  });
 
-  // ライフサイクルメソッド
-  // カウントアップ
-  // componentDidMount() {
-  //   document.getElementById('counter').addEventListener('click', this.countUp)
-  // }
-  // componentDidUpdate() {
-  //   if (this.state.count > 10) {
-  //     this.setState({count: 0});
-  //   }
-  // }
-  // componentWillUnmount() {
-  //   document.getElementById('counter').removeEventListener('click', this.countUp)
-  // }
-  // countUp = () => {
-  //   this.setState({count: this.state.count + 1});
-  // }
-  
-  setUserName(e) {
-    this.setState({
-      userName: e.target.value,
-    });
+  // 取得機能
+  const handleGet = async () => {
+    const auser = [];
+    const snap = await collection.get();
+    snap.forEach(doc => {
+      auser.push({
+        userId: doc.id,
+        ...doc.data(), // スプレッド演算子
+      });
+      console.log(doc.id, ':', doc.data());
+    })
+    console.log('get!');
+    setUsers(auser);
   }
 
-  handleAdd() {
-    if (!this.userName) {
-      console.log('空です');
+  // 追加機能
+  const [userName, setUserName] = useState('');
+  const [age, setAge] = useState('');
+  const handleAdd = async () => {
+    // await collection
+    //   .doc('1')
+    //   .get()
+    //   .then((doc) => { // then がある = promise = awaitが使える
+    //     console.log('docdata:', doc.data());
+    //   });
+    if (!userName) {
+      console.log('名前が空です');
+    }
+    if (!age) {
+      console.log('年齢が空です');
+    }
+    const parsedAge = parseInt(age, 10); // string → int
+    if (age && isNaN(parsedAge)) {
+      console.log('年齢は半角でお願いします');
+    }
+    if (!userName || isNaN(parsedAge)) {
       return;
     }
-    collection.add({
-      name: this.userName,
-      age: '20',
+    const ref = await collection.add({
+      name: userName,
+      age: parsedAge,
       locate: 'america',
-    }, { merge: true })
-      .then(doc => { // promise
-        console.log(`${doc.id} added`);
-      })
-      .catch(function (error) {
-        console.error("Error writing document: ", error);
+    });
+    // const data = await ref.get().data(); // なぜかできず
+    // , { merge: true }) // 情報更新したものだけ上書き
+    console.log(ref.id, (await ref.get()).data());
+    console.log('ok');
+    setUserName(''); // 空にする
+    setAge('');
+  }
+
+  // 更新機能
+  const [docId, setDoc] = useState('');
+  const handleUpdate = async () => {
+    if (!docId) {
+      console.log('Idが空です');
+      return;
+    }
+    const newData = {};
+    if (userName) {
+      newData['name'] = userName;
+    }
+    if (age) {
+      newData['age'] = parseInt(age, 10);
+    }
+    try {
+      await collection.doc(docId).update(newData);
+      setUserName('');
+      setAge('');
+      setDoc('');
+      console.log(docId, 'updated!')
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  // 削除機能
+  const handleDelete = async () => {
+    if (!docId) {
+      console.log('Idが空です');
+      return;
+    }
+    try {
+      await collection.doc(docId).delete();
+      setUserName('');
+      setAge('');
+      setDoc('');
+      console.log(docId, 'delete!')
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // 更新を検知する（自動でcallback関数が実行される）
+  useEffect(() => {
+    const unsubscribe = collection
+      // .where('age', '>=', 2) // 条件
+      .orderBy('age', 'desc') // default asc
+      .limit(4)
+      .onSnapshot((shot) => {
+        console.log('mounted');
+        shot.forEach(doc => {
+          console.log(doc.id, doc.data());
+        })
+        const auser = shot.docs.map(doc => {
+          return {
+            userId: doc.id,
+            ...doc.data()
+          }
+        });
+        setUsers(auser);
       });
-  }
-  render() {
-    return (
-      <div className="mx-auto my-4">
-        <h2>hello</h2>
-        <label htmlFor="namae">名前: </label>
-        <input type="text" id="namae" autoComplete="off"
-          value={this.userName}
-          onChange={e => { this.setUserName(e) }}
-        />
-        <button onClick={handleFetch}>取得</button>
-        <button onClick={this.handleAdd}>追加</button>
-        {/* <ul>{this.userList}</ul> */}
-        <PoseList />
-        {/* いいねボタン */}
-        <Likelist count={this.state.count} />
-        <Todo />
+    return () => {
+      unsubscribe();
+    };
+  }, []); // 第二引数に[]と書いたらunmountedされた。
+
+  return (
+    <div className="mx-auto my-4">
+      <h2>hello</h2>
+      <div>
+        <div className="d-inline-block mx-5">
+          <label htmlFor="namae">名前：</label>
+          <input type="text" id="namae" autoComplete="off"
+            value={userName}
+            onChange={e => { setUserName(e.target.value) }}
+          /><br />
+          <label htmlFor="age">年齢：</label>
+          <input type="text" id="age" autoComplete="off"
+            value={age}
+            onChange={e => { setAge(e.target.value) }}
+          /><br />
+          <label htmlFor="doc">DocId：</label>
+          <input type="text" id="doc" autoComplete="off"
+            value={docId}
+            onChange={e => { setDoc(e.target.value) }}
+          />
+        </div>
       </div>
-    );
-  }
+      <div>
+        <div className="d-inline-block">
+          {/* <button onClick={handleGet}>取得</button> */}
+          <button onClick={handleAdd}>追加</button>
+          <button onClick={handleUpdate}>更新</button>
+          <button onClick={handleDelete}>削除</button>
+        </div>
+      </div>
+      <div className="my-2">
+        <ul className="d-inline-block text-left">{userList}</ul>
+      </div>
+      {/* <PoseList /> */}
+      {/* いいねボタン */}
+      {/* <Likelist count={state.count} /> */}
+    </div>
+  );
 }
 
 export default Sampledb;

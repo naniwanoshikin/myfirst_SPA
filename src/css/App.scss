@@ -22,83 +22,99 @@
     text-decoration: none;
   }
 }
-// 写真・説明
-@mixin imgcss {
-  img {
-    width: 90%;
-    border-radius: 10px;
-    vertical-align: bottom;
-  }
-  .tex {
-    padding: 0 30px;
-    p {
-      text-align: justify;
-    }
-  }
-}
+
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 /* small screen */
-// body {
-h1 {
-  font-size: 34px;
-  text-align: center;
-  // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-family: "Boogaloo", cursive;
-  letter-spacing: 0.25em;
-}
-ul {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-// ナビ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-.nav {
-  @include bcr($b: rgb(199, 187, 187), $r: 10px);
-  // border-bottom: 1px solid rgb(41, 52, 218);
-  .nav-item {
-    @include acolor($c: rgb(0, 0, 0), $bh: rgb(220, 230, 132), $ch: blueviolet);
-    transform: rotate(3deg);
-    padding: 10px 0px;
-    font-size: 20px;
-    font-family: "Itim", cursive;
+body {
+  h1 {
+    font-size: 34px;
+    text-align: center;
+    // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Boogaloo", cursive;
+    letter-spacing: 0.25em;
   }
-}
-// フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-footer {
-  background: rgb(207, 230, 241);
   ul {
-    li {
-      padding-right: 20px;
-      a {
-        .fa-github {
-          color: black;
-        }
-        .fa-twitter {
-          color: skyblue;
-        }
-        .fa-instagram {
-          color: purple;
-        }
-        .fa-youtube {
-          color: red;
-        }
-        &:hover {
-          transition: 2s;
-          opacity: 0.5;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  // ナビ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  .nav {
+    @include bcr($b: rgb(199, 187, 187), $r: 10px);
+    // border-bottom: 1px solid rgb(41, 52, 218);
+    .nav-item {
+      @include acolor($c: rgb(0, 0, 0), $bh: rgb(220, 230, 132), $ch: blueviolet);
+      transform: rotate(3deg);
+      padding: 10px 0px;
+      font-size: 20px;
+      font-family: "Itim", cursive;
+    }
+  }
+  // フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  footer {
+    background: rgb(207, 230, 241);
+    ul {
+      li {
+        padding-right: 20px;
+        a {
+          .fa-github {
+            color: black;
+          }
+          .fa-twitter {
+            color: rgb(106, 202, 240);
+          }
+          .fa-instagram {
+            color: purple;
+          }
+          .fa-youtube {
+            color: red;
+          }
+          &:hover {
+            transition: 2s;
+            opacity: 0.5;
+          }
         }
       }
     }
-  }
-  p {
-    a {
-      @include acolor($c: rgb(0, 190, 57), $bh: #fff, $ch: blueviolet);
-      font-size: 20px;
+    p {
+      a {
+        @include acolor($c: rgb(0, 190, 57), $bh: #fff, $ch: blueviolet);
+        font-size: 20px;
+      }
     }
   }
 }
-// }
+// HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 // ABOUT ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .about {
   // RDB用
@@ -118,33 +134,28 @@ footer {
 .work {
   // 個々ワークス
   .work-item {
-    width: 80%;
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
-    p {
-      text-align: justify;
-      font-size: 16px;
-    }
-    a > img {
-      cursor: pointer;
-    }
+    width: 90%;
     h5 {
       @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
-      border-radius: 5px;
+      cursor: pointer;
+    }
+    img {
       cursor: pointer;
     }
     .work-modal {
+      background: rgba(209, 197, 197, 0.6);
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       z-index: 5;
-      @include bcr($b: rgba(209, 197, 197, 0.6), $c: rgb(245, 111, 111), $r: 10px);
       .modalin {
+        color: rgb(245, 111, 111);
         top: 30%;
         right: 0;
         left: 0;
         width: 95%;
-        @include bcr($b: rgba(244, 248, 231, 0.6), $c: rgb(245, 111, 111), $r: 10px);
         span {
           cursor: pointer;
         }
@@ -224,99 +235,6 @@ footer {
         opacity: 1;
       }
     }
-  }
-}
-
-// ホーム ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-// Todo管理アプリ React.js
-.todo {
-  // width: calc(230px + 20%);
-  background: rgba(32, 238, 200, 0.4);
-  border-radius: 20px;
-  h3 {
-    // My todos
-    font-size: 30px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    border-bottom: 1px solid #e1f00f;
-    // margin-top: 0;
-    span {
-      // (3/9)とか
-      color: #ccc;
-      font-size: 24px;
-      margin-left: 10px;
-    }
-    button {
-      // パージボタン
-      float: right;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-  }
-  form {
-    input {
-      // 追加ボタン
-      border-radius: 10px;
-      font-size: 16px;
-    }
-  }
-  ul {
-    li {
-      // リスト
-      line-height: 1.4; // 行高さ
-      font-size: 20px;
-      .cmd {
-        // 削除ボタン
-        font-size: 18px;
-        cursor: pointer;
-        color: rgb(28, 24, 233);
-        margin-left: 5px;
-      }
-      .done {
-        // ✔︎したタイトル
-        text-decoration: line-through;
-        color: #bbb;
-      }
-    }
-  }
-  input[type="text"] {
-    // 入力欄の横
-    padding: 2px;
-    margin-right: 10px;
-  }
-  input[type="checkbox"] {
-    // ✔️の横
-    margin-right: 10px;
   }
 }
 

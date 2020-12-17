@@ -29,7 +29,7 @@ Slack通知機能
 
 # Future Tasks
 * Home部 デザイン
-* Contact部 修正した時、radioだけ値が消える
+* Contactクラス radioボタンの値の保持
 <!-- * 削除機能（firestore） -->
 <!-- * 非同期通信 -->
 <!-- - JavaScript （英訳機能） -->
