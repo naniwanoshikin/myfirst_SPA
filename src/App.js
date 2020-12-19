@@ -2,14 +2,15 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Footer from './Foot';
-import logo from './img/logo.svg'; // ロゴ
-import Translate from './translater'; // Translate
+import Pose from './pose'; // pose
+import { Anime } from './anime'; // anime
 import Graph from './Graph'; // Chart.js
 import MyWork from './Work_1'; // Works
 import Contactform from './Contact'; // ContactForm
 import './css/App.css';
 // import firebase from 'firebase/app'
 import Sampledb from './fire/firestr.jsx'; // firestore
+
 
 // Routing処理
 const App = () => (
@@ -25,7 +26,6 @@ const App = () => (
 )
 
 // RDBSデータ表示
-// functional Component
 const Data = props => {
   const { id } = props.match.params
   return (
@@ -42,12 +42,14 @@ const Data = props => {
 // Home
 const Home = () => {
   return (
-    <div className="text-center">
+    <div className="home text-center">
       <Nav />
-      <h1 className="mt-5" >HELLO WORLD</h1>
-      <header className="App-header">
-        <Translate />
-        <img src={logo} className="App-logo" alt="logo" />
+      <h1 id="home" className="mt-5" >HELLO WORLD</h1>
+      <p id="construction">ただいま工事中。</p>
+      <header className="">
+        <h1 className="">Wellcome to myPage!</h1>
+        <Anime />
+        <Pose />
       </header>
       <Footer />
     </div>
@@ -58,14 +60,14 @@ const About = () => {
   return (
     <div className="about text-center">
       <Nav />
-      <h1 className="mt-5">About</h1>
+      <h1 id="about" className="mt-5">About</h1>
       <p>自己紹介です。</p>
-      <div className="container py-2 bg-warning">
+      <div className="container py-2">
         <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
           <tbody>
             <tr>
               <td>Name</td>
-              <td>SHIKITTI</td>
+              <td>Masahiro</td>
             </tr>
             <tr>
               <td>From</td>
@@ -73,18 +75,16 @@ const About = () => {
             </tr>
             <tr>
               <td>Hobby</td>
-              <td>picture</td>
+              <td>Picture</td>
             </tr>
           </tbody>
         </table>
-        <ul>
+        <ul className="pl-5">
           <li>2020/6 プログラミング開始</li>
           <li>2020/8 ポートフォリオ作成開始</li>
         </ul>
       </div>
-      <div className="py-4 bg-warning">
-        <Graph />
-      </div>
+      <Graph />
       <Footer />
     </div>
   )
@@ -96,9 +96,7 @@ const Work = () => {
       <Nav />
       <h1 id="work" className="mt-5" style={{ color: "red" }}>Works</h1>
       <p>ポートフォリオ作品です。</p>
-      <div className="container px-0 py-4">
-        <MyWork />
-      </div>
+      <MyWork />
       <Footer />
     </div>
   )

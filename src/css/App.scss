@@ -86,48 +86,63 @@ body {
   }
 }
 // HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#canvasstyle {
+  position: absolute;
+  top: 50;
+  left: 0;
+  z-index: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.home {
+  user-select: none;
+  header {
+    @include bcr($b: rgb(243, 234, 181), $c: rgb(51, 45, 45), $r: 0px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    height: 360px;
+    h1 {
+      font-size: 50px;
+      z-index: 10;
+    }
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 15s linear;
+    }
   }
-  to {
-    transform: rotate(360deg);
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 // ABOUT ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .about {
-  // RDB用
-  table th,
-  table td {
-    font-size: 14px;
-    // border-bottom: 1px solid gray;
-  }
-  ul {
-    padding-left: 16%;
-    li {
-      text-align: left;
+  user-select: none;
+  & > .container {
+    @include bcr($b: rgb(250, 230, 115), $c: rgb(73, 61, 61), $r: 0px);
+    // プロフィール
+    table th,
+    table td {
+      font-size: 18px;
+      border-top: 1px solid rgb(158, 152, 152);
     }
+    // 経歴
+    ul {
+      li {
+        font-size: 18px;
+        text-align: left;
+      }
+    }
+  }
+  // グラフ
+  .chart {
+    @include bcr($b: rgb(223, 245, 181), $c: white, $r: 0px);
   }
 }
 // WORKs ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -189,6 +204,7 @@ body {
   .error-message {
     color: #fa204f;
     margin: 5px auto 0px;
+    text-align: center;
   }
   // 確認・送信ボタン
   .submitbtn {
@@ -210,7 +226,7 @@ body {
     position: relative;
     padding-left: 28px;
     span {
-      // 円形
+      // 枠
       @include bcr($b: rgb(255, 255, 255), $r: 30%);
       @include wh($w: 18px, $h: 18px);
       position: absolute;
@@ -241,9 +257,11 @@ body {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 /* medium screen */
 @media (min-width: 576px) {
-  .nav {
-    .nav-item {
-      font-size: 30px;
+  body {
+    .nav {
+      .nav-item {
+        font-size: 30px;
+      }
     }
   }
   .work {

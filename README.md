@@ -22,10 +22,14 @@ Slack通知機能
 - Sass
 - Bootstrap 4.5.0
 - node.js 14.8.0
-- npm 6.14.9
+- npm 6.14.10
 - React 16.13.1
-- Chart.js 2.9.3
 - Git, Github
+
+# 使用ライブラリ
+- react-chartjs-2
+- react-three-fiber
+- react-pose
 
 # Future Tasks
 * Home部 デザイン

@@ -81,21 +81,24 @@ body footer p a:hover {
   text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#canvasstyle {
+  position: absolute;
+  top: 50;
+  left: 0;
+  z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    -webkit-animation: App-logo-spin infinite 20s linear;
-            animation: App-logo-spin infinite 20s linear;
-  }
+.home {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home header {
+  background: #f3eab5;
+  color: #332d2d;
+  border-radius: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,6 +113,19 @@ body footer p a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: calc(10px + 2vmin);
+  height: 360px;
+}
+
+.home header h1 {
+  font-size: 50px;
+  z-index: 10;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home .App-logo {
+    -webkit-animation: App-logo-spin infinite 15s linear;
+            animation: App-logo-spin infinite 15s linear;
+  }
 }
 
 @-webkit-keyframes App-logo-spin {
@@ -134,17 +150,34 @@ body footer p a:hover {
   }
 }
 
-.about table th,
-.about table td {
-  font-size: 14px;
+.about {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
-.about ul {
-  padding-left: 16%;
+.about > .container {
+  background: #fae673;
+  color: #493d3d;
+  border-radius: 0px;
 }
 
-.about ul li {
+.about > .container table th,
+.about > .container table td {
+  font-size: 18px;
+  border-top: 1px solid #9e9898;
+}
+
+.about > .container ul li {
+  font-size: 18px;
   text-align: left;
+}
+
+.about .chart {
+  background: #dff5b5;
+  color: white;
+  border-radius: 0px;
 }
 
 .work .work-item {
@@ -227,6 +260,7 @@ body footer p a:hover {
 .contact .error-message {
   color: #fa204f;
   margin: 5px auto 0px;
+  text-align: center;
 }
 
 .contact .submitbtn {
@@ -292,7 +326,7 @@ body footer p a:hover {
 
 /* medium screen */
 @media (min-width: 576px) {
-  .nav .nav-item {
+  body .nav .nav-item {
     font-size: 30px;
   }
   .work .work-item .work-modal .modalin {

@@ -66,9 +66,9 @@ class Contactform extends React.Component {
   }
   handleRadio(ee) { // ラジオボタンを選択した時
     const inputValue = ee.input;
-    // console.log(ee.id);
-    // console.log(ee.check);
-    // console.log(inputValue); // 選択した値
+    // console.log(ee.id); // 0
+    // console.log(ee.check); // false
+    // console.log(ee.input); // 選択した値
     // console.log(this.state.radio); // 保持している値
     this.setState({
       radio: inputValue,
@@ -221,19 +221,21 @@ class Contactform extends React.Component {
             <div className="px-0">
               <div className="px-0">
                 {/* お名前 */}
-                <div className="bg-white d-inline-block">
-                  <label htmlFor="name" className="bg-warning px-1 py-1 rounded">お名前（必須）</label>
-                  {/* <div> */}
-                  <input type="text" id="name" placeholder="大阪太郎"
-                    className="textline ml-3" autoComplete="off"
-                    value={this.state.name} onChange={(e) => { this.handleName(e) }}
-                  />
-                  {/* メソッド */}
-                  {NameError}
-                  {/* </div> */}
+                <div>
+                  <div className="d-inline-block bg-white">
+                    <label htmlFor="name" className="d-inline d-sm-inline-block bg-warning px-1 py-1 rounded">お名前（必須）</label>
+                    {/* <div> */}
+                    <input type="text" id="name" placeholder="大阪太郎"
+                      className="textline ml-3" autoComplete="off"
+                      value={this.state.name} onChange={(e) => { this.handleName(e) }}
+                    />
+                    {/* メソッド */}
+                    {NameError}
+                    {/* </div> */}
+                  </div>
                 </div>
                 {/* Email */}
-                <div className="bg-white mt-3">
+                <div className="d-inline-block bg-white mt-3">
                   <label htmlFor="email" className="bg-warning px-1 py-1 rounded">Email（必須）</label>
                   <input type="text" id="email" placeholder="aichi@gmail.com"
                     className="textline ml-3" autoComplete="off"
@@ -242,30 +244,32 @@ class Contactform extends React.Component {
                   {MailError}
                 </div>
                 {/* 年齢 */}
-                <div className="bg-white mt-3">
-                  <label className="bg-info mr-3 px-1 py-1 rounded">年齢（任意）</label>
-                  <select name="age" className="textline ml-3"
-                    value={this.state.age} onChange={(e) => { this.handleAge(e) }}
-                  >
-                    {ageitems.map((ee, i) => {
-                      return (
-                        <option key={i} value={ee.output}>{ee.input}</option>
-                      )
-                    })}
-                  </select>
-                  {AgeError}
+                <div>
+                  <div className="d-inline-block bg-white mt-3">
+                    <label className="bg-info mr-3 px-1 py-1 rounded">年齢（任意）</label>
+                    <select name="age" className="textline ml-3"
+                      value={this.state.age} onChange={(e) => { this.handleAge(e) }}
+                    >
+                      {ageitems.map((ee, i) => {
+                        return (
+                          <option key={i} value={ee.output}>{ee.input}</option>
+                        )
+                      })}
+                    </select>
+                    {AgeError}
+                  </div>
                 </div>
-                {/* 連絡方法 */}
+                {/* ラジオボタン */}
                 <div className="radio d-inline-block text-left mt-3 bg-white">
-                  <p className="d-sm-inline-flex mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
+                  <p className="d-block d-sm-inline-block mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
                   {radioitems.map((item, i) => {
                     return (
-                      <label className="my-radio ml-3 my-2" key={i}>
+                      <label key={i} className="ml-3 my-2">
                         <input type="radio" name="abcde" className="mr-1"
                           value={item.output} onChange={() => { this.handleRadio(item) }}
                         // checked={item.check} // うまく保持できず
-                        />
-                        {item.input}<span>{/* 円 */}</span>
+                        />{item.input}
+                        <span>{/* 円 */}</span>
                       </label>
                     )
                   })}
