@@ -35,7 +35,7 @@ const Home = () => {
     <div className="home text-center">
       <Nav />
       <Pose name={"Home"} comment={"ただいま工事中。"} />
-      <Paper x="14%" y="18%" w="0" h="0" o="0.1" fs="120px" r="25px" c="" m="Hello" />
+      <Paper x="14%" y="17%" w="0" h="0" o="0.1" fs="120px" r="25px" c="" m="Hello" />
       <header>
         <PaperAnime />
         <PaperClick />
