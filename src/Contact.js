@@ -19,7 +19,7 @@ const radioitems = [ // radioボタン
   { id: 2, check: false, input: "無職", output: "無職" },
 ];
 
-class Contactform extends React.Component {
+export default class Contactform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -109,7 +109,7 @@ class Contactform extends React.Component {
     const content = spa(this.state.content);
     const age = this.state.age;
     const radio = this.state.radio;
-    const WEBHOOK_url = "https://hooks.slack.com/services/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";
+    const WEBHOOK_url = "https://hooks.slack.com/services/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";
     const payload = {
       text: '★New Message★\n'
         + 'お名前: ' + name + '\n'
@@ -167,7 +167,7 @@ class Contactform extends React.Component {
       RadioError = (
         <p className="error-message">※直近の状況を選択してください</p>
       );
-      console.log('radio not selected');
+      // console.log('radio not selected');
     }
     if (this.state.hasContentError) {
       ContentError = (
@@ -295,5 +295,3 @@ class Contactform extends React.Component {
     );
   }
 }
-
-export default Contactform;

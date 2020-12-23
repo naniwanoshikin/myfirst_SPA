@@ -3,41 +3,13 @@ import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/firestore'
 import config from './config';
-import PoseList from './poselist';
-import Likelist from './likelist';
 
 // firebase使用
 firebase.initializeApp(config);
 const db = firebase.firestore();
 const collection = db.collection('users');
 
-// ライフサイクルメソッド
-// カウントアップ
-// componentDidMount() {
-//   document.getElementById('counter').addEventListener('click', this.countUp)
-// }
-// componentDidUpdate() {
-//   if (this.state.count > 10) {
-//     this.setState({count: 0});
-//   }
-// }
-// componentWillUnmount() {
-//   document.getElementById('counter').removeEventListener('click', this.countUp)
-// }
-// countUp = () => {
-//   this.setState({count: this.state.count + 1});
-// }
-
-// constructor(props) {
-//   super(props);
-//   this.state = {
-//     // users: auser,
-//     userName: '',
-//     count: 0,
-//   };
-// };
-
-const Sampledb = () => {
+export const Crud = () => {
 
   // 表示
   const [users, setUsers] = useState([]);
@@ -51,20 +23,19 @@ const Sampledb = () => {
   });
 
   // 取得機能
-  const handleGet = async () => {
-    const auser = [];
-    const snap = await collection.get();
-    snap.forEach(doc => {
-      auser.push({
-        userId: doc.id,
-        ...doc.data(), // スプレッド演算子
-      });
-      console.log(doc.id, ':', doc.data());
-    })
-    console.log('get!');
-    setUsers(auser);
-  }
-
+  // const handleGet = async () => {
+  //   const auser = [];
+  //   const snap = await collection.get();
+  //   snap.forEach(doc => {
+  //     auser.push({
+  //       userId: doc.id,
+  //       ...doc.data(), // スプレッド演算子
+  //     });
+  //     console.log(doc.id, ':', doc.data());
+  //   })
+  //   console.log('get!');
+  //   setUsers(auser);
+  // }
   // 追加機能
   const [userName, setUserName] = useState('');
   const [age, setAge] = useState('');
@@ -100,7 +71,6 @@ const Sampledb = () => {
     setUserName(''); // 空にする
     setAge('');
   }
-
   // 更新機能
   const [docId, setDoc] = useState('');
   const handleUpdate = async () => {
@@ -149,9 +119,9 @@ const Sampledb = () => {
       .orderBy('age', 'desc') // default asc
       .limit(4)
       .onSnapshot((shot) => {
-        console.log('mounted');
+        // console.log('mounted');
         shot.forEach(doc => {
-          console.log(doc.id, doc.data());
+          console.log("ID:" + doc.id, doc.data());
         })
         const auser = shot.docs.map(doc => {
           return {
@@ -181,7 +151,7 @@ const Sampledb = () => {
             value={age}
             onChange={e => { setAge(e.target.value) }}
           /><br />
-          <label htmlFor="doc">DocId：</label>
+          <label htmlFor="doc">ID：</label>
           <input type="text" id="doc" autoComplete="off"
             value={docId}
             onChange={e => { setDoc(e.target.value) }}
@@ -199,11 +169,6 @@ const Sampledb = () => {
       <div className="my-2">
         <ul className="d-inline-block text-left">{userList}</ul>
       </div>
-      {/* <PoseList /> */}
-      {/* いいねボタン */}
-      {/* <Likelist count={state.count} /> */}
     </div>
   );
 }
-
-export default Sampledb;

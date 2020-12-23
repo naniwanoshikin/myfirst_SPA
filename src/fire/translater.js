@@ -5,7 +5,7 @@ const words = [
   { japanese: "日本語だよ", english: "Japan" },
 ];
 
-class Translate extends React.Component {
+export default class Translate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,6 @@ class Translate extends React.Component {
   trans() { // javascript
     document.getElementById("english").textContent = words[0].japanese;
     document.getElementById("japanese").textContent = words[1].japanese;
-
   }
   render() {
     return (
@@ -30,5 +29,3 @@ class Translate extends React.Component {
     );
   }
 }
-
-export default Translate;

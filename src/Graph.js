@@ -10,7 +10,7 @@ const skills = [
   { data: [90, 85, 90, 80, 70, 80,], label: "2021.09", bgc: "rgba(0, 0, 255, 0)", bc: "blue", bw: 0.5 },
 ]
 
-const Graph = () => {
+export const Graph = () => {
   // 値
   const data = {
     labels: langage,
@@ -84,7 +84,7 @@ const Graph = () => {
     },
     title: {
       display: false,
-      text: '使用言語（スキル）',
+      // text: '使用言語（スキル）',
       fontSize: 16,
     },
     animation: {
@@ -111,5 +111,3 @@ const Graph = () => {
     </div>
   );
 };
-
-export default Graph;

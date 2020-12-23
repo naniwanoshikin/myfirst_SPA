@@ -81,13 +81,6 @@ body footer p a:hover {
   text-decoration: none;
 }
 
-#canvasstyle {
-  position: absolute;
-  top: 50;
-  left: 0;
-  z-index: 0;
-}
-
 .home {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -99,6 +92,7 @@ body footer p a:hover {
   background: #f3eab5;
   color: #332d2d;
   border-radius: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,41 +107,7 @@ body footer p a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: calc(10px + 2vmin);
-  height: 360px;
-}
-
-.home header h1 {
-  font-size: 50px;
-  z-index: 10;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .home .App-logo {
-    -webkit-animation: App-logo-spin infinite 15s linear;
-            animation: App-logo-spin infinite 15s linear;
-  }
-}
-
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+  height: 435px;
 }
 
 .about {
@@ -167,6 +127,7 @@ body footer p a:hover {
 .about > .container table td {
   font-size: 18px;
   border-top: 1px solid #9e9898;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .about > .container ul li {
@@ -185,6 +146,7 @@ body footer p a:hover {
   color: white;
   border-radius: 10px;
   width: 90%;
+  z-index: 0;
 }
 
 .work .work-item h5 {
@@ -206,16 +168,18 @@ body footer p a:hover {
 
 .work .work-item .work-modal {
   background: rgba(209, 197, 197, 0.6);
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 5;
 }
 
 .work .work-item .work-modal .modalin {
   color: #f56f6f;
-  top: 30%;
+  position: relative;
+  z-index: 3;
+  top: 20%;
   right: 0;
   left: 0;
   width: 95%;
@@ -237,6 +201,7 @@ body footer p a:hover {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: 5;
 }
 
 .contact ul {
@@ -322,6 +287,39 @@ body footer p a:hover {
 
 .contact .radio > label input:checked + span:after {
   opacity: 1;
+}
+
+.App-logo {
+  height: 100px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    -webkit-animation: App-logo-spin infinite 15s linear;
+            animation: App-logo-spin infinite 15s linear;
+  }
+}
+
+@-webkit-keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 /* medium screen */

@@ -7,7 +7,7 @@ SPAポートフォリオを作成しました。
 各ページに飛びます。
 
 # Hosting
-* firebase 8.19.0
+* firebase 9.1.0
 * URL: https://spapf-24842.web.app/
 
 # 実装機能
@@ -32,8 +32,10 @@ Slack通知機能
 - react-pose
 
 # Future Tasks
-* Home部 デザイン
 * Contactクラス radioボタンの値の保持
-<!-- * 削除機能（firestore） -->
+* Workコンポーネント リンク 文字列のHTML変換
+* Workコンポーネント グラフのコンポーネント化
+* Workコンポーネント z-index
+* Navコンポーネント hover
+<!-- * firebase（cloud functions） -->
 <!-- * 非同期通信 -->
-<!-- - JavaScript （英訳機能） -->

@@ -4,13 +4,19 @@ import photo2 from './img/SPA.jpg';
 import photo3 from './img/CHAT.jpg';
 import photo4 from './img/cafe.jpg';
 import TheWork from './Work_2';
+// import StrReplace from "react-string-replace";
+
+// 改行（\n）
+// (@param, @return) = (string, string)
+const newLine = (string) => {
+  return string.split('\n').map((x, i) => (<p className="mb-0" key={i}>{x}</p>));
+}
 
 // 参考
 const link = "https://www.youtube.com/playlist?list=PLX8Rsrpnn3IVOk48awq_nKW0aFP0MGpnn";
 
 const WorkList = [
   {
-    id: 0,
     name: "Todoリスト",
     link: "https://myfirstlp.web.app",
     intro: "お手軽に管理できるTodoリストを作成。\n一応LPです！",
@@ -19,7 +25,6 @@ const WorkList = [
     date: "2020.9-",
   },
   {
-    id: 1,
     name: "CAFE（工事中）",
     link: "https://myfirstlp.web.app/pages/cafe.html",
     intro: "料理注文用アプリを作成しました。",
@@ -28,7 +33,6 @@ const WorkList = [
     date: "2020.10-",
   },
   {
-    id: 3,
     name: "本サイト",
     link: "https://spapf-24842.web.app/",
     intro: "SPAサイト（React）を作成中。\n年末完了予定。",
@@ -37,7 +41,6 @@ const WorkList = [
     date: "2020.12-",
   },
   {
-    id: 4,
     name: "チャットbot",
     link: "https://chatbot-18322.web.app",
     intro: "chatbotアプリ。\n参考：正社員エンジニアの動画。",
@@ -47,18 +50,39 @@ const WorkList = [
   },
 ];
 
-const MyWork = () => {
+// リンク変換：やり方わからない。。
+// const ref = (array) => {
+//   return (
+//     <div>
+//       <ul>
+//         {array.map((item, i) => {
+//           return (
+//             <li key={i}>
+//               {StrReplace(item, /(https?:\/\/\S+)/g, (match, i) => (
+//                 <a href={match} key={i}>{match}</a>
+//               ))}
+//             </li>
+//           )
+//         })}
+//       </ul>
+//     </div>
+//   )
+// }
+
+// console.log(ref(WorkList));
+
+export const MyWork = () => {
   return (
     <div className="container px-0 py-4">
       <div className="row mx-auto">
-        {WorkList.map((list) => {
+        {WorkList.map((list, i) => {
           return (
             <TheWork
-              key={list.id}
-              id={list.id}
+              key={i}
+              id={i}
               name={list.name}
-              intro={list.intro}
-              intro2={list.intro2}
+              intro={newLine(list.intro)}
+              intro2={newLine(list.intro2)}
               img={list.img}
               link={list.link}
               date={list.date}
@@ -69,5 +93,3 @@ const MyWork = () => {
     </div>
   );
 }
-
-export default MyWork;

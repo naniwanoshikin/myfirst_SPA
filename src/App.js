@@ -1,18 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Nav from './Nav';
-import Footer from './Foot';
-import Pose from './pose'; // pose
-import { Anime } from './anime'; // anime
-import Graph from './Graph'; // Chart.js
-import MyWork from './Work_1'; // Works
-import Contactform from './Contact'; // ContactForm
+import { Nav } from './ComNav'; // const
+import { Footer } from './ComFoot'; // const
+import Paper from './Paper'; // class
+import Pose from './ComPose'; // class
+import PaperClick from './PaperClick'; // class
+import { PaperAnime } from './PaperAnime'; // const
+import { Anime2 } from './anime2'; // anime const
+import { MyWork } from './Work_1'; // const
+import Contactform from './Contact'; // class
+import { Crud } from './fire/crudstore.jsx'; // const
+import PoseList from './fire/poselist'; // class
+import { Likelist } from './fire/likelist'; // const
+import Translate from './fire/translater'; // class
+import logo from './img/logo.svg'; // ロゴ
 import './css/App.css';
-// import firebase from 'firebase/app'
-import Sampledb from './fire/firestr.jsx'; // firestore
 
-
-// Routing処理
+// Routing
 const App = () => (
   <BrowserRouter>
     <div>
@@ -20,36 +24,25 @@ const App = () => (
       <Route path="/about" component={About} />
       <Route path="/blog" component={Work} />
       <Route path="/contact" component={Contact} />
-      <Route path="/db:id" component={Data} />
+      <Route path="/db:id" component={Practice} />
     </div>
   </BrowserRouter>
 )
-
-// RDBSデータ表示
-const Data = props => {
-  const { id } = props.match.params
-  return (
-    <div className="text-center">
-      <Nav />
-      <h1 className="mt-5">firebase</h1>
-      <p>{id}番目の記事です</p>
-      <Sampledb />
-      <Footer />
-    </div>
-  )
-}
 
 // Home
 const Home = () => {
   return (
     <div className="home text-center">
       <Nav />
-      <h1 id="home" className="mt-5" >HELLO WORLD</h1>
-      <p id="construction">ただいま工事中。</p>
-      <header className="">
-        <h1 className="">Wellcome to myPage!</h1>
-        <Anime />
-        <Pose />
+      <Pose name={"Home"} comment={"ただいま工事中。"} />
+      <Paper x="14%" y="18%" w="0" h="0" o="0.1" fs="120px" r="25px" c="" m="Hello" />
+      <header>
+        <PaperAnime />
+        <PaperClick />
+        {/* x方向 y方向 たて 横 色 */}
+        <Paper x="14%" y="42%" w="270px" h="160px" o="0.2" fs="40px" r="50px" bc="magenta" m="World" />
+        <Paper x="36%" y="53%" w="200px" h="100px" o="0.4" fs="30px" r="35px" bc="cyan" m="" />
+        <Paper x="31%" y="55%" w="150px" h="160px" o="0.4" fs="30px" r="5px" bc="#fffac2" m="∩" />
       </header>
       <Footer />
     </div>
@@ -60,9 +53,9 @@ const About = () => {
   return (
     <div className="about text-center">
       <Nav />
-      <h1 id="about" className="mt-5">About</h1>
-      <p>自己紹介です。</p>
-      <div className="container py-2">
+      <Pose name={"About"} comment={"自己紹介です。"} />
+      <div className="container py-4 my-5">
+        <Paper x="25%" y="20%" w="" h="" o="0.1" fs="90px" r="25px" c="" m="About" />
         <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
           <tbody>
             <tr>
@@ -84,7 +77,7 @@ const About = () => {
           <li>2020/8 ポートフォリオ作成開始</li>
         </ul>
       </div>
-      <Graph />
+      <Anime2 />
       <Footer />
     </div>
   )
@@ -94,8 +87,8 @@ const Work = () => {
   return (
     <div className="work text-center">
       <Nav />
-      <h1 id="work" className="mt-5" style={{ color: "red" }}>Works</h1>
-      <p>ポートフォリオ作品です。</p>
+      <Pose name={"Work"} comment={"ポートフォリオ作品です。"} />
+      <Paper x="25%" y="14%" w="0" h="0" o="0.1" fs="100px" r="25px" c="" m="Work" />
       <MyWork />
       <Footer />
     </div>
@@ -107,9 +100,31 @@ const Contact = () => {
   return (
     <div className="text-center">
       <Nav />
-      <h1 id="contact" className="mt-5">Contact</h1>
-      <p className="free mb-4" id="free">お気軽にご連絡ください。</p>
+      <Pose name={"Contact"} comment={"お気軽にご連絡ください。"} />
+      <Paper x="5%" y="14%" w="0" h="0" o="0.1" fs="90px" r="25px" c="" m="Contact" />
       <Contactform />
+      <Footer />
+    </div>
+  )
+}
+
+// DBデータ表示
+const Practice = props => {
+  const { id } = props.match.params
+  return (
+    <div className="text-center">
+      <Nav />
+      <Pose name={"firebase"} comment={id + "番目の記事です"} />
+      <Crud />
+      <Translate />
+      {/* いいねボタン */}
+      <Likelist />
+      <PoseList />
+      <div style={{
+        backgroundColor: "tomato",
+      }}>
+        <img src={logo} className="App-logo" alt="logo" />
+      </div>
       <Footer />
     </div>
   )

@@ -1,37 +1,31 @@
 import React from 'react';
 import posed from 'react-pose';
 
-
-const sidebarProps = {
+const SidePanel = posed.ul({
   open: {
     x: '0%',
     delayChildren: 300,
-    staggerChildren: 60
+    staggerChildren: 60,
   },
   closed: {
     delay: 500,
     staggerChildren: 20,
-    x: '-100%'
+    x: '-100%',
   }
-};
-
-const itemProps = {
+});
+const Item = posed.li({
   open: { opacity: 1, y: 0 },
-  closed: { opacity: 0, y: 20 }
-};
+  closed: { opacity: 0, y: 20 },
+});
 
-const SidePanel = posed.ul(sidebarProps);
-const Item = posed.li(itemProps);
 
-class PoseList extends React.Component {
-  state = { isOpen: false };
+export default class PoseList extends React.Component {
+  state = { isOpen: true };
 
+  toggle = () => this.setState({ isOpen: !this.state.isOpen });
   componentDidMount() {
     setTimeout(this.toggle, 1000);
   }
-
-  toggle = () => this.setState({ isOpen: !this.state.isOpen });
-
   render() {
     return (
       <div>
@@ -52,5 +46,3 @@ class PoseList extends React.Component {
     );
   }
 }
-
-export default PoseList;
