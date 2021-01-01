@@ -35,14 +35,14 @@ const Home = () => {
     <div className="home text-center">
       <Nav />
       <Pose name={"Home"} comment={"ただいま工事中。"} />
-      <Paper x="14%" y="17%" w="0" h="0" o="0.1" fs="120px" r="25px" c="" m="Hello" />
+      <Paper x="14%" y="14%" w="0" h="0" o="0.1" fs="120px" r="25px" c="blue" m="Hello" />
       <header>
         <PaperAnime />
         <PaperClick />
         {/* x方向 y方向 たて 横 色 */}
-        <Paper x="14%" y="42%" w="270px" h="160px" o="0.2" fs="40px" r="50px" bc="magenta" m="World" />
-        <Paper x="36%" y="53%" w="200px" h="100px" o="0.4" fs="30px" r="35px" bc="cyan" m="" />
-        <Paper x="31%" y="55%" w="150px" h="160px" o="0.4" fs="30px" r="5px" bc="#fffac2" m="∩" />
+        <Paper x="14%" y="38%" w="270px" h="160px" o="0.2" fs="40px" r="40px" bc="magenta" c="white" m="World" />
+        <Paper x="36%" y="50%" w="220px" h="100px" o="0.4" fs="30px" r="35px" bc="cyan" />
+        <Paper x="31%" y="52%" w="150px" h="160px" o="0.4" fs="30px" r="5px" bc="#fffac2" m="∩" />
       </header>
       <Footer />
     </div>
@@ -54,8 +54,8 @@ const About = () => {
     <div className="about text-center">
       <Nav />
       <Pose name={"About"} comment={"自己紹介です。"} />
-      <div className="container py-4 my-5">
-        <Paper x="25%" y="20%" w="" h="" o="0.1" fs="90px" r="25px" c="" m="About" />
+      <div className="container py-4">
+        <Paper x="25%" y="20%" w="" h="" o="0.2" fs="70px" r="25px" c="white" m="About" />
         <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
           <tbody>
             <tr>
@@ -88,7 +88,7 @@ const Work = () => {
     <div className="work text-center">
       <Nav />
       <Pose name={"Work"} comment={"ポートフォリオ作品です。"} />
-      <Paper x="25%" y="14%" w="0" h="0" o="0.1" fs="100px" r="25px" c="" m="Work" />
+      <Paper x="25%" y="15%" w="0" h="0" o="0.1" fs="100px" r="25px" c="" m="Works" />
       <MyWork />
       <Footer />
     </div>
@@ -101,7 +101,7 @@ const Contact = () => {
     <div className="text-center">
       <Nav />
       <Pose name={"Contact"} comment={"お気軽にご連絡ください。"} />
-      <Paper x="5%" y="14%" w="0" h="0" o="0.1" fs="90px" r="25px" c="" m="Contact" />
+      <Paper x="5%" y="15%" w="0" h="0" o="0.1" fs="90px" r="25px" c="" m="Contact" />
       <Contactform />
       <Footer />
     </div>

@@ -27,7 +27,7 @@ const WorkList = [
   {
     name: "CAFE（工事中）",
     link: "https://myfirstlp.web.app/pages/cafe.html",
-    intro: "料理注文用アプリを作成しました。",
+    intro: "料理注文用アプリを作成しました。\n未Hosting",
     intro2: "生PHP。\n未Hosting",
     img: photo4,
     date: "2020.10-",

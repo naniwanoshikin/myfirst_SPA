@@ -6,6 +6,7 @@ export default class Paper extends React.Component {
     super(props);
     this.message = props.m;
     this.style = {
+      fontFamily: "Boogaloo",
       position: "absolute",
       zIndex: "3",
       left: props.x,
@@ -14,6 +15,7 @@ export default class Paper extends React.Component {
       width: props.w,
       height: props.h,
       backgroundColor: props.bc,
+      color: props.c,
       borderRadius: props.r,
       opacity: props.o,
     }

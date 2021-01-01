@@ -43,7 +43,7 @@ export default class Pose extends React.Component {
         }}
       >
         <h1 className="mt-4">{this.props.name}</h1>
-        <p>{this.props.comment}</p>
+        <p className="">{this.props.comment}</p>
       </Box>
     );
   }
