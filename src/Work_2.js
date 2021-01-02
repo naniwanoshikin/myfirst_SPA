@@ -19,7 +19,8 @@ export default class TheWork extends React.Component {
       <div className="work-item mb-5 mx-auto pb-4 px-0 col-sm-5">
         <p className="px-4 pb-0 pt-2 pb-1 my-0 text-right">{this.props.date}</p>
         <h5 className="d-inline-block px-4 py-1 mb-2 rounded" onClick={() => { this.handleWork() }}>
-          {this.props.name}</h5>
+          {this.props.name}
+        </h5>
         <a href={this.props.link} target="_blank" rel="noreferrer noopener">
           <img src={this.props.img} alt="my work" width="" height="300" className="w-100" />
         </a>

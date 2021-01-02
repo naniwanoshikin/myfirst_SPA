@@ -101,7 +101,7 @@ const Contact = () => {
     <div className="text-center">
       <Nav />
       <Pose name={""} comment={"お気軽にご連絡ください。"} />
-      <Paper x="5%" y="3%" w="0" h="0" o="0.1" fs="120px" r="25px" c="yellow" m="Contact" />
+      <Paper x="5%" y="0%" w="0" h="0" o="0.1" fs="120px" r="25px" c="yellow" m="Contact" />
       <Contactform />
       <Footer />
     </div>

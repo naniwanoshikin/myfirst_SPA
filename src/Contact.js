@@ -109,7 +109,7 @@ export default class Contactform extends React.Component {
     const content = spa(this.state.content);
     const age = this.state.age;
     const radio = this.state.radio;
-    const WEBHOOK_url = "https://hooks.slack.com/services/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";
+    const WEBHOOK_url = "https://hooks.slack.com/services/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";
     const payload = {
       text: '★New Message★\n'
         + 'お名前: ' + name + '\n'
