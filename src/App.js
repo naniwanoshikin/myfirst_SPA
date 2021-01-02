@@ -34,14 +34,15 @@ const Home = () => {
   return (
     <div className="home text-center">
       <Nav />
-      <Pose name={""} comment={"The start of 2021"} />
-      <Paper x="14%" y="9%" w="0" h="0" o="0.1" fs="120px" r="25px" c="blue" m="Hello" />
+      <Pose name={""} comment={"Hello"} />
+      <Paper x="10%" y="0%" w="" h="" o="0.1" fs="80px" r="" c="#c0db75" m="Home" />
+      <Paper x="15%" y="24%" w="0" h="0" o="0.1" fs="70px" r="" bc="" c="blue" m={"The\nStart\nOf\n2021"} />
       <header>
         <PaperAnime />
         <PaperClick />
         {/* x方向 y方向 たて 横 色 */}
         <Paper x="14%" y="38%" w="270px" h="160px" o="0.2" fs="40px" r="40px" bc="magenta" c="white" m="World" />
-        <Paper x="36%" y="50%" w="220px" h="100px" o="0.4" fs="30px" r="35px" bc="cyan" />
+        <Paper x="36%" y="50%" w="220px" h="100px" o="0.4" fs="30px" r="35px" bc="cyan" m="" />
         <Paper x="31%" y="52%" w="150px" h="160px" o="0.4" fs="30px" r="5px" bc="#fffac2" m="∩" />
       </header>
       <Footer />
@@ -55,7 +56,7 @@ const About = () => {
       <Nav />
       <Pose name={""} comment={"自己紹介です。"} />
       <div className="container py-4">
-        <Paper x="16%" y="4%" w="" h="" o="0.1" fs="150px" r="25px" c="cyan" m="About" />
+        <Paper x="14%" y="2%" w="" h="" o="0.1" fs="120px" r="" c="#fff56c" m="About" />
         <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
           <tbody>
             <tr>
@@ -87,8 +88,8 @@ const Work = () => {
   return (
     <div className="work text-center">
       <Nav />
-      <Pose name={""} comment={"作品です。"} />
-      <Paper x="22%" y="12%" w="0" h="0" o="0.2" fs="100px" r="25px" c="" m="Works" />
+      <Pose name={""} comment={"Portfolioです。"} />
+      <Paper x="12%" y="12%" w="0" h="0" o="0.2" fs="100px" r="25px" c="" m="Works" />
       <MyWork />
       <Footer />
     </div>
@@ -101,7 +102,7 @@ const Contact = () => {
     <div className="text-center">
       <Nav />
       <Pose name={""} comment={"お気軽にご連絡ください。"} />
-      <Paper x="5%" y="0%" w="0" h="0" o="0.1" fs="120px" r="25px" c="yellow" m="Contact" />
+      <Paper x="5%" y="0%" w="0" h="0" o="0.1" fs="100px" r="25px" c="yellow" m="Contact" />
       <Contactform />
       <Footer />
     </div>

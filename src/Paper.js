@@ -1,10 +1,16 @@
 import React from 'react';
 
+// 改行（\n）
+// (@param, @return) = (string, string)
+const newLine = (str) => {
+  return str.replace(/\n/g, "\n");
+}
+
 export default class Paper extends React.Component {
   render() {
+    console.log(newLine(this.props.m));
     return (
       <div style={{
-        fontFamily: "Boogaloo",
         position: "absolute",
         zIndex: "3",
         left: this.props.x,
@@ -16,7 +22,7 @@ export default class Paper extends React.Component {
         color: this.props.c,
         borderRadius: this.props.r,
         opacity: this.props.o,
-      }}>{this.props.m}</div>
+      }}>{newLine(this.props.m)}</div>
     );
   }
 }

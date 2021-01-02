@@ -5,8 +5,9 @@ const style = {
   display: "inline-block",
   position: "relative",
   zIndex: "5",
-  fontSize: "18px",
+  fontSize: "22px",
   color: "#fffac2",
+  fontFamily: "Boogaloo",
 }
 const Box = posed.div({
   hidden: { // 表示前
