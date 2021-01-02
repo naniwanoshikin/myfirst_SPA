@@ -5,7 +5,7 @@ import React from 'react';
 function spa(string) {
   return string.replace(/^[ |　]+|[ |　]+$/g, ''); // sだと半角スペースが適用されず,,
 }
-// a@g.com形式であればtrue
+// a@g.c形式であればtrue
 // (@param, @return) = (string, bool)
 function ad(string) {
   const reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
@@ -109,7 +109,7 @@ export default class Contactform extends React.Component {
     const content = spa(this.state.content);
     const age = this.state.age;
     const radio = this.state.radio;
-    const WEBHOOK_url = "https://hooks.slack.com/services/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";
+    const WEBHOOK_url = "https://hooks.slack.com/services/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";
     const payload = {
       text: '★New Message★\n'
         + 'お名前: ' + name + '\n'
@@ -222,7 +222,7 @@ export default class Contactform extends React.Component {
               <div className="px-0">
                 {/* お名前 */}
                 <div>
-                  <div className="d-inline-block bg-white">
+                  <div className="d-inline-block">
                     <label htmlFor="name" className="d-inline d-sm-inline-block bg-warning px-1 py-1 rounded">お名前（必須）</label>
                     {/* <div> */}
                     <input type="text" id="name" placeholder="大阪太郎"
@@ -235,7 +235,7 @@ export default class Contactform extends React.Component {
                   </div>
                 </div>
                 {/* Email */}
-                <div className="d-inline-block bg-white mt-3">
+                <div className="d-inline-block mt-3">
                   <label htmlFor="email" className="bg-warning px-1 py-1 rounded">Email（必須）</label>
                   <input type="text" id="email" placeholder="aichi@gmail.com"
                     className="textline ml-3" autoComplete="off"
@@ -245,7 +245,7 @@ export default class Contactform extends React.Component {
                 </div>
                 {/* 年齢 */}
                 <div>
-                  <div className="d-inline-block bg-white mt-3">
+                  <div className="d-inline-block mt-3">
                     <label className="bg-info mr-3 px-1 py-1 rounded">年齢（任意）</label>
                     <select name="age" className="textline ml-3"
                       value={this.state.age} onChange={(e) => { this.handleAge(e) }}
@@ -260,8 +260,8 @@ export default class Contactform extends React.Component {
                   </div>
                 </div>
                 {/* ラジオボタン */}
-                <div className="radio d-inline-block text-left mt-3 bg-white">
-                  <p className="d-block d-sm-inline-block mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
+                <div className="radio d-inline-block text-left mt-3">
+                  <p className="d-sm-inline-block mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
                   {radioitems.map((item, i) => {
                     return (
                       <label key={i} className="ml-3 my-2">
@@ -276,7 +276,7 @@ export default class Contactform extends React.Component {
                   {RadioError}
                 </div>
               </div>
-              <div className="d-inline-block bg-white mt-3">
+              <div className="d-inline-block mt-3">
                 {/* 内容 */}
                 <label className="d-inline-block my-2 px-2 bg-warning py-1 rounded">お問い合わせ内容（必須）</label><br />
                 <textarea

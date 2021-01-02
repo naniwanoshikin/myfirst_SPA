@@ -34,8 +34,8 @@ const Home = () => {
   return (
     <div className="home text-center">
       <Nav />
-      <Pose name={"Home"} comment={"ただいま工事中。"} />
-      <Paper x="14%" y="14%" w="0" h="0" o="0.1" fs="120px" r="25px" c="blue" m="Hello" />
+      <Pose name={""} comment={"The start of 2021"} />
+      <Paper x="14%" y="9%" w="0" h="0" o="0.1" fs="120px" r="25px" c="blue" m="Hello" />
       <header>
         <PaperAnime />
         <PaperClick />
@@ -53,9 +53,9 @@ const About = () => {
   return (
     <div className="about text-center">
       <Nav />
-      <Pose name={"About"} comment={"自己紹介です。"} />
+      <Pose name={""} comment={"自己紹介です。"} />
       <div className="container py-4">
-        <Paper x="25%" y="20%" w="" h="" o="0.2" fs="70px" r="25px" c="white" m="About" />
+        <Paper x="16%" y="4%" w="" h="" o="0.1" fs="150px" r="25px" c="cyan" m="About" />
         <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
           <tbody>
             <tr>
@@ -87,8 +87,8 @@ const Work = () => {
   return (
     <div className="work text-center">
       <Nav />
-      <Pose name={"Work"} comment={"ポートフォリオ作品です。"} />
-      <Paper x="25%" y="15%" w="0" h="0" o="0.1" fs="100px" r="25px" c="" m="Works" />
+      <Pose name={""} comment={"作品です。"} />
+      <Paper x="22%" y="12%" w="0" h="0" o="0.2" fs="100px" r="25px" c="" m="Works" />
       <MyWork />
       <Footer />
     </div>
@@ -100,8 +100,8 @@ const Contact = () => {
   return (
     <div className="text-center">
       <Nav />
-      <Pose name={"Contact"} comment={"お気軽にご連絡ください。"} />
-      <Paper x="5%" y="15%" w="0" h="0" o="0.1" fs="90px" r="25px" c="" m="Contact" />
+      <Pose name={""} comment={"お気軽にご連絡ください。"} />
+      <Paper x="5%" y="3%" w="0" h="0" o="0.1" fs="120px" r="25px" c="yellow" m="Contact" />
       <Contactform />
       <Footer />
     </div>

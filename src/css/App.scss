@@ -25,7 +25,7 @@
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 /* small screen */
 body {
-  @include bcr($b: #d69191ef, $c: rgb(245, 235, 235), $r: 0px);
+  @include bcr($b: #ce604def, $c: rgb(245, 235, 235), $r: 0px);
   h1 {
     font-size: 34px;
     text-align: center;
@@ -42,25 +42,23 @@ body {
   $backnav: rgb(169, 216, 238);
   // Nav ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
   .nav {
-    @include bcr($b: $backnav, $r: 10px);
+    @include bcr($b: rgb(202, 128, 128), $r: 10px);
     // border-bottom: 1px solid rgb(41, 52, 218);
     .nav-item {
-      @include acolor($c: rgb(0, 0, 0), $bh: rgb(220, 230, 132), $ch: blueviolet);
+      @include acolor($c: rgb(241, 234, 234), $ch: rgb(38, 38, 233));
       transform: rotate(3deg);
-      padding: 10px 0px;
       font-size: 20px;
-      font-family: "Itim", cursive;
     }
     .snow {
       color: snow;
       font-size: 18px;
       position: fixed;
       top: -10%; /*初期位置*/
+      animation: anim 5s linear infinite;
       text-shadow: 2vw -50px 2px, 5vw -100px 2px, 8vw -200px 2px, 10vw -400px 3px, 15vw -200px 3px, 20vw -500px 4px,
         25vw -510px 1px, 30vw -280px 1px, 33vw -180px 1px, 35vw -380px 1px, 37vw -80px 1px, 39vw -250px 2px,
-        42vw -340px 5px, 45vw -140px 5px, 50vw -80px 2px, 56vw -150px 2px, 63vw -180px 0, 68vw -680px 0, 72vw -280px 0,
+        42vw -340px 5px, 45vw -140px 5px, 50vw -80px 2px, 56vw -150px 2px, 60vw -550px 2px, 63vw -180px 0, 68vw -680px 0, 72vw -280px 0,
         78vw -220px 4px, 82vw -120px 4px, 86vw -320px 9px, 90vw -20px 9px, 94vw -170px 7px;
-      animation: anim 5s linear infinite;
     }
     @keyframes anim {
       100% {
@@ -83,7 +81,7 @@ body {
             color: rgb(106, 202, 240);
           }
           .fa-instagram {
-            color: purple;
+            color: rgb(177, 48, 177);
           }
           .fa-youtube {
             color: red;
@@ -115,7 +113,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    height: 435px;
+    height: 485px;
   }
 }
 // ABOUT ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -152,6 +150,7 @@ body {
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
     width: 90%;
     z-index: 0;
+    border: 1px ridge white;
     h5 {
       @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
       cursor: pointer;
@@ -169,7 +168,7 @@ body {
       .modalin {
         color: rgb(245, 111, 111);
         position: relative;
-        z-index: 3;
+        z-index: 5;
         top: 20%;
         right: 0;
         left: 0;
@@ -280,7 +279,7 @@ body {
   body {
     .nav {
       .nav-item {
-        font-size: 30px;
+        font-size: 26px;
       }
     }
   }

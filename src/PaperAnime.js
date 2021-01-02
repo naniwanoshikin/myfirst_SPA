@@ -69,7 +69,7 @@ const Thing = () => {
 // スタイル
 const theme = {
   position: "absolute",
-  zIndex: "5",
+  zIndex: "4",
   top: "45%",
   left: "0px",
   width: "330px",

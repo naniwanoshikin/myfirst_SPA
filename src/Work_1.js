@@ -1,8 +1,9 @@
 import React from 'react';
 import photo1 from './img/LP.jpg';
-import photo2 from './img/SPA.jpg';
+import photo2 from './img/spa.jpg';
 import photo3 from './img/CHAT.jpg';
 import photo4 from './img/cafe.jpg';
+import photo5 from './img/Blog.jpg';
 import TheWork from './Work_2';
 // import StrReplace from "react-string-replace";
 
@@ -24,21 +25,29 @@ const WorkList = [
     img: photo1,
     date: "2020.9-",
   },
+  // {
+  //   name: "CAFE（工事中）",
+  //   link: "https://myfirstlp.web.app/pages/cafe.html",
+  //   intro: "料理注文用アプリを作成しました。\n未Hosting",
+  //   intro2: "生PHP。\n未Hosting",
+  //   img: photo4,
+  //   date: "2020.10-",
+  // },
   {
-    name: "CAFE（工事中）",
-    link: "https://myfirstlp.web.app/pages/cafe.html",
-    intro: "料理注文用アプリを作成しました。\n未Hosting",
-    intro2: "生PHP。\n未Hosting",
-    img: photo4,
-    date: "2020.10-",
-  },
-  {
-    name: "本サイト",
+    name: "SPA",
     link: "https://spapf-24842.web.app/",
-    intro: "SPAサイト（React）を作成中。\n年末完了予定。",
+    intro: "本サイトをReactで作成。",
     intro2: "HTML & CSS, Sass\nBootstrap 4.5.0\nnode.js 14.8.0\nnpm 6.14.9\nReact 16.13.1\nChart.js\nSlack通知\nHosting:firebase",
     img: photo2,
     date: "2020.12-",
+  },
+  {
+    name: "私のBlog",
+    link: "http://shikiblog.herokuapp.com/",
+    intro: "ブログアプリ。\nLaravelで作成。\nHerokuでデプロイ。",
+    intro2: `Laravel\nBootstrap\nHeroku postgresql`,
+    img: photo5,
+    date: "2021.01-",
   },
   {
     name: "チャットbot",

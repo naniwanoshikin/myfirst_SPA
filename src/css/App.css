@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* small screen */
 body {
-  background: #d69191ef;
+  background: #ce604def;
   color: #f5ebeb;
   border-radius: 0px;
 }
@@ -22,23 +22,21 @@ body a {
 }
 
 body .nav {
-  background: #a9d8ee;
+  background: #ca8080;
   color: #fff;
   border-radius: 10px;
 }
 
 body .nav .nav-item {
-  color: black;
+  color: #f1eaea;
   -webkit-transform: rotate(3deg);
           transform: rotate(3deg);
-  padding: 10px 0px;
   font-size: 20px;
-  font-family: "Itim", cursive;
 }
 
 body .nav .nav-item:hover {
-  background: #dce684;
-  color: blueviolet;
+  background: #eee;
+  color: #2626e9;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none;
@@ -50,9 +48,9 @@ body .nav .snow {
   position: fixed;
   top: -10%;
   /*初期位置*/
-  text-shadow: 2vw -50px 2px, 5vw -100px 2px, 8vw -200px 2px, 10vw -400px 3px, 15vw -200px 3px, 20vw -500px 4px, 25vw -510px 1px, 30vw -280px 1px, 33vw -180px 1px, 35vw -380px 1px, 37vw -80px 1px, 39vw -250px 2px, 42vw -340px 5px, 45vw -140px 5px, 50vw -80px 2px, 56vw -150px 2px, 63vw -180px 0, 68vw -680px 0, 72vw -280px 0, 78vw -220px 4px, 82vw -120px 4px, 86vw -320px 9px, 90vw -20px 9px, 94vw -170px 7px;
   -webkit-animation: anim 5s linear infinite;
           animation: anim 5s linear infinite;
+  text-shadow: 2vw -50px 2px, 5vw -100px 2px, 8vw -200px 2px, 10vw -400px 3px, 15vw -200px 3px, 20vw -500px 4px, 25vw -510px 1px, 30vw -280px 1px, 33vw -180px 1px, 35vw -380px 1px, 37vw -80px 1px, 39vw -250px 2px, 42vw -340px 5px, 45vw -140px 5px, 50vw -80px 2px, 56vw -150px 2px, 60vw -550px 2px, 63vw -180px 0, 68vw -680px 0, 72vw -280px 0, 78vw -220px 4px, 82vw -120px 4px, 86vw -320px 9px, 90vw -20px 9px, 94vw -170px 7px;
 }
 
 @-webkit-keyframes anim {
@@ -86,7 +84,7 @@ body footer ul li a .fa-twitter {
 }
 
 body footer ul li a .fa-instagram {
-  color: purple;
+  color: #b130b1;
 }
 
 body footer ul li a .fa-youtube {
@@ -138,7 +136,7 @@ body footer p a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: calc(10px + 2vmin);
-  height: 435px;
+  height: 485px;
 }
 
 .about {
@@ -179,6 +177,7 @@ body footer p a:hover {
   border-radius: 10px;
   width: 90%;
   z-index: 0;
+  border: 1px ridge white;
 }
 
 .work .work-item h5 {
@@ -210,7 +209,7 @@ body footer p a:hover {
 .work .work-item .work-modal .modalin {
   color: #f56f6f;
   position: relative;
-  z-index: 3;
+  z-index: 5;
   top: 20%;
   right: 0;
   left: 0;
@@ -357,7 +356,7 @@ body footer p a:hover {
 /* medium screen */
 @media (min-width: 576px) {
   body .nav .nav-item {
-    font-size: 30px;
+    font-size: 26px;
   }
   .work .work-item .work-modal .modalin {
     width: 60%;
