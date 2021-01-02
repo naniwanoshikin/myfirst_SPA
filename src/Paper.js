@@ -8,7 +8,6 @@ const newLine = (str) => {
 
 export default class Paper extends React.Component {
   render() {
-    console.log(newLine(this.props.m));
     return (
       <div style={{
         position: "absolute",

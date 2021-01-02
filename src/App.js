@@ -35,8 +35,8 @@ const Home = () => {
     <div className="home text-center">
       <Nav />
       <Pose name={""} comment={"Hello"} />
-      <Paper x="10%" y="0%" w="" h="" o="0.1" fs="80px" r="" c="#c0db75" m="Home" />
-      <Paper x="15%" y="24%" w="0" h="0" o="0.1" fs="70px" r="" bc="" c="blue" m={"The\nStart\nOf\n2021"} />
+      <Paper x="12%" y="2%" w="" h="" o="0.2" fs="100px" r="" bc="" c="" m="Home" />
+      <Paper x="10%" y="24%" w="0px" h="" o="0.1" fs="70px" r="" bc="" c="blue" m={"The\nStart\nOf\n2021"} />
       <header>
         <PaperAnime />
         <PaperClick />
@@ -54,10 +54,11 @@ const About = () => {
   return (
     <div className="about text-center">
       <Nav />
-      <Pose name={""} comment={"自己紹介です。"} />
+      <Pose name={""} comment={"Profile"} />
       <div className="container py-4">
-        <Paper x="14%" y="2%" w="" h="" o="0.1" fs="120px" r="" c="#fff56c" m="About" />
-        <table className="table table-sm table-hover w-75 w-sm-50 my-5 mx-auto">
+        <Paper x="14%" y="2%" w="" h="" o="0.2" fs="120px" r="" bc="" c="#fff56c" m="About" />
+        <p className="mt-2">自己紹介です</p>
+        <table className="table table-sm table-hover w-75 w-sm-50 mb-5 mx-auto">
           <tbody>
             <tr>
               <td>Name</td>
@@ -88,8 +89,8 @@ const Work = () => {
   return (
     <div className="work text-center">
       <Nav />
-      <Pose name={""} comment={"Portfolioです。"} />
-      <Paper x="12%" y="12%" w="0" h="0" o="0.2" fs="100px" r="25px" c="" m="Works" />
+      <Pose name={""} comment={"Portfolio"} />
+      <Paper x="12%" y="12%" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" m="Works" />
       <MyWork />
       <Footer />
     </div>
@@ -102,7 +103,7 @@ const Contact = () => {
     <div className="text-center">
       <Nav />
       <Pose name={""} comment={"お気軽にご連絡ください。"} />
-      <Paper x="5%" y="0%" w="0" h="0" o="0.1" fs="100px" r="25px" c="yellow" m="Contact" />
+      <Paper x="5%" y="-2%" w="0" h="0" o="0.1" fs="100px" r="" bc="" c="yellow" m="Contact" />
       <Contactform />
       <Footer />
     </div>

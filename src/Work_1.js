@@ -20,7 +20,7 @@ const WorkList = [
   {
     name: "Todoリスト",
     link: "https://myfirstlp.web.app",
-    intro: "お手軽に管理できるTodoリストを作成。\n一応LPです！",
+    intro: "お手軽に管理できるTodoリストを作成。一応LPです！",
     intro2: "HTML & CSS, Sass\n生JavaScript+firestore（→Todolist）\njQuery (→scroll, トップダウンメニュー)\nChart.js\nReact.js (→お問い合わせ)\nHosting:firebase",
     img: photo1,
     date: "2020.9-",
@@ -42,20 +42,20 @@ const WorkList = [
     date: "2020.12-",
   },
   {
-    name: "私のブログス",
-    link: "https://shikiblog.herokuapp.com/",
-    intro: "今年からブログ始めます。テーマは未定です。\nLaravelで作成。\nHerokuでデプロイ。",
-    intro2: "Laravel\nBootstrap\nHeroku postgresql",
-    img: photo4,
-    date: "2021.01-",
-  },
-  {
     name: "チャットBOT",
     link: "https://chatbot-18322.web.app",
-    intro: "chatbotアプリ。\n某正社員エンジニアのYoutube動画を参考に作成。",
+    intro: "某正社員エンジニアのYoutube動画を参考にchatbotアプリを作成。",
     intro2: `React \nfirebase cloud Functions, \nMaterial UI\nHosting:firebase\n参考:${link}`,
     img: photo3,
     date: "2020.12-",
+  },
+  {
+    name: "マイブログス",
+    link: "https://shikiblog.herokuapp.com/",
+    intro: "今年からブログ始めます。テーマは未定です。\nLaravelで作成。\nHerokuでデプロイ。",
+    intro2: "Laravel\nBootstrap\npostgresql\nHeroku",
+    img: photo4,
+    date: "2021.01-",
   },
 ];
 

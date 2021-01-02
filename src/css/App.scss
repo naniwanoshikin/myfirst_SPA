@@ -166,7 +166,7 @@ body {
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
     width: 90%;
     z-index: 0;
-    border: 1px ridge white;
+    border: 3px groove white;
     h5 {
       @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
       cursor: pointer;

@@ -27,9 +27,9 @@ Slack通知機能
 - Git, Github
 
 # 使用ライブラリ
-- react-chartjs-2
-- react-three-fiber
 - react-pose
+- react-three-fiber
+- react-chartjs-2
 
 # Future Tasks
 * Contactクラス radioボタンの値の保持

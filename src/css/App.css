@@ -191,7 +191,7 @@ body footer p a:hover {
   border-radius: 10px;
   width: 90%;
   z-index: 0;
-  border: 1px ridge white;
+  border: 3px groove white;
 }
 
 .work .work-item h5 {
