@@ -2,9 +2,10 @@
 ```
 SPAポートフォリオを作成しました。
 ```
-![AF5A3F24-FD0D-4A3A-8794-F9C7631C4213_1_105_c](https://user-images.githubusercontent.com/67915047/101193629-36622100-36a0-11eb-95e0-8105d97df2f5.jpeg)
+![spa](https://user-images.githubusercontent.com/67915047/103504093-bd6e0900-4e99-11eb-842d-2c0e86ab7dc8.jpg)
+
 # description
-各ページに飛びます。
+各ページに飛びます。季節感を出しました。
 
 # Hosting
 * firebase 9.1.0
@@ -12,9 +13,8 @@ SPAポートフォリオを作成しました。
 
 # 実装機能
 ```
-お問い合わせ：
-Validation
-Slack通知機能
+コンポーネント
+Contact：Validation、Slack通知
 ```
 
 # 使用技術
