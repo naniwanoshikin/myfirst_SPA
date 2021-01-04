@@ -25,7 +25,6 @@ body .nav .nav-item {
   color: #f1eaea;
   -webkit-transform: rotate(3deg);
           transform: rotate(3deg);
-  font-size: 20px;
 }
 
 body .nav .nav-item:hover {
@@ -37,22 +36,22 @@ body .nav .nav-item:hover {
 }
 
 body .nav .nav-item:before {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
-  bottom: -4px;
+  bottom: -1px;
   /*線の上下位置*/
   left: 50%;
-  width: 60px;
+  width: 55px;
   /*線の長さ*/
-  height: 4px;
+  height: 3px;
   /*線の太さ*/
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   /*位置調整*/
   border-radius: 50%;
   /*線の丸み*/
-  background: #d89e51;
+  background: #d8ca51;
 }
 
 body .nav .snow {
@@ -112,7 +111,7 @@ body footer ul li a:hover {
 }
 
 body footer p a {
-  color: #00be39;
+  color: #1b4e28;
   font-size: 20px;
 }
 
@@ -246,7 +245,8 @@ body footer p a:hover {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  z-index: 5;
+  position: relative;
+  z-index: 1;
 }
 
 .contact ul {

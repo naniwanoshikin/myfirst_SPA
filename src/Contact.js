@@ -190,34 +190,11 @@ export default class Contactform extends React.Component {
     ];
 
     return (
-      <div className="contact py-5 mt-3">
-        {this.state.isSubmitted // （三項演算子）
-          ? // 確認画面
+      <div className="contact py-4 mt-3">
+        {!this.state.isSubmitted // （三項演算子）
+          ? // フォーム
           <>
-            <h5 className="">下記内容でよろしいでしょうか？</h5>
-            <hr />
-            <ul className="text-left my-0 mx-auto p-4">
-              {confirmform.map((e, i) => {
-                return (
-                  <li key={i}><span>{e.input}：</span><span className="answer">{e.output}</span></li>
-                )
-              })}
-            </ul>
-            <div className="d-flex justify-content-center">
-              <form className="mr-3">
-                <input type="submit" value="修正する" className="submitbtn"
-                  onClick={(e) => { this.handleFix(e) }}
-                />
-              </form>
-              <form>
-                <input type="submit" value="送信" className="submitbtn"
-                  onClick={(e) => { this.handleSubmit(e) }}
-                />
-              </form>
-            </div>
-          </>
-          : // 元の画面
-          <>
+            <p className="py-3">お気軽にご連絡ください。</p>
             <div className="px-0">
               <div className="px-0">
                 {/* お名前 */}
@@ -289,6 +266,30 @@ export default class Contactform extends React.Component {
             <form onSubmit={(e) => { this.handleConfirm(e) }}>
               <input type="submit" value="確認画面へ" className="submitbtn" />
             </form>
+          </>
+          : // 確認画面
+          <>
+            <h5 className="">下記内容でよろしいでしょうか？</h5>
+            <hr />
+            <ul className="text-left my-0 mx-auto p-4">
+              {confirmform.map((e, i) => {
+                return (
+                  <li key={i}><span>{e.input}：</span><span className="answer">{e.output}</span></li>
+                )
+              })}
+            </ul>
+            <div className="d-flex justify-content-center">
+              <form className="mr-3">
+                <input type="submit" value="修正する" className="submitbtn"
+                  onClick={(e) => { this.handleFix(e) }}
+                />
+              </form>
+              <form>
+                <input type="submit" value="送信" className="submitbtn"
+                  onClick={(e) => { this.handleSubmit(e) }}
+                />
+              </form>
+            </div>
           </>
         }
       </div>

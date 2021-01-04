@@ -25,6 +25,8 @@
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 /* small screen */
 body {
+  // 背景色
+  $backnav: rgb(169, 216, 238);
   @include bcr($b: #ce604def, $c: rgb(245, 235, 235), $r: 0px);
   h1 {
     font-size: 34px;
@@ -38,29 +40,26 @@ body {
   a {
     text-decoration: none;
   }
-  // Nav, Footer 背景色
-  $backnav: rgb(169, 216, 238);
   // Nav ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
   .nav {
     // @include bcr($b: rgb(121, 61, 61), $r: 10px);
     .nav-item {
       @include acolor($c: rgb(241, 234, 234), $ch: rgb(38, 38, 233));
       transform: rotate(3deg);
-      font-size: 20px;
       // border-bottom: 3px groove rgb(228, 193, 38);
       // text-decoration: underline;
       // アンダーライン
       &:before {
-        content: '';
+        content: "";
         display: inline-block;
         position: absolute;
-        bottom: -4px; /*線の上下位置*/
+        bottom: -1px; /*線の上下位置*/
         left: 50%;
-        width: 60px; /*線の長さ*/
-        height: 4px; /*線の太さ*/
+        width: 55px; /*線の長さ*/
+        height: 3px; /*線の太さ*/
         transform: translateX(-50%); /*位置調整*/
         border-radius: 50%; /*線の丸み*/
-        background: rgb(216, 158, 81);
+        background: rgb(216, 202, 81);
       }
     }
     .snow {
@@ -111,7 +110,7 @@ body {
     }
     p {
       a {
-        @include acolor($c: rgb(0, 190, 57), $bh: #fff, $ch: blueviolet);
+        @include acolor($c: rgb(27, 78, 40), $bh: #fff, $ch: blueviolet);
         font-size: 20px;
       }
     }
@@ -203,7 +202,8 @@ body {
 .contact {
   @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 0px);
   user-select: none;
-  z-index: 5;
+  position: relative;
+  z-index: 1;
   // 確認画面
   ul {
     @include bcr($b: rgba(48, 214, 184, 0.16), $c: #524f4f, $r: 20px);

@@ -6,6 +6,8 @@ const navstyle = {
   zIndex: "5",
   padding: "10px 0",
   fontFamily: "Itim",
+  fontSize: "20px",
+  transform: "rotate(1deg)",
 }
 
 export const Nav = () => {

@@ -14,7 +14,9 @@ const newLine = (string) => {
 }
 
 // 参考
+const text = "参考";
 const link = "https://www.youtube.com/playlist?list=PLX8Rsrpnn3IVOk48awq_nKW0aFP0MGpnn";
+// console.log(text.link(link).replace(/</g,"&lt;"));
 
 const WorkList = [
   {
@@ -45,7 +47,7 @@ const WorkList = [
     name: "チャットBOT",
     link: "https://chatbot-18322.web.app",
     intro: "某正社員エンジニアのYoutube動画を参考にchatbotアプリを作成。",
-    intro2: `React \nfirebase cloud Functions, \nMaterial UI\nHosting:firebase\n参考:${link}`,
+    intro2: `React\nfirebase cloud Functions,\nMaterial UI\nHosting:firebase\n${text.link(link)}`,
     img: photo3,
     date: "2020.12-",
   },

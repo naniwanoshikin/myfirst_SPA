@@ -21,6 +21,7 @@ export default class Paper extends React.Component {
         color: this.props.c,
         borderRadius: this.props.r,
         opacity: this.props.o,
+        transform: "rotate(" + this.props.deg + ")",
       }}>{newLine(this.props.m)}</div>
     );
   }
