@@ -5,7 +5,7 @@ const style = {
   display: "inline-block",
   position: "relative",
   zIndex: "5",
-  fontSize: "22px",
+  fontSize: "30px",
   color: "#fffac2",
   fontFamily: "Boogaloo",
 }
@@ -43,8 +43,8 @@ export default class Pose extends React.Component {
   render() {
     return (
       <Box pose={this.state.isVisible ? 'visible' : 'hidden'} style={style} >
-        <h1 className="mt-4">{this.props.name}</h1>
-        <p className="">{this.props.comment}</p>
+        {/* <h1 className="mt-4">{this.props.name}</h1> */}
+        <p className="mb-1">{this.props.comment}</p>
       </Box>
     );
   }

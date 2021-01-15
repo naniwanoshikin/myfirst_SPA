@@ -21,21 +21,21 @@ body a {
   text-decoration: none;
 }
 
-body .nav .nav-item {
+.nav .nav-item {
   color: #f1eaea;
   -webkit-transform: rotate(3deg);
           transform: rotate(3deg);
 }
 
-body .nav .nav-item:hover {
+.nav .nav-item:hover {
   background: #eee;
   color: #2626e9;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
   text-decoration: none;
 }
 
-body .nav .nav-item:before {
+.nav .nav-item:before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -54,7 +54,7 @@ body .nav .nav-item:before {
   background: #d8ca51;
 }
 
-body .nav .snow {
+.nav .snow {
   color: snow;
   font-size: 18px;
   position: fixed;
@@ -80,46 +80,46 @@ body .nav .snow {
   }
 }
 
-body footer {
-  background: #a9d8ee;
+footer {
+  background: #c7dee9;
 }
 
-body footer ul li {
+footer ul li {
   padding-right: 20px;
 }
 
-body footer ul li a .fa-github {
+footer ul li a .fa-github {
   color: black;
 }
 
-body footer ul li a .fa-twitter {
+footer ul li a .fa-twitter {
   color: #6acaf0;
 }
 
-body footer ul li a .fa-instagram {
+footer ul li a .fa-instagram {
   color: #b130b1;
 }
 
-body footer ul li a .fa-youtube {
+footer ul li a .fa-youtube {
   color: red;
 }
 
-body footer ul li a:hover {
+footer ul li a:hover {
   -webkit-transition: 2s;
   transition: 2s;
   opacity: 0.5;
 }
 
-body footer p a {
+footer p a {
   color: #1b4e28;
   font-size: 20px;
 }
 
-body footer p a:hover {
+footer p a:hover {
   background: #fff;
   color: blueviolet;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
   text-decoration: none;
 }
 
@@ -134,7 +134,6 @@ body footer p a:hover {
   background: #f3dfb5;
   color: #332d2d;
   border-radius: 0px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,7 +148,7 @@ body footer p a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: calc(10px + 2vmin);
-  height: 485px;
+  height: 60vh;
 }
 
 .about {
@@ -201,8 +200,8 @@ body footer p a:hover {
 .work .work-item h5:hover {
   background: white;
   color: blueviolet;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
   text-decoration: none;
 }
 
@@ -369,14 +368,36 @@ body footer p a:hover {
 
 /* medium screen */
 @media (min-width: 576px) {
-  body .nav .nav-item {
-    font-size: 26px;
+  .nav .nav-item {
+    font-size: 24px;
+  }
+  .home header {
+    height: 59vh;
   }
   .work .work-item .work-modal .modalin {
     width: 60%;
   }
   .contact ul {
     width: 45%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .nav .nav-item {
+    font-size: 36px;
+    color: #b3e9c0;
+  }
+  .home header {
+    height: 66vh;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+  body .nav .nav-item {
+    font-size: 40px;
+  }
+  .home header {
+    height: 74vh;
   }
 }
 /*# sourceMappingURL=App.css.map */

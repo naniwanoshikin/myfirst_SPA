@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer = () => {
   return (
-    <footer className="pt-5 pb-4 text-center">
+    <footer className="pt-5 pb-3 text-center">
       <ul className="d-inline-flex pl-3">
         <li>
           <a href="https://github.com/naniwanoshikin/shikichanpower.github.io/blob/master/index.html" target="_blank" rel="noreferrer noopener">

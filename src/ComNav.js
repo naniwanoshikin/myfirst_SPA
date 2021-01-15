@@ -12,7 +12,7 @@ const navstyle = {
 
 export const Nav = () => {
   return (
-    <div className="nav mt-5 mx-1 mx-sm-5">
+    <div className="nav mt-5 mb-3 mx-1 mx-sm-5">
       <div className="container">
         <div className="row" style={navstyle}>
           <Link id="nav-home" className="nav-item col-3" to="/">Home</Link>

@@ -18,15 +18,13 @@
   &:hover {
     background: $bh;
     color: $ch;
-    transition: 0.5s;
+    transition: 0.7s;
     text-decoration: none;
   }
 }
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 /* small screen */
 body {
-  // 背景色
-  $backnav: rgb(169, 216, 238);
   @include bcr($b: #ce604def, $c: rgb(245, 235, 235), $r: 0px);
   h1 {
     font-size: 34px;
@@ -40,79 +38,81 @@ body {
   a {
     text-decoration: none;
   }
-  // Nav ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-  .nav {
-    // @include bcr($b: rgb(121, 61, 61), $r: 10px);
-    .nav-item {
-      @include acolor($c: rgb(241, 234, 234), $ch: rgb(38, 38, 233));
-      transform: rotate(3deg);
-      // border-bottom: 3px groove rgb(228, 193, 38);
-      // text-decoration: underline;
-      // アンダーライン
-      &:before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        bottom: -1px; /*線の上下位置*/
-        left: 50%;
-        width: 55px; /*線の長さ*/
-        height: 3px; /*線の太さ*/
-        transform: translateX(-50%); /*位置調整*/
-        border-radius: 50%; /*線の丸み*/
-        background: rgb(216, 202, 81);
-      }
-    }
-    .snow {
-      color: snow;
-      font-size: 18px;
-      position: fixed;
-      top: -10%; /*初期位置*/
-      z-index: 5;
-      animation: anim 5s linear infinite;
-      text-shadow: 2vw -50px 2px, 5vw -100px 2px, 8vw -200px 2px, 10vw -400px 3px, 15vw -200px 3px, 20vw -500px 4px,
-        23vw -500px 1px, 25vw -510px 1px, 30vw -280px 1px, 33vw -180px 1px, 35vw -380px 1px, 37vw -80px 1px,
-        39vw -250px 2px, 42vw -340px 5px, 45vw -140px 5px, 50vw -80px 2px, 56vw -150px 2px, 60vw -550px 2px,
-        63vw -180px 0, 68vw -680px 0, 72vw -280px 0, 75vw -800px 10px, 78vw -220px 4px, 82vw -120px 4px, 86vw -320px 9px,
-        90vw -20px 9px, 94vw -170px 7px, 98vw -100px 10px;
-    }
-    @keyframes anim {
-      100% {
-        color: transparent;
-        top: 150%;
-      }
+}
+// Nav ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.nav {
+  // @include bcr($b: rgb(121, 61, 61), $r: 10px);
+  .nav-item {
+    @include acolor($c: rgb(241, 234, 234), $ch: rgb(38, 38, 233));
+    transform: rotate(3deg);
+    // border-bottom: 3px groove rgb(228, 193, 38);
+    // text-decoration: underline;
+    // アンダーライン
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      bottom: -1px; /*線の上下位置*/
+      left: 50%;
+      width: 55px; /*線の長さ*/
+      height: 3px; /*線の太さ*/
+      transform: translateX(-50%); /*位置調整*/
+      border-radius: 50%; /*線の丸み*/
+      background: rgb(216, 202, 81);
     }
   }
-  // フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-  footer {
-    background: $backnav;
-    ul {
-      li {
-        padding-right: 20px;
-        a {
-          .fa-github {
-            color: black;
-          }
-          .fa-twitter {
-            color: rgb(106, 202, 240);
-          }
-          .fa-instagram {
-            color: rgb(177, 48, 177);
-          }
-          .fa-youtube {
-            color: red;
-          }
-          &:hover {
-            transition: 2s;
-            opacity: 0.5;
-          }
+  .snow {
+    color: snow;
+    font-size: 18px;
+    position: fixed;
+    top: -10%; /*初期位置*/
+    z-index: 5;
+    animation: anim 5s linear infinite;
+    text-shadow: 2vw -50px 2px, 5vw -100px 2px, 8vw -200px 2px, 10vw -400px 3px, 15vw -200px 3px, 20vw -500px 4px,
+      23vw -500px 1px, 25vw -510px 1px, 30vw -280px 1px, 33vw -180px 1px, 35vw -380px 1px, 37vw -80px 1px,
+      39vw -250px 2px, 42vw -340px 5px, 45vw -140px 5px, 50vw -80px 2px, 56vw -150px 2px, 60vw -550px 2px, 63vw -180px 0,
+      68vw -680px 0, 72vw -280px 0, 75vw -800px 10px, 78vw -220px 4px, 82vw -120px 4px, 86vw -320px 9px, 90vw -20px 9px,
+      94vw -170px 7px, 98vw -100px 10px;
+  }
+  @keyframes anim {
+    100% {
+      color: transparent;
+      top: 150%;
+    }
+  }
+}
+// 背景色
+$backnav: rgb(199, 222, 233);
+// フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+footer {
+  background: $backnav;
+  ul {
+    li {
+      padding-right: 20px;
+      a {
+        .fa-github {
+          color: black;
+        }
+        .fa-twitter {
+          color: rgb(106, 202, 240);
+        }
+        .fa-instagram {
+          color: rgb(177, 48, 177);
+        }
+        .fa-youtube {
+          color: red;
+        }
+        &:hover {
+          transition: 2s;
+          opacity: 0.5;
         }
       }
     }
-    p {
-      a {
-        @include acolor($c: rgb(27, 78, 40), $bh: #fff, $ch: blueviolet);
-        font-size: 20px;
-      }
+  }
+  p {
+    a {
+      @include acolor($c: rgb(27, 78, 40), $bh: #fff, $ch: blueviolet);
+      font-size: 20px;
     }
   }
 }
@@ -122,13 +122,13 @@ body {
   user-select: none;
   header {
     @include bcr($b: rgb(243, 223, 181), $c: rgb(51, 45, 45), $r: 0px);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    // font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    height: 485px;
+    height: 60vh;
   }
 }
 // ABOUT ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -292,11 +292,14 @@ body {
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 /* medium screen */
 @media (min-width: 576px) {
-  body {
-    .nav {
-      .nav-item {
-        font-size: 26px;
-      }
+  .nav {
+    .nav-item {
+      font-size: 24px;
+    }
+  }
+  .home {
+    header {
+      height: 59vh;
     }
   }
   .work {
@@ -311,6 +314,39 @@ body {
   .contact {
     ul {
       width: 45%;
+    }
+  }
+}
+// iPad限定（縦向きのみ）
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  // NAV ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  .nav {
+    .nav-item {
+      font-size: 36px;
+      color: #b3e9c0;
+    }
+  }
+  // HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  .home {
+    header {
+      height: 66vh;
+    }
+  }
+}
+// iPad Pro限定（縦向きのみ）
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+  // NAV ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  body {
+    .nav {
+      .nav-item {
+        font-size: 40px;
+      }
+    }
+  }
+  // HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  .home {
+    header {
+      height: 74vh;
     }
   }
 }
