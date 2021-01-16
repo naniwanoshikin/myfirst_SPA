@@ -31,14 +31,13 @@ const App = () => (
 
 // Home
 const Home = () => {
-  const header = {
-  }
+
   return (
     <div className="home text-center">
       <Nav />
       <Pose comment={"Hello"} />
-      <header style={header}>
-        <Paper x="10%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="" m="Home" />
+      <header>
+        <Paper x="10%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="white" m="Home" />
         <div className="stroke">
           <Paper x="8%" y="28%" w="0px" h="" o="0.2" fs="65px" r="" bc="" c="" m={"The\nStart\nOf\n2021"} />
         </div>

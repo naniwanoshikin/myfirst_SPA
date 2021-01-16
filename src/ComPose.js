@@ -1,5 +1,6 @@
 import React from 'react';
 import posed from 'react-pose';
+import Paper from './Paper'; // class
 
 const style = {
   display: "inline-block",
@@ -43,7 +44,7 @@ export default class Pose extends React.Component {
   render() {
     return (
       <Box pose={this.state.isVisible ? 'visible' : 'hidden'}>
-        {/* <h1 className="mt-4">{this.props.name}</h1> */}
+        {/* <Paper style={style} x="10%" y="4%" w="" h="" o="0.2" fs="100px" bc="" m={this.props.comment} /> */}
         <p className="mb-1" style={style} >{this.props.comment}</p>
       </Box>
     );

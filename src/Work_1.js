@@ -54,7 +54,7 @@ const WorkList = [
   {
     name: "マイブログス",
     link: "https://shikiblog.herokuapp.com/",
-    intro: "今年からブログ始めます。テーマは未定です。\nLaravelで作成。\nHerokuでデプロイ。",
+    intro: "今年からブログ始めます。初ブログです。テーマは未定。\nLaravelで作成。\nHerokuでデプロイ。",
     intro2: "Laravel\nBootstrap\npostgresql\nHeroku",
     img: photo4,
     date: "2021.01-",

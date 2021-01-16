@@ -8,7 +8,7 @@ SPAポートフォリオを作成しました。
 各ページに飛びます。季節感を出しました。
 
 # Hosting
-* firebase 9.1.0
+* firebase 9.2.0
 * URL: https://spapf-24842.web.app/
 
 # 実装機能

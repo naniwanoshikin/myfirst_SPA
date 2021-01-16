@@ -70,10 +70,10 @@ const Thing = () => {
 const theme = {
   position: "absolute",
   zIndex: "4",
-  top: "45%",
+  top: "35%",
   left: "0px",
   width: "330px",
-  height: "340px",
+  height: "330px",
 }
 export const PaperAnime = () => {
   return (
