@@ -38,8 +38,10 @@ const Home = () => {
       <Nav />
       <Pose comment={"Hello"} />
       <header style={header}>
-        <Paper x="16%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="" m="Home" />
-        <Paper x="7%" y="25%" w="0px" h="" o="0.1" fs="70px" r="" bc="" c="blue" m={"The\nStart\nOf\n2021"} />
+        <Paper x="10%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="" m="Home" />
+        <div className="stroke">
+          <Paper x="8%" y="28%" w="0px" h="" o="0.2" fs="65px" r="" bc="" c="" m={"The\nStart\nOf\n2021"} />
+        </div>
         <PaperAnime />
         <PaperClick />
         {/* x方向 y方向 縦 横 opa fontSize round backgroundcolor color message degree */}

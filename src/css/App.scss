@@ -39,6 +39,7 @@ body {
     text-decoration: none;
   }
 }
+
 // Nav ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .nav {
   // @include bcr($b: rgb(121, 61, 61), $r: 10px);
@@ -129,6 +130,13 @@ footer {
     justify-content: center;
     font-size: calc(10px + 2vmin);
     height: 60vh;
+    // text ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+    .stroke {
+      color: rgba(50, 197, 75, 0.39);
+      letter-spacing: 0.7em;
+      text-shadow: 5px 5px 0 #e09249;
+      -webkit-text-stroke: 1px #555555;
+    }
   }
 }
 // ABOUT ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -330,6 +338,13 @@ footer {
   .home {
     header {
       height: 66vh;
+      .stroke {
+        font-size: 40px;
+        color: rgba(50, 197, 75, 0.39);
+        letter-spacing: 1em;
+        text-shadow: 5px 5px 0 #e09249;
+        -webkit-text-stroke: 4px #555555;
+      }
     }
   }
 }
@@ -347,6 +362,22 @@ footer {
   .home {
     header {
       height: 74vh;
+      .stroke {
+        font-size: 60px;
+        color: rgba(197, 50, 178, 0.39);
+        letter-spacing: 1em;
+        text-shadow: 5px 5px 0 #e09249;
+        -webkit-text-stroke: 5px #555555;
+      }
+    }
+  }
+}
+// iPad Pro 11 2020（縦向きのみ）
+@media only screen and (min-device-width: 1688px) and (max-device-width: 2388px) and (orientation: portrait) {
+  // HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  .home {
+    header {
+      height: auto;
     }
   }
 }

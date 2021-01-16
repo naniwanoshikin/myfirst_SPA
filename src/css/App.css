@@ -151,6 +151,13 @@ footer p a:hover {
   height: 60vh;
 }
 
+.home header .stroke {
+  color: rgba(50, 197, 75, 0.39);
+  letter-spacing: 0.7em;
+  text-shadow: 5px 5px 0 #e09249;
+  -webkit-text-stroke: 1px #555555;
+}
+
 .about {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -390,6 +397,13 @@ footer p a:hover {
   .home header {
     height: 66vh;
   }
+  .home header .stroke {
+    font-size: 40px;
+    color: rgba(50, 197, 75, 0.39);
+    letter-spacing: 1em;
+    text-shadow: 5px 5px 0 #e09249;
+    -webkit-text-stroke: 4px #555555;
+  }
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
@@ -398,6 +412,19 @@ footer p a:hover {
   }
   .home header {
     height: 74vh;
+  }
+  .home header .stroke {
+    font-size: 60px;
+    color: rgba(197, 50, 178, 0.39);
+    letter-spacing: 1em;
+    text-shadow: 5px 5px 0 #e09249;
+    -webkit-text-stroke: 5px #555555;
+  }
+}
+
+@media only screen and (min-device-width: 1688px) and (max-device-width: 2388px) and (orientation: portrait) {
+  .home header {
+    height: auto;
   }
 }
 /*# sourceMappingURL=App.css.map */

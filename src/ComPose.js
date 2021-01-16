@@ -42,9 +42,9 @@ export default class Pose extends React.Component {
   }
   render() {
     return (
-      <Box pose={this.state.isVisible ? 'visible' : 'hidden'} style={style} >
+      <Box pose={this.state.isVisible ? 'visible' : 'hidden'}>
         {/* <h1 className="mt-4">{this.props.name}</h1> */}
-        <p className="mb-1">{this.props.comment}</p>
+        <p className="mb-1" style={style} >{this.props.comment}</p>
       </Box>
     );
   }
