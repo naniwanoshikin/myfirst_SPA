@@ -32,7 +32,6 @@ Contact：Validation、Slack通知
 - react-chartjs-2
 
 # Future Tasks
-* Contactクラス radioボタンの値の保持
 * Workコンポーネント リンク 文字列のHTML変換
 * Workコンポーネント グラフのコンポーネント化
 * Workコンポーネント z-index

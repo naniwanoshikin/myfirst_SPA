@@ -31,23 +31,21 @@ const App = () => (
 
 // Home
 const Home = () => {
-
   return (
-    <div className="home text-center">
+    <div className="text-center">
       <Nav />
       <Pose comment={"Hello"} />
-      <header>
-        <Paper x="10%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="white" m="Home" />
+      <Paper x="10%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="white" m="Home" />
+      <div className="home">
+        <Paper x="31%" y="37%" w="160px" h="180px" o="0.1" fs="25px" r="40px" bc="magenta" c="white" m="World" deg="90deg" />
+        <Paper x="52%" y="52%" w="160px" h="60px" o="0.3" fs="30px" r="35px" bc="cyan" m="" />
+        <Paper x="49%" y="53%" w="90px" h="170px" o="0.5" fs="30px" r="5px" bc="#fffac2" m="∩" />
         <div className="stroke">
           <Paper x="8%" y="28%" w="0px" h="" o="0.2" fs="65px" r="" bc="" c="" m={"The\nStart\nOf\n2021"} />
         </div>
         <PaperAnime />
         <PaperClick />
-        {/* x方向 y方向 縦 横 opa fontSize round backgroundcolor color message degree */}
-        <Paper x="40%" y="38%" w="180px" h="130px" o="0.2" fs="25px" r="40px" bc="magenta" c="white" m="World" deg="90deg" />
-        <Paper x="52%" y="51%" w="160px" h="60px" o="0.3" fs="30px" r="35px" bc="cyan" m="" />
-        <Paper x="49%" y="52%" w="100px" h="160px" o="0.5" fs="30px" r="5px" bc="#fffac2" m="∩" />
-      </header>
+      </div>
       <Footer />
     </div>
   )
@@ -55,34 +53,36 @@ const Home = () => {
 // About
 const About = () => {
   return (
-    <div className="about text-center">
+    <div className="text-center">
       <Nav />
-      <Pose name={""} comment={"Profile"} />
-      <div className="container py-4">
-        <Paper x="10%" y="10%" w="" h="" o="0.2" fs="120px" r="" bc="" c="white" m="About" deg="1deg" />
-        <p className="mt-2">自己紹介です</p>
-        <table className="table table-sm table-hover w-75 w-sm-50 mb-5 mx-auto">
-          <tbody>
-            <tr>
-              <td>Name</td>
-              <td>Masahiro</td>
-            </tr>
-            <tr>
-              <td>From</td>
-              <td>Osaka</td>
-            </tr>
-            <tr>
-              <td>Hobby</td>
-              <td>Picture</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul className="pl-5">
-          <li>2020/6 プログラミング開始</li>
-          <li>2020/8 ポートフォリオ作成開始</li>
-        </ul>
+      <Pose comment={"Profile"} />
+      <Paper x="10%" y="10%" w="" h="" o="0.2" fs="120px" r="" bc="" c="white" m="About" deg="1deg" />
+      <div className="about">
+        <div className="container py-4">
+          <p className="mt-2">自己紹介です</p>
+          <table className="table table-sm table-hover w-75 w-sm-50 mb-5 mx-auto">
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td>Masahiro</td>
+              </tr>
+              <tr>
+                <td>From</td>
+                <td>Osaka</td>
+              </tr>
+              <tr>
+                <td>Hobby</td>
+                <td>Picture</td>
+              </tr>
+            </tbody>
+          </table>
+          <ul className="pl-5">
+            <li>2020/6 プログラミング開始</li>
+            <li>2020/8 ポートフォリオ作成開始</li>
+          </ul>
+        </div>
+        <Anime2 />
       </div>
-      <Anime2 />
       <Footer />
     </div>
   )
@@ -90,11 +90,13 @@ const About = () => {
 // Work
 const Work = () => {
   return (
-    <div className="work text-center">
+    <div className="text-center">
       <Nav />
-      <Pose name={""} comment={"Portfolio"} />
+      <Pose comment={"Portfolio"} />
       <Paper x="24%" y="11%" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" m="Works" deg="0deg" />
-      <MyWork />
+      <div className="work">
+        <MyWork />
+      </div>
       <Footer />
     </div>
   )
@@ -105,29 +107,29 @@ const Contact = () => {
   return (
     <div className="text-center">
       <Nav />
-      <Pose name={""} comment={"Contact"} />
-      <Paper x="5%" y="11%" w="0" h="0" o="0.1" fs="100px" r="" bc="" c="blue" m="Contact" deg="1deg" />
+      <Pose comment={"Contact"} />
+      <Paper x="5%" y="11%" w="0" h="0" o="0.1" fs="100px" r="" bc="" c="green" m="Contact" deg="-1deg" />
       <Contactform />
       <Footer />
     </div>
   )
 }
 
-// DBデータ表示
+// Practice
 const Practice = props => {
   const { id } = props.match.params
   return (
     <div className="text-center">
       <Nav />
-      <Pose name={"firebase"} comment={id + "番目の記事です"} />
-      <Crud />
-      <Translate />
-      {/* いいねボタン */}
-      <Likelist />
-      <PoseList />
+      <Pose name={"firebase"} comment={id + "番目の記事"} />
       <div style={{
         backgroundColor: "tomato",
       }}>
+        <Crud />
+        <Translate />
+        {/* いいねボタン */}
+        <Likelist />
+        <PoseList />
         <img src={logo} className="App-logo" alt="logo" />
       </div>
       <Footer />

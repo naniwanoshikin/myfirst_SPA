@@ -128,16 +128,13 @@ footer p a:hover {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-.home header {
   background: #f3dfb5;
   color: #332d2d;
   border-radius: 0px;
   height: 61vh;
 }
 
-.home header .stroke {
+.home .stroke {
   color: rgba(50, 197, 75, 0.39);
   letter-spacing: 0.7em;
   text-shadow: 5px 5px 0 #e09249;

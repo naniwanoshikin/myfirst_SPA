@@ -12,22 +12,25 @@ function ad(string) {
   return reg.test(string);
 }
 
-// check状態をstate保持したかったがうまく変更できず
-const radioitems = [ // radioボタン
+const radioItems = [
   { id: 0, check: false, input: "社員", output: "社員" },
   { id: 1, check: false, input: "アルバイト", output: "アルバイト" },
   { id: 2, check: false, input: "無職", output: "無職" },
 ];
-
 export default class Contactform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // 入力値
       name: "",
       mail: "",
-      age: '',
-      radio: "",
       content: "",
+      select: "", // age
+      // オブジェクト
+      radio: radioItems,
+      // 確認画面で値（output）を取得用
+      radioValue: "",
+      // エラーメッセージ用
       hasNameError: false,
       hasMailError: false,
       hasAgeError: false,
@@ -40,7 +43,7 @@ export default class Contactform extends React.Component {
     const inputValue = e.target.value;
     this.setState({
       name: inputValue, // string
-      hasNameError: spa(inputValue) === "", // bool （未入力だとtrue）
+      hasNameError: spa(inputValue) === "", // bool （未入力だとtrue つまり error）
     });
   }
   handleMail(e) { // emailを入力した時
@@ -57,25 +60,32 @@ export default class Contactform extends React.Component {
       hasContentError: spa(inputValue) === "",
     });
   }
-  handleAge(e) { // 年齢を選択した時
+  handleSelect(e) { // 年齢を選択した時
     const inputValue = e.target.value;
     this.setState({
-      age: inputValue,
+      select: inputValue,
       hasAgeError: inputValue === "",
     });
   }
-  handleRadio(ee) { // ラジオボタンを選択した時
-    const inputValue = ee.input;
-    // console.log(ee.id); // 0
-    // console.log(ee.check); // false
-    // console.log(ee.input); // 選択した値
-    // console.log(this.state.radio); // 保持している値
-    this.setState({
-      radio: inputValue,
-      hasRadioError: inputValue === "",  // →checkでboolしたい。
+  // ラジオボタンを選択した時
+  handleRadio(ee) { // param: クリックしたオブジェクト
+    const radios = this.state.radio.map(item => { // stateのコピー
+      return {
+        id: item.id,
+        check: (item.input === ee.input) ? true : false,
+        input: item.input,
+        output: item.output,
+      };
     });
+    this.setState({
+      radio: radios, // 保持している値（現在）
+      radioValue: ee.output, // 選択した値（確認画面用）
+      hasRadioError: false,  // エラーメッセージを消す。
+    });
+    // console.log(ee.input); // 選択した値
+    // console.log(this.state.radio); // 保持している値（クリック前）
   }
-  handleConfirm(e) { // 確認ボタン押した時、
+  handleConfirm(e) { // バリデーション（確認ボタン押した時）
     e.preventDefault();
     if (!this.state.name) { // 未入力ならエラーメッセージを表示
       this.setState({ hasNameError: true });
@@ -86,14 +96,14 @@ export default class Contactform extends React.Component {
     if (!this.state.content) {
       this.setState({ hasContentError: true });
     }
-    if (!this.state.age) {
-      this.setState({ hasAgeError: true, age: "未回答" });
+    if (!this.state.select) {
+      this.setState({ hasAgeError: true, select: "未回答" });
     }
-    if (!this.state.radio) {
-      console.log('not radio value');
+    if (!this.state.radioValue) { // checkしていなければ、
+      // console.log('radioValueが空です');
       this.setState({ hasRadioError: true });
     }
-    if (!this.state.name || !ad(this.state.mail) || !this.state.radio || !this.state.content) {
+    if (!this.state.name || !ad(this.state.mail) || !this.state.radioValue || !this.state.content) {
       return;
     }
     this.setState({ isSubmitted: true });
@@ -107,9 +117,9 @@ export default class Contactform extends React.Component {
     const name = spa(this.state.name);
     const mail = spa(this.state.mail);
     const content = spa(this.state.content);
-    const age = this.state.age;
-    const radio = this.state.radio;
-    const WEBHOOK_url = "https://hooks.slack.com/services/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";
+    const age = this.state.select;
+    const radio = this.state.radioValue;
+    const WEBHOOK_url = "https://hooks.slack.com/services/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";
     const payload = {
       text: '★New Message★\n'
         + 'お名前: ' + name + '\n'
@@ -118,7 +128,7 @@ export default class Contactform extends React.Component {
         + '方法: ' + radio + '\n'
         + '【問い合わせ内容】\n' + content
     };
-    // fetchメソッドでフォーム内容をSlackのIncoming Webhook URL に送信
+    // フォーム内容をSlackのIncoming Webhook URL に送信
     fetch(WEBHOOK_url, {
       method: 'POST',
       body: JSON.stringify(payload)
@@ -127,8 +137,9 @@ export default class Contactform extends React.Component {
       this.setState({
         name: "",
         mail: "",
-        age: "",
-        radio: "",
+        select: "",
+        radio: radioItems, // check状態をfalseにする
+        radioValue: "", // radio値（output）を空にする
         content: "",
         isSubmitted: false,
       })
@@ -174,24 +185,9 @@ export default class Contactform extends React.Component {
         <p className="error-message">※希望事項を入力してください</p>
       );
     }
-    const confirmform = [ // 確認画面リスト（順番どおり）
-      { input: "お名前", output: [spa(this.state.name)] },
-      { input: "Email", output: [spa(this.state.mail)] },
-      { input: "年齢", output: [this.state.age] },
-      { input: "職業", output: [this.state.radio] },
-      { input: "内容", output: [spa(this.state.content)] },
-    ];
-    const ageitems = [ // checkbox
-      { input: "-", output: "回答しない" },
-      { input: "16-25歳", output: "16~25歳" },
-      { input: "26-35歳", output: "26~35歳" },
-      { input: "36-45歳", output: "36~45歳" },
-      { input: "46-歳", output: "46~歳" },
-    ];
-
     return (
-      <div className="contact py-4 mt-3">
-        {!this.state.isSubmitted // （三項演算子）
+      <div className="contact py-4">
+        {!this.state.isSubmitted
           ? // フォーム
           <>
             <p className="py-3">お気軽にご連絡ください。</p>
@@ -220,14 +216,20 @@ export default class Contactform extends React.Component {
                   />
                   {MailError}
                 </div>
-                {/* 年齢 */}
+                {/* selectBox */}
                 <div>
                   <div className="d-inline-block mt-3">
                     <label className="bg-info mr-3 px-1 py-1 rounded">年齢（任意）</label>
                     <select name="age" className="textline ml-3"
-                      value={this.state.age} onChange={(e) => { this.handleAge(e) }}
+                      value={this.state.select} onChange={(e) => { this.handleSelect(e) }}
                     >
-                      {ageitems.map((ee, i) => {
+                      {[
+                        { input: "-", output: "回答しない" },
+                        { input: "16-25歳", output: "16~25歳" },
+                        { input: "26-35歳", output: "26~35歳" },
+                        { input: "36-45歳", output: "36~45歳" },
+                        { input: "46-歳", output: "46~歳" },
+                      ].map((ee, i) => {
                         return (
                           <option key={i} value={ee.output}>{ee.input}</option>
                         )
@@ -239,14 +241,14 @@ export default class Contactform extends React.Component {
                 {/* ラジオボタン */}
                 <div className="radio d-inline-block text-left mt-3">
                   <p className="d-sm-inline-block mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
-                  {radioitems.map((item, i) => {
+                  {this.state.radio.map((item, i) => {
                     return (
                       <label key={i} className="ml-3 my-2">
                         <input type="radio" name="abcde" className="mr-1"
                           value={item.output} onChange={() => { this.handleRadio(item) }}
-                        // checked={item.check} // うまく保持できず
+                          checked={item.check} // checkを保持
                         />{item.input}
-                        <span>{/* 円 */}</span>
+                        <span>{/* 円枠 */}</span>
                       </label>
                     )
                   })}
@@ -272,7 +274,13 @@ export default class Contactform extends React.Component {
             <h5 className="">下記内容でよろしいでしょうか？</h5>
             <hr />
             <ul className="text-left my-0 mx-auto p-4">
-              {confirmform.map((e, i) => {
+              {[
+                { input: "お名前", output: [spa(this.state.name)] },
+                { input: "Email", output: [spa(this.state.mail)] },
+                { input: "年齢", output: [this.state.select] },
+                { input: "職業", output: [this.state.radioValue] },
+                { input: "内容", output: [spa(this.state.content)] },
+              ].map((e, i) => {
                 return (
                   <li key={i}><span>{e.input}：</span><span className="answer">{e.output}</span></li>
                 )
