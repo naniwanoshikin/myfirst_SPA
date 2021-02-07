@@ -3,7 +3,7 @@ import photo1 from './img/LP.jpg';
 import photo2 from './img/spa.jpg';
 import photo3 from './img/CHAT.jpg';
 import photo4 from './img/Blog.jpg';
-// import photo5 from './img/cafe.jpg';
+import photo5 from './img/sai.jpg';
 import TheWork from './Work_2';
 // import StrReplace from "react-string-replace";
 
@@ -58,6 +58,14 @@ const WorkList = [
     intro2: "Laravel\nBootstrap\npostgresql\nHeroku",
     img: photo4,
     date: "2021.01-",
+  },
+  {
+    name: "サイドン",
+    link: "#",
+    intro: "Adobe Fresco",
+    intro2: "",
+    img: photo5,
+    date: "2021.02-",
   },
 ];
 

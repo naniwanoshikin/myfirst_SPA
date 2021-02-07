@@ -12,6 +12,7 @@ function ad(string) {
   return reg.test(string);
 }
 
+// オブジェクト（checkの状態のみ変更）
 const radioItems = [
   { id: 0, check: false, input: "社員", output: "社員" },
   { id: 1, check: false, input: "アルバイト", output: "アルバイト" },
@@ -26,8 +27,7 @@ export default class Contactform extends React.Component {
       mail: "",
       content: "",
       select: "", // age
-      // オブジェクト
-      radio: radioItems,
+      radio: radioItems, // radio
       // 確認画面で値（output）を取得用
       radioValue: "",
       // エラーメッセージ用
