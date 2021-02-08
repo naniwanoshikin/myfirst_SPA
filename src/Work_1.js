@@ -22,7 +22,7 @@ const WorkList = [
   {
     name: "Todoリスト",
     link: "https://myfirstlp.web.app",
-    intro: "お手軽に管理できるTodoリストを作成。一応LPです！",
+    intro: "お手軽に管理できるTodoリストをJavaScriptで作成。一応LPです！",
     intro2: "HTML & CSS, Sass\n生JavaScript+firestore（→Todolist）\njQuery (→scroll, トップダウンメニュー)\nChart.js\nReact.js (→お問い合わせ)\nHosting:firebase",
     img: photo1,
     date: "2020.9-",
@@ -36,9 +36,9 @@ const WorkList = [
   //   date: "2020.10-",
   // },
   {
-    name: "SPA",
+    name: "本サイト",
     link: "https://spapf-24842.web.app/",
-    intro: "本サイト。\nReactで作成。\nfirebaseでデプロイ。",
+    intro: "Reactで作成(SPA)。\nfirebaseでデプロイ。",
     intro2: "HTML & CSS, Sass\nBootstrap 4.5.0\nnode.js 14.8.0\nnpm 6.14.9\nReact 16.13.1\nChart.js\nSlack\nHosting:firebase",
     img: photo2,
     date: "2020.12-",
@@ -54,7 +54,7 @@ const WorkList = [
   {
     name: "マイブログス",
     link: "https://shikiblog.herokuapp.com/",
-    intro: "今年からブログ始めます。初ブログです。テーマは未定。\nLaravelで作成。",
+    intro: "今年からブログ始めます。初ブログです。Laravelで作成。テーマは未定。",
     intro2: "Laravel\nBootstrap\npostgresql\nHeroku",
     img: photo4,
     date: "2021.01-",

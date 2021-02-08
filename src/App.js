@@ -1,18 +1,19 @@
+// {}はconst、違うならclassコンポーネント
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Nav } from './ComNav'; // const
-import { Footer } from './ComFoot'; // const
-import Paper from './Paper'; // class
-import Pose from './ComPose'; // class
-import PaperClick from './PaperClick'; // class
-import { PaperAnime } from './PaperAnime'; // const
-import { Anime2 } from './anime2'; // anime const
-import { MyWork } from './Work_1'; // const
-import Contactform from './Contact'; // class
-import { Crud } from './fire/crudstore.jsx'; // const
-import PoseList from './fire/poselist'; // class
-import { Likelist } from './fire/likelist'; // const
-import Translate from './fire/translater'; // class
+import { Nav } from './ComNav';
+import { Footer } from './ComFoot';
+import Paper from './Paper';
+import Pose from './ComPose';
+import PaperClick from './PaperClick';
+import { PaperAnime } from './PaperAnime';
+import { Anime2 } from './anime2'; // anime
+import { MyWork } from './Work_1';
+import Contactform from './Contact';
+import { Crud } from './fire/crudstore.jsx';
+import PoseList from './fire/poselist';
+import { Likelist } from './fire/likelist';
+import Translate from './fire/translater';
 import logo from './img/logo.svg'; // ロゴ
 import './css/App.css';
 

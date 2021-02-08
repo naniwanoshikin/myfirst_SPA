@@ -6,7 +6,7 @@ const style = {
   zIndex: "5",
   padding: "15px 0",
   fontFamily: "Itim",
-  fontSize: "25px",
+  fontSize: "22px",
   transform: "rotate(1deg)",
 }
 

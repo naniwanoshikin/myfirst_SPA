@@ -37,25 +37,12 @@ nav .nav-item:hover {
 }
 
 nav .nav-item:hover {
-  top: -3px;
+  top: 5px;
   color: #4eacff;
   background-color: rgba(255, 255, 255, 0.685);
   border-radius: 10px;
   -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.7);
           box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.7);
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-
-nav .nav-item:after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 42%;
-  border-style: solid;
-  border-color: transparent;
-  border-width: 5px 5px 0 5px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -67,7 +54,7 @@ nav .nav-item:before {
   bottom: 3px;
   /*線の上下位置*/
   left: 50%;
-  width: 75px;
+  width: 65px;
   /*線の長さ*/
   height: 3px;
   /*線の太さ*/
@@ -86,8 +73,8 @@ nav .snow {
   top: -10%;
   /*初期位置*/
   z-index: 5;
-  -webkit-animation: anim 5s linear 2;
-          animation: anim 5s linear 2;
+  -webkit-animation: anim 5s linear 1;
+          animation: anim 5s linear 1;
   text-shadow: 2vw -50px 2px, 5vw -100px 2px, 8vw -200px 2px, 10vw -400px 3px, 15vw -200px 3px, 20vw -500px 4px, 23vw -500px 1px, 25vw -510px 1px, 30vw -280px 1px, 33vw -180px 1px, 35vw -380px 1px, 37vw -80px 1px, 39vw -250px 2px, 42vw -340px 5px, 45vw -140px 5px, 50vw -80px 2px, 56vw -150px 2px, 60vw -550px 2px, 63vw -180px 0, 68vw -680px 0, 72vw -280px 0, 75vw -800px 10px, 78vw -220px 4px, 82vw -120px 4px, 86vw -320px 9px, 90vw -20px 9px, 94vw -170px 7px, 98vw -100px 10px;
 }
 
@@ -325,7 +312,7 @@ footer p a:hover {
   /* 上からの位置 */
   left: 4px;
   border: solid 2px #727983;
-  /* 選択時に重ねる円（透明にしておく） */
+  /* 選択時に重ねる内円（透明にしておく） */
 }
 
 .contact .radio > label span:after {
@@ -384,8 +371,8 @@ footer p a:hover {
 
 /* medium screen */
 @media (min-width: 576px) {
-  .nav .nav-item {
-    font-size: 24px;
+  nav .nav-item {
+    font-size: 26px;
   }
   .home header {
     height: 59vh;
@@ -399,7 +386,7 @@ footer p a:hover {
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .nav .nav-item {
+  nav .nav-item {
     font-size: 36px;
     color: #b3e9c0;
   }
@@ -416,8 +403,8 @@ footer p a:hover {
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
-  body .nav .nav-item {
-    font-size: 40px;
+  nav .nav-item {
+    font-size: 44px;
   }
   .home header {
     height: 74vh;

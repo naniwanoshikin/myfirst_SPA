@@ -147,11 +147,12 @@ export default class Contactform extends React.Component {
     console.log('sent for slack!');
   }
   render() {
-    let NameError; // 名前エラー
-    let MailError; // アドレスエラー
-    let AgeError; // 年齢の選択エラー
-    let RadioError; // 連絡方法の選択エラー
-    let ContentError; // お問い合せ内容エラー
+    // エラーメッセージ
+    let NameError; // 名前
+    let MailError; // アドレス
+    let AgeError; // 年齢の選択
+    let RadioError; // 連絡方法の選択
+    let ContentError; // お問い合せ内容
     if (this.state.hasNameError) { // 未入力（true）の時、
       NameError = (
         <p className="error-message">※お名前を入力してください</p>
@@ -166,13 +167,11 @@ export default class Contactform extends React.Component {
       MailError = (
         <p className="error-message">※正しい形式にしてください</p>
       );
-      // console.log('format adress!');
     }
     if (this.state.hasAgeError) {
       AgeError = (
         <p className="error-message">※選択されていません</p>
       );
-      // console.log('age not selected');
     }
     if (this.state.hasRadioError) {
       RadioError = (
@@ -193,22 +192,18 @@ export default class Contactform extends React.Component {
             <p className="py-3">お気軽にご連絡ください。</p>
             <div className="px-0">
               <div className="px-0">
-                {/* お名前 */}
-                <div>
-                  <div className="d-inline-block">
-                    <label htmlFor="name" className="d-inline d-sm-inline-block bg-warning px-1 py-1 rounded">お名前（必須）</label>
-                    {/* <div> */}
-                    <input type="text" id="name" placeholder="大阪太郎"
-                      className="textline ml-3" autoComplete="off"
-                      value={this.state.name} onChange={(e) => { this.handleName(e) }}
-                    />
-                    {/* メソッド */}
-                    {NameError}
-                    {/* </div> */}
-                  </div>
+                {/* お名前 改行したいためblock要素にした */}
+                <div className="d-block">
+                  <label htmlFor="name" className="d-inline d-sm-inline-block bg-warning px-1 py-1 rounded">お名前（必須）</label>
+                  <input type="text" id="name" placeholder="大阪太郎"
+                    className="textline ml-3" autoComplete="off"
+                    value={this.state.name} onChange={(e) => { this.handleName(e) }}
+                  />
+                  {/* メソッド */}
+                  {NameError}
                 </div>
                 {/* Email */}
-                <div className="d-inline-block mt-3">
+                <div className="d-block mt-3">
                   <label htmlFor="email" className="bg-warning px-1 py-1 rounded">Email（必須）</label>
                   <input type="text" id="email" placeholder="aichi@gmail.com"
                     className="textline ml-3" autoComplete="off"
@@ -217,30 +212,30 @@ export default class Contactform extends React.Component {
                   {MailError}
                 </div>
                 {/* selectBox */}
-                <div>
-                  <div className="d-inline-block mt-3">
-                    <label className="bg-info mr-3 px-1 py-1 rounded">年齢（任意）</label>
-                    <select name="age" className="textline ml-3"
-                      value={this.state.select} onChange={(e) => { this.handleSelect(e) }}
-                    >
-                      {[
-                        { input: "-", output: "回答しない" },
-                        { input: "16-25歳", output: "16~25歳" },
-                        { input: "26-35歳", output: "26~35歳" },
-                        { input: "36-45歳", output: "36~45歳" },
-                        { input: "46-歳", output: "46~歳" },
-                      ].map((ee, i) => {
-                        return (
-                          <option key={i} value={ee.output}>{ee.input}</option>
-                        )
-                      })}
-                    </select>
-                    {AgeError}
-                  </div>
+                <div className="d-block mt-3">
+                  <label className="bg-info mr-3 px-1 py-1 rounded">年齢（任意）</label>
+                  <select name="age" className="textline ml-3"
+                    value={this.state.select} onChange={(e) => { this.handleSelect(e) }}
+                  >
+                    {[
+                      { input: "-", output: "回答しない" },
+                      { input: "16-25歳", output: "16~25歳" },
+                      { input: "26-35歳", output: "26~35歳" },
+                      { input: "36-45歳", output: "36~45歳" },
+                      { input: "46-歳", output: "46~歳" },
+                    ].map((ee, i) => {
+                      return (
+                        <option key={i} value={ee.output}>{ee.input}</option>
+                      )
+                    })}
+                  </select>
+                  {AgeError}
                 </div>
                 {/* ラジオボタン */}
-                <div className="radio d-inline-block text-left mt-3">
-                  <p className="d-sm-inline-block mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
+                <div className="radio d-inline-block mt-3">
+                  <div className="d-sm-inline-block d-block text-left">
+                    <p className="d-inline-block mb-0 bg-warning px-1 py-1 rounded">職業（必須）</p>
+                  </div>
                   {this.state.radio.map((item, i) => {
                     return (
                       <label key={i} className="ml-3 my-2">
@@ -255,11 +250,13 @@ export default class Contactform extends React.Component {
                   {RadioError}
                 </div>
               </div>
+              {/* 内容 */}
               <div className="d-inline-block mt-3">
-                {/* 内容 */}
-                <label className="d-inline-block my-2 px-2 bg-warning py-1 rounded">お問い合わせ内容（必須）</label><br />
+                <div className="d-block text-left">
+                  <label htmlFor="content" className="d-inline-block my-2 px-2 bg-warning py-1 rounded">お問い合わせ内容（必須）</label><br />
+                </div>
                 <textarea
-                  className="textline" placeholder="希望事項" cols="35" rows="8" maxLength="500"
+                  className="textline" placeholder="希望事項" cols="35" rows="7" maxLength="500" id="content"
                   value={this.state.content} onChange={(e) => { this.handleContent(e) }}
                 />
                 {ContentError}

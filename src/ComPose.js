@@ -1,6 +1,6 @@
 import React from 'react';
 import posed from 'react-pose';
-import Paper from './Paper'; // class
+// import Paper from './Paper'; // class
 
 const style = {
   display: "inline-block",

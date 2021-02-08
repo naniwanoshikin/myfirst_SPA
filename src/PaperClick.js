@@ -23,8 +23,8 @@ export default class Papers extends React.Component {
       position: "absolute",
       left: (d.x - 25) + "px",
       top: (d.y - 25) + "px",
-      width: "50px",
-      height: "50px",
+      width: "60px",
+      height: "60px",
       backgroundColor: "#66f3",
       zIndex: "5",
     };
