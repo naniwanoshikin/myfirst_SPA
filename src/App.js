@@ -3,10 +3,10 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Nav } from './ComNav';
 import { Footer } from './ComFoot';
-import Paper from './Paper';
+import Paper from './ComPeace';
 import Pose from './ComPose';
 import PaperClick from './PaperClick';
-import { PaperAnime } from './PaperAnime';
+import { PaperAnime } from './PaperThree';
 import { Anime2 } from './anime2'; // anime
 import { MyWork } from './Work_1';
 import Contactform from './Contact';

@@ -14,7 +14,7 @@ export const Footer = () => {
           </a>
         </li>
         <li>
-          <a className="share" href="https://twitter.com/intent/tweet?text=学習方法で困っている方々必見&url=https://dotinstall.com/lessons&related=@power_of_shikin"
+          <a className="share" href="https://twitter.com/intent/tweet?text=LGTM恵んでください🙇‍♂️&url=https://twitter.com/power_of_shikin/status/1346568577843773441"
             target="_blank" rel="noreferrer noopener"
           >
             <span className="faa-parent animated-hover">

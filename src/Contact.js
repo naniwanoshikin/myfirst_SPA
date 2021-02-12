@@ -205,7 +205,7 @@ export default class Contactform extends React.Component {
                 {/* Email */}
                 <div className="d-block mt-3">
                   <label htmlFor="email" className="bg-warning px-1 py-1 rounded">Email（必須）</label>
-                  <input type="text" id="email" placeholder="aichi@gmail.com"
+                  <input type="text" id="email" placeholder="aichi@gifu.com"
                     className="textline ml-3" autoComplete="off"
                     value={this.state.mail} onChange={(e) => { this.handleMail(e) }}
                   />
