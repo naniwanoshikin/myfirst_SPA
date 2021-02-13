@@ -14,7 +14,7 @@ export const Nav = () => {
   return (
     <nav className="mt-4 mb-3 mx-sm-5">
       <div className="container">
-        <menu className="row mx-0" style={style}>
+        <menu className="row mx-0 pb-0" style={style}>
           <Link id="nav-home" className="nav-item col-3" to="/">Home</Link>
           <Link id="nav-about" className="nav-item col-3" to="/about">About</Link>
           <Link id="nav-work" className="nav-item col-3" to="/blog">Work</Link>

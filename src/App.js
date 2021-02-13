@@ -109,7 +109,7 @@ const Contact = () => {
     <div className="text-center">
       <Nav />
       <Pose comment={"Contact"} />
-      <Paper x="5%" y="11%" w="0" h="0" o="0.1" fs="100px" r="" bc="" c="green" m="Contact" deg="-1deg" />
+      <Paper x="5%" y="11%" w="0" h="0" o="0.1" fs="90px" r="" bc="" c="green" m="Contact" deg="-1deg" />
       <Contactform />
       <Footer />
     </div>
