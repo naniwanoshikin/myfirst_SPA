@@ -21,6 +21,14 @@ export const Nav = () => {
           <Link id="nav-contact" className="nav-item col-3" to="/contact">Contact</Link>
         </menu>
       </div>
+      <Link id="" style={{
+        position: "absolute",
+        zIndex: "5",
+        left: "92%",
+        top: "14px",
+      }} to="/db2">
+        <i className="fas fa-lg fa-database faa-spin"></i>
+      </Link>
       <div className="snow">✳</div>
     </nav>
   );

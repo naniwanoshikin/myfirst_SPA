@@ -137,37 +137,43 @@ export const Crud = () => {
   }, []); // 第二引数に[]と書いたらunmountedされた。
 
   return (
-    <div className="mx-auto my-4">
-      <h2>hello</h2>
+    <div className="mx-auto py-4">
+      <h3>名簿作成</h3>
       <div>
         <div className="d-inline-block mx-5">
-          <label htmlFor="namae">名前：</label>
-          <input type="text" id="namae" autoComplete="off"
+          <label>名前：</label>
+          <input type="text" autoComplete="off"
             value={userName}
             onChange={e => { setUserName(e.target.value) }}
           /><br />
-          <label htmlFor="age">年齢：</label>
-          <input type="text" id="age" autoComplete="off"
+          <label>年齢：</label>
+          <input type="text" autoComplete="off"
             value={age}
             onChange={e => { setAge(e.target.value) }}
           /><br />
-          <label htmlFor="doc">ID：</label>
-          <input type="text" id="doc" autoComplete="off"
+          <button onClick={handleAdd}>登録</button>
+        </div>
+
+        <div className="d-block mt-3">
+          <label>ID：</label>
+          <input type="text" autoComplete="off"
             value={docId}
             onChange={e => { setDoc(e.target.value) }}
-          />
+          /><br />
+          <div className="d-inline-block">
+            {/* <button onClick={handleGet}>取得</button> */}
+            <button onClick={handleUpdate}>更新</button>
+            <button onClick={handleDelete}>削除</button>
+          </div>
         </div>
       </div>
-      <div>
-        <div className="d-inline-block">
-          {/* <button onClick={handleGet}>取得</button> */}
-          <button onClick={handleAdd}>追加</button>
-          <button onClick={handleUpdate}>更新</button>
-          <button onClick={handleDelete}>削除</button>
-        </div>
-      </div>
-      <div className="my-2">
-        <ul className="d-inline-block text-left">{userList}</ul>
+
+      <div className="mt-4">
+        <h4>名簿リスト</h4>
+        <ul className="d-inline-block text-left">
+          <li>userName(Age)-From</li>
+          {userList}
+          </ul>
       </div>
     </div>
   );

@@ -2,9 +2,10 @@ import React from 'react';
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/database'
+// RealDatabase 公式によると使用は非推奨のため使用中止中
 
 // ナビ構成
-class Bookdb extends React.Component {
+export default class Bookdb extends React.Component {
   style = {
     fontSize: "70px",
   }
@@ -35,11 +36,12 @@ class Bookdb extends React.Component {
       return [<tr key="0"><th>NO data.</th></tr>];
     }
     for (let i in this.state.data) {
-      result.push(<tr key={i}>
-        <th className="text-left py-1 px-3 mx-0 my-0">{this.state.data[i].ID}</th>
-        <td className="text-left py-1 px-3 mx-0 my-0">{this.state.data[i].name}</td>
-        <td className="text-left py-1 px-3 mx-0 my-0">{this.state.data[i].message}</td>
-      </tr>);
+      result.push(
+        <tr key={i}>
+          <th className="text-left py-1 px-3 mx-0 my-0">{this.state.data[i].ID}</th>
+          <td className="text-left py-1 px-3 mx-0 my-0">{this.state.data[i].name}</td>
+          <td className="text-left py-1 px-3 mx-0 my-0">{this.state.data[i].message}</td>
+        </tr>);
     }
     return result;
   }
@@ -48,13 +50,11 @@ class Bookdb extends React.Component {
       this.getFireData();
     }
     return (
-        <table className="mx-auto my-4">
-          <tbody>
-            {this.getTableData()}
-          </tbody>
-        </table>
+      <table className="mx-auto my-4">
+        <tbody>
+          {this.getTableData()}
+        </tbody>
+      </table>
     );
   }
 }
-
-export default Bookdb;

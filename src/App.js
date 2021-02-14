@@ -1,10 +1,9 @@
-// {}はconst、違うならclassコンポーネント
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React from 'react'; // classコンポーネント
+import { BrowserRouter, Route } from 'react-router-dom'; // constコンポーネント
 import { Nav } from './ComNav';
 import { Footer } from './ComFoot';
-import Paper from './ComPeace';
-import Pose from './ComPose';
+import Block from './ComBlock'; // 浮き文字
+import Moment from './ComMoment'; // 浮かび上がる文字
 import PaperClick from './PaperClick';
 import { PaperAnime } from './PaperThree';
 import { Anime2 } from './anime2'; // anime
@@ -25,7 +24,7 @@ const App = () => (
       <Route path="/about" component={About} />
       <Route path="/blog" component={Work} />
       <Route path="/contact" component={Contact} />
-      <Route path="/db:id" component={Practice} />
+      <Route path="/db:id" component={DataBase} />
     </div>
   </BrowserRouter>
 )
@@ -35,14 +34,14 @@ const Home = () => {
   return (
     <div className="text-center">
       <Nav />
-      <Pose comment={"Hello"} />
-      <Paper x="10%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="white" m="Home" />
+      <Moment comment={"Hello"} />
+      <Block x="10%" y="4%" w="" h="" o="0.2" fs="100px" r="" bc="" c="white" m="Home" />
       <div className="home">
-        <Paper x="31%" y="37%" w="160px" h="180px" o="0.1" fs="25px" r="40px" bc="magenta" c="white" m="World" deg="90deg" />
-        <Paper x="52%" y="52%" w="160px" h="60px" o="0.3" fs="30px" r="35px" bc="cyan" m="" />
-        <Paper x="49%" y="53%" w="90px" h="170px" o="0.5" fs="30px" r="5px" bc="#fffac2" m="∩" />
+        <Block x="31%" y="37%" w="160px" h="180px" o="0.1" fs="25px" r="40px" bc="magenta" c="white" m="World" deg="90deg" />
+        <Block x="52%" y="52%" w="160px" h="60px" o="0.3" fs="30px" r="35px" bc="cyan" m="" />
+        <Block x="49%" y="53%" w="90px" h="170px" o="0.5" fs="30px" r="5px" bc="#fffac2" m="∩" />
         <div className="stroke">
-          <Paper x="8%" y="28%" w="0px" h="" o="0.2" fs="65px" r="" bc="" c="" m={"The\nStart\nOf\n2021"} />
+          <Block x="8%" y="28%" w="0px" h="" o="0.2" fs="65px" r="" bc="" c="" m={"The\nStart\nOf\n2021"} />
         </div>
         <PaperAnime />
         <PaperClick />
@@ -56,8 +55,8 @@ const About = () => {
   return (
     <div className="text-center">
       <Nav />
-      <Pose comment={"Profile"} />
-      <Paper x="10%" y="10%" w="" h="" o="0.2" fs="120px" r="" bc="" c="white" m="About" deg="1deg" />
+      <Moment comment={"Profile"} />
+      <Block x="10%" y="10%" w="" h="" o="0.2" fs="120px" r="" bc="" c="white" m="About" deg="1deg" />
       <div className="about">
         <div className="container py-4">
           <p className="mt-2">自己紹介です</p>
@@ -93,8 +92,8 @@ const Work = () => {
   return (
     <div className="text-center">
       <Nav />
-      <Pose comment={"Portfolio"} />
-      <Paper x="24%" y="11%" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" m="Works" deg="0deg" />
+      <Moment comment={"Portfolio"} />
+      <Block x="24%" y="11%" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" m="Works" deg="0deg" />
       <div className="work">
         <MyWork />
       </div>
@@ -108,24 +107,23 @@ const Contact = () => {
   return (
     <div className="text-center">
       <Nav />
-      <Pose comment={"Contact"} />
-      <Paper x="5%" y="11%" w="0" h="0" o="0.1" fs="90px" r="" bc="" c="green" m="Contact" deg="-1deg" />
+      <Moment comment={"Contact"} />
+      <Block x="5%" y="11%" w="0" h="0" o="0.1" fs="90px" r="" bc="" c="green" m="Contact" deg="-1deg" />
       <Contactform />
       <Footer />
     </div>
   )
 }
 
-// Practice
-const Practice = props => {
+
+// DataBase
+const DataBase = props => {
   const { id } = props.match.params
   return (
     <div className="text-center">
       <Nav />
-      <Pose name={"firebase"} comment={id + "番目の記事"} />
-      <div style={{
-        backgroundColor: "tomato",
-      }}>
+      <Moment name={"firebase"} comment={id + "番目の記事"} />
+      <div style={{backgroundColor: "Teal",}}>
         <Crud />
         <Translate />
         {/* いいねボタン */}

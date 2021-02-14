@@ -5,36 +5,16 @@ import photo3 from './img/CHAT.jpg';
 import photo4 from './img/Blog.jpg';
 import photo5 from './img/sai.jpg';
 import TheWork from './Work_2';
-// import StrReplace from "react-string-replace";
 
-// 改行（\n）
-// (@param, @return) = (string, string)
-const newLine = (string) => {
-  return string.split('\n').map((x, i) => (<p className="mb-0" key={i}>{x}</p>));
-}
-
-// 参考
-const text = "参考";
-const link = "https://www.youtube.com/playlist?list=PLX8Rsrpnn3IVOk48awq_nKW0aFP0MGpnn";
-// console.log(text.link(link).replace(/</g,"&lt;"));
-
-const WorkList = [
+const Lists = [
   {
     name: "Todoリスト",
     link: "https://myfirstlp.web.app",
     intro: "お手軽に管理できるTodoリストをJavaScriptで作成。一応LPです！",
-    intro2: "HTML & CSS, Sass\n生JavaScript+firestore（→Todolist）\njQuery (→scroll, トップダウンメニュー)\nChart.js\nReact.js (→お問い合わせ)\nHosting:firebase",
+    intro2: "HTML & CSS, Sass\n生JavaScript+firestore\njQuery\nChart.js\nReact.js\nHosting:firebase",
     img: photo1,
     date: "2020.9-",
   },
-  // {
-  //   name: "CAFEページ",
-  //   link: "https://myfirstlp.web.app/pages/cafe.html",
-  //   intro: "料理注文用アプリを作成しました。\n未Hosting",
-  //   intro2: "生PHP。",
-  //   img: photo5,
-  //   date: "2020.10-",
-  // },
   {
     name: "本サイト",
     link: "https://spapf-24842.web.app/",
@@ -44,10 +24,10 @@ const WorkList = [
     date: "2020.12-",
   },
   {
-    name: "チャットBOT",
+    name: "ChatBot",
     link: "https://chatbot-18322.web.app",
-    intro: "某正社員エンジニアのYoutube動画を参考にchatbotアプリを作成。",
-    intro2: `React\nfirebase cloud Functions,\nMaterial UI\nHosting:firebase\n${text.link(link)}`,
+    intro: "参考：某正社員エンジニアの「,チャンネル動画https://www.youtube.com/playlist?list=PLX8Rsrpnn3IVOk48awq_nKW0aFP0MGpnn」",
+    intro2: `React\nfirebase cloud Functions,\nMaterial UI\nHosting:firebase`,
     img: photo3,
     date: "2020.12-",
   },
@@ -69,41 +49,40 @@ const WorkList = [
   },
 ];
 
-// リンク変換：やり方わからない。。
-// const ref = (array) => {
-//   return (
-//     <div>
-//       <ul>
-//         {array.map((item, i) => {
-//           return (
-//             <li key={i}>
-//               {StrReplace(item, /(https?:\/\/\S+)/g, (match, i) => (
-//                 <a href={match} key={i}>{match}</a>
-//               ))}
-//             </li>
-//           )
-//         })}
-//       </ul>
-//     </div>
-//   )
-// }
+/**
+ * https://... を<a href="">に格納 + 改行
+ * @params  str
+ * @return {String} 文字列"<a><br>"
+ */
+const strTag = (string) => {
+  const pattern = /,\s?(.+)(https?:\/\/[\w\d/%#$&?()~_.=+-]+)/g;
+  const tag = '<a href="$2" target="_blank" rel="noreferrer noopener">$1</a>';
+  return string.replace(pattern, tag).replace(/\n/g, '<br/>');
+}
+/**
+*  改行
+* @params  str
+* @return {Html} html化
+*/
+const newLineHtml = (string) => {
+  return string.split('\n').map((x, i) => (<p className="mb-0" key={i}>{x}</p>));
+}
 
-// console.log(ref(WorkList));
 
 export const MyWork = () => {
   return (
     <div className="container px-0 py-4">
       <div className="row mx-auto">
-        {WorkList.map((list, i) => {
+        {Lists.map((list, i) => {
           return (
             <TheWork
               key={i}
               id={i}
               name={list.name}
-              intro={newLine(list.intro)}
-              intro2={newLine(list.intro2)}
-              img={list.img}
               link={list.link}
+              img={list.img}
+              intro={strTag(((list.intro)))} // 文字列
+              intro2={newLineHtml(list.intro2)} // html要素
               date={list.date}
             />
           )

@@ -195,6 +195,10 @@ footer {
     img {
       cursor: pointer;
     }
+    // urlを格納したタグ
+    a {
+      color: rgb(37, 217, 223);
+    }
     .work-modal {
       background: rgba(209, 197, 197, 0.6);
       position: fixed;

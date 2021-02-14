@@ -197,7 +197,8 @@ export default class Contactform extends React.Component {
                   <label htmlFor="name" className="d-inline d-sm-inline-block bg-warning px-1 py-1 rounded">お名前（必須）</label>
                   <input type="text" id="name" placeholder="大阪太郎"
                     className="textline ml-3" autoComplete="off"
-                    value={this.state.name} onChange={(e) => { this.handleName(e) }}
+                    value={this.state.name} // 入力値
+                    onChange={(e) => { this.handleName(e) }} // e: string
                   />
                   {/* メソッド */}
                   {NameError}
@@ -253,10 +254,10 @@ export default class Contactform extends React.Component {
               {/* 内容 */}
               <div className="d-inline-block mt-3">
                 <div className="d-block text-left">
-                  <label htmlFor="content" className="d-inline-block my-2 px-2 bg-warning py-1 rounded">お問い合わせ内容（必須）</label><br />
+                  <label className="d-inline-block my-2 px-2 bg-warning py-1 rounded">お問い合わせ内容（必須）</label><br />
                 </div>
                 <textarea
-                  className="textline" placeholder="希望事項" cols="35" rows="7" maxLength="500" id="content"
+                  className="textline" placeholder="希望事項" cols="35" rows="7" maxLength="500"
                   value={this.state.content} onChange={(e) => { this.handleContent(e) }}
                 />
                 {ContentError}

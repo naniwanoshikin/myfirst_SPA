@@ -14,7 +14,7 @@ SPAポートフォリオを作成しました。
 # 実装機能
 ```
 コンポーネント
-Contact：Validation、Slack通知
+Validation, Slack通知
 ```
 
 # 使用技術
@@ -32,7 +32,6 @@ Contact：Validation、Slack通知
 - react-chartjs-2
 
 # Future Tasks
-* Workコンポーネント リンク 文字列のHTML変換
 * Workコンポーネント グラフのコンポーネント化
 * Workコンポーネント z-index
 * Navコンポーネント hover

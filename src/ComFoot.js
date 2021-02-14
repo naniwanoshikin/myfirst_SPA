@@ -17,10 +17,6 @@ const Links = [
     link: "https://www.youtube.com/channel/UCyydUwy-0x2Tc-FcCWBQncw?view_as=subscriber",
     i: "fab fa-2x fa-youtube faa-ring",
   },
-  {
-    link: "/db1",
-    i: "fas fa-2x fa-database faa-spin",
-  },
 ];
 
 export const Footer = () => {
@@ -39,7 +35,7 @@ export const Footer = () => {
           )
         })}
       </ul>
-      <p><a href="#">© shikitti-Portfolio.2020</a></p>
+      <p><a href="/">© shikitti-Portfolio.2020</a></p>
     </footer>
   );
 }

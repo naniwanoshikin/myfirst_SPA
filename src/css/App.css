@@ -212,6 +212,10 @@ footer p a:hover {
   cursor: pointer;
 }
 
+.work .work-item a {
+  color: #25d9df;
+}
+
 .work .work-item .work-modal {
   background: rgba(209, 197, 197, 0.6);
   position: fixed;

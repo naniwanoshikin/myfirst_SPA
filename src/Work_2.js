@@ -1,5 +1,5 @@
 import React from 'react';
-import { Graph } from './Graph'; // Chart.js const
+import { Graph } from './Graph'; // Chart.js
 
 export default class TheWork extends React.Component {
   constructor(props) {
@@ -24,14 +24,16 @@ export default class TheWork extends React.Component {
         <a href={this.props.link} target="_blank" rel="noreferrer noopener">
           <img src={this.props.img} alt="my work" width="" height="300" className="w-100" />
         </a>
-        <div className="mt-3 px-4 text-justify">{this.props.intro}</div>
+        {/* ここでHTMLを設定＝危ない */}
+        <div className="mt-3 px-4 text-justify" dangerouslySetInnerHTML={{ __html: this.props.intro }} />
         {
           this.state.isModalOpen &&
           <div className="work-modal text-center">
             <div className="modalin mx-auto p-4 pb-5 bg-light rounded">
               <h3>{this.props.name}
                 <span className="float-right" onClick={() => { this.handleClose() }}>
-                  <i className="fas fa-undo-alt text-info"></i></span>
+                  <i className="fas fa-undo-alt text-info"></i>
+                </span>
               </h3>
               <div className="text-justify">{this.props.intro2}</div>
               <Graph />
