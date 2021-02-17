@@ -48,7 +48,7 @@ const workLists = [
   {
     name: "マイブログス",
     link: "https://shikiblog.herokuapp.com/",
-    intro: "今年からブログ始めます。\n初ブログです。テーマは未定。",
+    intro: "ブログ始めます。\n初ブログです。テーマ未定。",
     intro2: "Laravel, Bootstrap, Heroku",
     img: photo4,
     date: "2021.01-",
@@ -96,7 +96,7 @@ const newLineHtml = (string) => {
 export const MyWork = () => {
   return (
     <div className="container px-0 py-4">
-      <div className="row mx-auto">
+      <div className="row">
         {workLists.map((list, i) => {
           return (
             <TheWork

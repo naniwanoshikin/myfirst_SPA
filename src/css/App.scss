@@ -167,7 +167,7 @@ footer {
       border-top: 1px solid rgb(209, 200, 200);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
-    // 経歴
+    // タイムライン
     ul {
       li {
         font-size: 18px;
@@ -175,25 +175,22 @@ footer {
       }
     }
   }
-  // グラフ
-  .chart {
-    @include bcr($b: rgb(223, 245, 181), $c: white, $r: 0px);
-  }
 }
 // WORKs ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .work {
-  // 個々ワークス
+  h5 {
+    @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+  }
+  // コンポーネント
   .work-item {
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
-    width: 90%;
+    width: 80%;
+    height: 100%;
     z-index: 1;
     border: 3px groove white;
-    h5 {
-      @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
-      border-radius: 10px;
-      display: inline-block;
-      cursor: pointer;
-    }
     img {
       cursor: pointer;
     }
@@ -201,28 +198,29 @@ footer {
     a {
       color: rgb(37, 217, 223);
     }
+  }
+  // モーダルマスク
+  .work-modal {
+    background: rgba(209, 197, 197, 0.6);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10; // ここに指定しないとmodal-inまで0になる！
+    left: 0;
     // モーダル画面
-    .work-modal {
-      background: rgba(209, 197, 197, 0.6);
-      position: fixed;
-      top: 0;
+    .modal-in {
+      color: rgb(245, 111, 111);
+      position: relative;
+      top: 20%;
       right: 0;
-      bottom: 0;
       left: 0;
-      .modalin {
-        color: rgb(245, 111, 111);
-        position: relative;
-        z-index: 5;
-        top: 20%;
-        right: 0;
-        left: 0;
-        width: 95%;
-        span {
-          cursor: pointer;
-        }
-        p {
-          font-size: 20px;
-        }
+      width: 90%;
+      span {
+        cursor: pointer;
+      }
+      p {
+        font-size: 20px;
       }
     }
   }
@@ -334,10 +332,11 @@ footer {
   }
   .work {
     .work-item {
-      .work-modal {
-        .modalin {
-          width: 80%;
-        }
+      width: 100%;
+    }
+    .work-modal {
+      .modal-in {
+        width: 80%;
       }
     }
   }

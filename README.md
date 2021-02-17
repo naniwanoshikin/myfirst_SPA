@@ -32,6 +32,6 @@ Validation, Slack通知
 - recharts
 
 # Future Tasks
-* Workコンポーネント z-index
+* ABOUTコンポーネント 綺麗にする
+* DBコンポーネント API
 <!-- * firebase（cloud functions） -->
-<!-- * 非同期通信 -->
