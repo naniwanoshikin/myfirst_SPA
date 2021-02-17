@@ -1,3 +1,4 @@
+// 動いている物体
 import React, { useRef } from 'react'; // 値が変わっても変更は通知されない（再レンダリングされない）
 // useFrame 1フレームごとに引数にとった関数をトリガ(1フレーム≒60fps(1秒間に60回処理))
 import { Canvas, useFrame } from 'react-three-fiber';

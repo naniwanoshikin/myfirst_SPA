@@ -1,8 +1,8 @@
+// 公式によると RealDatabase の使用は非推奨のため使用中止中
 import React from 'react';
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/database'
-// RealDatabase 公式によると使用は非推奨のため使用中止中
 
 // ナビ構成
 export default class Bookdb extends React.Component {

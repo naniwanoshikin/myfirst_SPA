@@ -186,10 +186,12 @@ footer {
   .work-item {
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
     width: 90%;
-    z-index: 0;
+    z-index: 1;
     border: 3px groove white;
     h5 {
       @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
+      border-radius: 10px;
+      display: inline-block;
       cursor: pointer;
     }
     img {
@@ -199,6 +201,7 @@ footer {
     a {
       color: rgb(37, 217, 223);
     }
+    // モーダル画面
     .work-modal {
       background: rgba(209, 197, 197, 0.6);
       position: fixed;
@@ -333,7 +336,7 @@ footer {
     .work-item {
       .work-modal {
         .modalin {
-          width: 60%;
+          width: 80%;
         }
       }
     }

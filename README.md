@@ -13,7 +13,7 @@ SPAポートフォリオを作成しました。
 
 # 実装機能
 ```
-コンポーネント
+グラフのコンポーネント化
 Validation, Slack通知
 ```
 
@@ -22,18 +22,16 @@ Validation, Slack通知
 - Sass
 - Bootstrap 4.5.0
 - node.js 14.8.0
-- npm 6.14.10
+- npm 7.5.4
 - React 16.13.1
 - Git, Github
 
 # 使用ライブラリ
 - react-pose
 - react-three-fiber
-- react-chartjs-2
+- recharts
 
 # Future Tasks
-* Workコンポーネント グラフのコンポーネント化
 * Workコンポーネント z-index
-* Navコンポーネント hover
 <!-- * firebase（cloud functions） -->
 <!-- * 非同期通信 -->

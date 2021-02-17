@@ -1,18 +1,18 @@
 import React from 'react';
 import { Radar } from 'react-chartjs-2';
 
-const langage = ['HTML CSS', 'Sass', 'JS', 'Bootstrap', 'React', 'git',];
+const langage = ['Html Css', 'Sass', 'JS', 'Bootstrap', 'React', 'git',];
+// 値
 const skills = [
   { data: [55, 30, 30, 10, 20, 5,], label: "2020.09", bgc: "rgba(246, 255, 0, 0.1)", bc: "yellow", bw: 1 },
   { data: [60, 35, 40, 20, 30, 10,], label: "2020.10", bgc: "rgba(255, 70, 0, 0.2)", bc: "orange", bw: 1 },
-  // { data: [65, 50, 55, 20, 30, 25,], label: "2020.11", bgc: "rgba(0, 255, 10, 0.2)", bc: "green", bw: 1 },
+  { data: [65, 50, 55, 20, 30, 25,], label: "2020.11", bgc: "rgba(0, 255, 10, 0.2)", bc: "green", bw: 1 },
   { data: [70, 55, 60, 35, 40, 35,], label: "2020.12", bgc: "rgba(255, 0, 0, 0.2)", bc: "red", bw: 1 },
   { data: [75, 55, 65, 40, 45, 45,], label: "2021.01", bgc: "rgba(157, 204, 224, 0.3)", bc: "bluesky", bw: 1 },
   { data: [90, 85, 90, 80, 70, 80,], label: "2021.09", bgc: "rgba(0, 0, 255, 0)", bc: "blue", bw: 0.5 },
 ]
 
 export const Graph = () => {
-  // 値
   const data = {
     labels: langage,
     datasets: [
@@ -23,10 +23,6 @@ export const Graph = () => {
         borderColor: skills[0].bc,
         borderWidth: skills[0].bw,
         pointRadius: 0,
-        // fill: false,
-        // lineTension: 0,
-        // pointStyle: 'rect',
-        // pointStyle: 'triangle',
       },
       {
         label: skills[1].label,
@@ -62,20 +58,20 @@ export const Graph = () => {
       }
     ]
   };
-  // 設定
+
   const options = {
     scale: {
-      pointLabels: { // １つ１つのラベル
+      pointLabels: {
         fontSize: 16,
         fontColor: 'purple',
       },
       // yAxes: [{
       ticks: {
         // min: 0,
-        beginAtZero: true, // 自動最小
-        // max: 100, // 最大
-        suggestedmax: 100, // 自動最大
-        stepSize: 20, // 刻み
+        beginAtZero: true,
+        // max: 100,
+        suggestedmax: 100,
+        stepSize: 20,
         // fontSize: 30,
         callback: function (value, index, values) {
           return value + '-';
@@ -85,21 +81,21 @@ export const Graph = () => {
     },
     title: {
       display: false,
-      // text: '使用言語（スキル）',
+      text: '言語',
       fontSize: 16,
     },
     animation: {
       // duration: 0
     },
-    legend: { // 判例
-      // display: false // なくす
+    legend: {
+      // display: false
       position: 'bottom',
       labels: {
         fontSize: 18,
       }
     },
-    maintainAspectRatio: false, // heightのみ指定
-    // responsive: false, // width指定
+    maintainAspectRatio: false,
+    // responsive: false,
   };
   return (
     <div className="chart py-5">

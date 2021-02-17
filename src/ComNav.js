@@ -24,10 +24,10 @@ export const Nav = () => {
       <Link id="" style={{
         position: "absolute",
         zIndex: "5",
-        left: "92%",
+        left: "90%",
         top: "14px",
       }} to="/db2">
-        <i className="fas fa-lg fa-database faa-spin"></i>
+        <i className="fas fa-lg fa-database"></i>
       </Link>
       <div className="snow">✳</div>
     </nav>

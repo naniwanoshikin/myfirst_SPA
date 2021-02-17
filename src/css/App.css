@@ -191,12 +191,14 @@ footer p a:hover {
   color: white;
   border-radius: 10px;
   width: 90%;
-  z-index: 0;
+  z-index: 1;
   border: 3px groove white;
 }
 
 .work .work-item h5 {
   color: #bdebcb;
+  border-radius: 10px;
+  display: inline-block;
   cursor: pointer;
 }
 
@@ -382,7 +384,7 @@ footer p a:hover {
     height: 59vh;
   }
   .work .work-item .work-modal .modalin {
-    width: 60%;
+    width: 80%;
   }
   .contact ul {
     width: 45%;

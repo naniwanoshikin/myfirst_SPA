@@ -72,7 +72,7 @@ const About = () => {
               </tr>
               <tr>
                 <td>Hobby</td>
-                <td>Picture<br/>Drawing</td>
+                <td>Picture<br/>Running</td>
               </tr>
             </tbody>
           </table>

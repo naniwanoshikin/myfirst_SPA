@@ -15,10 +15,18 @@ export const Crud = () => {
   const [users, setUsers] = useState([]);
   const userList = users.map(user => {
     return (
-      <li key={user.userId}>
+      <tr key={user.userId}>
         {/* {user.userId.substr(0, 3)} */}
-        {user.name}({user.age})-{user.locate}
-      </li>
+        <td>
+          {user.name}
+        </td>
+        <td>
+          ({user.age})
+        </td>
+        <td>
+          {user.locate}
+        </td>
+      </tr>
     );
   });
 
@@ -138,7 +146,7 @@ export const Crud = () => {
 
   return (
     <div className="mx-auto py-4">
-      <h3>名簿作成</h3>
+      <p>名簿作成</p>
       <div>
         <div className="d-inline-block mx-5">
           <label>名前：</label>
@@ -169,11 +177,19 @@ export const Crud = () => {
       </div>
 
       <div className="mt-4">
-        <h4>名簿リスト</h4>
-        <ul className="d-inline-block text-left">
-          <li>userName(Age)-From</li>
-          {userList}
-          </ul>
+        <p>名簿リスト</p>
+        <table className="table table-striped d-inline">
+          <thead>
+            <tr bgcolor="Coral">
+              <th>名前</th>
+              <th>(age)</th>
+              <th>From</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userList}
+          </tbody>
+        </table>
       </div>
     </div>
   );

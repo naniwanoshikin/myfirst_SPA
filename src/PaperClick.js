@@ -27,17 +27,21 @@ export default class Papers extends React.Component {
       height: "60px",
       backgroundColor: "#66f3",
       zIndex: "5",
+      border: "1px dashed Teal",
     };
     return <div style={s} key={i}></div>;
   }
+  // クリック範囲
   area = {
     width: "100vw",
     height: "70vh",
     // border: "1px solid blue",
   }
   render() {
-    return <div style={this.area} onClick={this.doAction}>
-      {this.data.map((e, i) => this.draw(e, i))}
-    </div>;
+    return (
+      <div style={this.area} onClick={this.doAction}>
+        {this.data.map((e, i) => this.draw(e, i))}
+      </div>
+    )
   }
 }
