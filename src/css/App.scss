@@ -178,51 +178,49 @@ footer {
 }
 // WORKs ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .work {
-  h5 {
-    @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
-    border-radius: 10px;
-    display: inline-block;
-    cursor: pointer;
-  }
   // コンポーネント
   .work-item {
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
-    width: 80%;
+    width: 90%;
     height: 100%;
     z-index: 1;
     border: 3px groove white;
-    img {
+    h5 {
+      @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
+      background:rgb(121, 149, 168);
+      border-radius: 10px;
+      display: inline-block;
       cursor: pointer;
     }
-    // urlを格納したタグ
+    img {
+      width: 100%;
+      height:280px;
+      cursor: pointer;
+    }
+    // urlを格納した文字列としてのタグ
     a {
       color: rgb(37, 217, 223);
     }
   }
   // モーダルマスク
-  .work-modal {
+  .modal-out {
     background: rgba(209, 197, 197, 0.6);
     position: fixed;
+    z-index: 8; // 設定しないとマスクされないところが出る
     top: 0;
     right: 0;
     bottom: 0;
-    z-index: 10; // ここに指定しないとmodal-inまで0になる！
     left: 0;
-    // モーダル画面
-    .modal-in {
-      color: rgb(245, 111, 111);
-      position: relative;
-      top: 20%;
-      right: 0;
-      left: 0;
-      width: 90%;
-      span {
-        cursor: pointer;
-      }
-      p {
-        font-size: 20px;
-      }
-    }
+  }
+  // モーダル画面
+  .modal-in {
+    color: rgb(245, 111, 111);
+    position: fixed;
+    z-index: 10;
+    top: 20%;
+    right: 0;
+    left: 0;
+    width: 90%;
   }
 }
 // お問い合わせ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
@@ -334,10 +332,8 @@ footer {
     .work-item {
       width: 100%;
     }
-    .work-modal {
-      .modal-in {
-        width: 80%;
-      }
+    .modal-in {
+      width: 80%;
     }
   }
   .contact {

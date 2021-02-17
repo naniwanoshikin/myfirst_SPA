@@ -14,7 +14,7 @@ SPAポートフォリオを作成しました。
 # 実装機能
 ```
 グラフのコンポーネント化
-Validation, Slack通知
+Validation
 ```
 
 # 使用技術
@@ -25,6 +25,7 @@ Validation, Slack通知
 - npm 7.5.4
 - React 16.13.1
 - Git, Github
+- Slack
 
 # 使用ライブラリ
 - react-pose
@@ -32,6 +33,12 @@ Validation, Slack通知
 - recharts
 
 # Future Tasks
+* NAVコンポーネント UI整える
 * ABOUTコンポーネント 綺麗にする
 * DBコンポーネント API
+
 <!-- * firebase（cloud functions） -->
+<!-- # 苦労したところ -->
+<!-- homeのblockの改行（正規表現） -->
+<!-- workのz-index（親にも設定しないと子要素に効かない）、仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
+<!-- contactのblock要素、inline要素。ラジオボタンのcheckbox。 -->

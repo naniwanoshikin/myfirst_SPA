@@ -180,14 +180,25 @@ footer p a:hover {
   text-align: left;
 }
 
-.work h5 {
+.work .work-item {
+  background: #575e4a;
+  color: white;
+  border-radius: 10px;
+  width: 90%;
+  height: 100%;
+  z-index: 1;
+  border: 3px groove white;
+}
+
+.work .work-item h5 {
   color: #bdebcb;
+  background: #7995a8;
   border-radius: 10px;
   display: inline-block;
   cursor: pointer;
 }
 
-.work h5:hover {
+.work .work-item h5:hover {
   background: white;
   color: blueviolet;
   -webkit-transition: 0.7s;
@@ -195,17 +206,9 @@ footer p a:hover {
   text-decoration: none;
 }
 
-.work .work-item {
-  background: #575e4a;
-  color: white;
-  border-radius: 10px;
-  width: 80%;
-  height: 100%;
-  z-index: 1;
-  border: 3px groove white;
-}
-
 .work .work-item img {
+  width: 100%;
+  height: 280px;
   cursor: pointer;
 }
 
@@ -213,31 +216,24 @@ footer p a:hover {
   color: #25d9df;
 }
 
-.work .work-modal {
+.work .modal-out {
   background: rgba(209, 197, 197, 0.6);
   position: fixed;
+  z-index: 8;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
   left: 0;
 }
 
-.work .work-modal .modal-in {
+.work .modal-in {
   color: #f56f6f;
-  position: relative;
+  position: fixed;
+  z-index: 10;
   top: 20%;
   right: 0;
   left: 0;
   width: 90%;
-}
-
-.work .work-modal .modal-in span {
-  cursor: pointer;
-}
-
-.work .work-modal .modal-in p {
-  font-size: 20px;
 }
 
 .contact {
@@ -381,7 +377,7 @@ footer p a:hover {
   .work .work-item {
     width: 100%;
   }
-  .work .work-modal .modal-in {
+  .work .modal-in {
     width: 80%;
   }
   .contact ul {

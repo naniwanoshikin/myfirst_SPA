@@ -93,7 +93,7 @@ const Work = () => {
     <div className="text-center">
       <Nav />
       <Moment comment={"Portfolio"} />
-      <Block x="24%" y="11%" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" m="Works" deg="0deg" />
+      <Block x="22%" y="11%" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" m="Works" deg="0deg" />
       <div className="work">
         <MyWork />
       </div>

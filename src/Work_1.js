@@ -11,8 +11,8 @@ const workLists = [
   {
     name: "Todoリスト",
     link: "https://myfirstlp.web.app",
-    intro: "お手軽に管理できるTodoリストを作成。一応LPです！",
-    intro2: "Html, Sass, JavaScript, Firestore, jQuery, Chart.js\nHosting:Firebase",
+    intro: "お手軽に管理できるTodoリストを作成。一応LPです。",
+    intro2: "Html, Sass, JavaScript, Firestore, jQuery, Chart.js\nHosting: Firebase",
     img: photo1,
     date: "2020.9-",
     // recharts
@@ -25,7 +25,7 @@ const workLists = [
   {
     name: "本サイト",
     link: "https://spapf-24842.web.app/",
-    intro: "Reactで作成。",
+    intro: "Reactで作成！！",
     intro2: "Html, Sass, Bootstrap, React\nSlack, Firebase",
     img: photo2,
     date: "2020.12-",
@@ -38,7 +38,7 @@ const workLists = [
   {
     name: "ChatBot",
     link: "https://chatbot-18322.web.app",
-    intro: "参考：某正社員エンジニアの「,チャンネル動画https://www.youtube.com/playlist?list=PLX8Rsrpnn3IVOk48awq_nKW0aFP0MGpnn」",
+    intro: "参考：某正社員エンジニアの「,ゼミhttps://www.youtube.com/playlist?list=PLX8Rsrpnn3IVOk48awq_nKW0aFP0MGpnn」",
     intro2: `React, Cloud Functions, Material UI\nFirebase`,
     img: photo3,
     date: "2020.12-",
@@ -61,7 +61,7 @@ const workLists = [
   {
     name: "サイドン",
     link: "#",
-    intro: "稀に絵を描きます。",
+    intro: "少し描いてみました。",
     intro2: "Adobe Fresco",
     img: photo5,
     date: "2021.02-",
@@ -96,7 +96,7 @@ const newLineHtml = (string) => {
 export const MyWork = () => {
   return (
     <div className="container px-0 py-4">
-      <div className="row">
+      <div className="row mx-auto">
         {workLists.map((list, i) => {
           return (
             <TheWork
