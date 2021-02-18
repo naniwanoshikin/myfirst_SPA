@@ -1,3 +1,4 @@
+// chart.js 未使用
 import React from 'react';
 import { Radar } from 'react-chartjs-2';
 

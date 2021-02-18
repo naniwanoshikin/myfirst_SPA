@@ -33,7 +33,7 @@ export function useCannon({ ...props }, fn, deps = []) {
     world.addBody(body)
     // Remove body on unmount
     return () => world.removeBody(body)
-  }, deps)
+  }, [deps, body, fn, world]) // →元々depsだけ書いてた。他は警告消すために引数かいた。
 
   useFrame(() => {
     if (ref.current) {

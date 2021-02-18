@@ -9,10 +9,10 @@ import { PaperAnime } from './PaperThree';
 import { Anime2 } from './anime2'; // anime
 import { MyWork } from './Work_1';
 import Contactform from './Contact';
-import { Crud } from './fire/crudstore.jsx';
-import PoseList from './fire/poselist';
-import { Likelist } from './fire/likelist';
-import Translate from './fire/translater';
+import { Crud } from './fire/conweight';
+// import PoseList from './fire/poselist';
+// import Likelist from './fire/trazemi';
+// import Translate from './fire/translater';
 import logo from './img/logo.svg'; // ロゴ
 import './css/App.css';
 
@@ -122,13 +122,15 @@ const DataBase = props => {
   return (
     <div className="text-center">
       <Nav />
-      <Moment name={"firebase"} comment={id + "番目の記事"} />
+      <Moment name={""} comment={ "firebase" + id + "番目"} />
       <div style={{backgroundColor: "Teal",}}>
+        {/* グラフ作成予定 */}
         <Crud />
-        <Translate />
+        {/* JS */}
+        {/* <Translate /> */}
         {/* いいねボタン */}
-        <Likelist />
-        <PoseList />
+        {/* <Likelist /> */}
+        {/* <PoseList /> */}
         <img src={logo} className="App-logo" alt="logo" />
       </div>
       <Footer />

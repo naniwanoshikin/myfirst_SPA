@@ -178,7 +178,7 @@ footer {
 }
 // WORKs ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .work {
-  // コンポーネント
+  // アイテム
   .work-item {
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
     width: 90%;
@@ -214,16 +214,17 @@ footer {
   }
   // モーダル画面
   .modal-in {
+    user-select: none;
     color: rgb(245, 111, 111);
     position: fixed;
     z-index: 10;
-    top: 20%;
+    top: 15%;
     right: 0;
     left: 0;
     width: 90%;
   }
 }
-// お問い合わせ ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// Constact ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .contact {
   @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 0px);
   user-select: none;

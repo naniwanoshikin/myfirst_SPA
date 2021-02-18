@@ -3,6 +3,8 @@ import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/firestore'
 import config from './config';
+import Graph from './conscale';
+
 
 // firebase使用
 firebase.initializeApp(config);
@@ -15,18 +17,20 @@ export const Crud = () => {
   const [users, setUsers] = useState([]);
   const userList = users.map(user => {
     return (
-      <tr key={user.userId}>
-        {/* {user.userId.substr(0, 3)} */}
-        <td>
-          {user.name}
+      <div>
+        <tr key={user.userId}>
+          {/* {user.userId.substr(0, 3)} */}
+          <td>
+            {user.name}
+          </td>
+          <td>
+            ({user.age})
         </td>
-        <td>
-          ({user.age})
-        </td>
-        <td>
-          {user.locate}
-        </td>
-      </tr>
+          <td>
+            {user.locate}
+          </td>
+        </tr>
+      </div>
     );
   });
 
@@ -125,7 +129,7 @@ export const Crud = () => {
     const unsubscribe = collection
       // .where('age', '>=', 2) // 条件
       .orderBy('age', 'desc') // default asc
-      .limit(4)
+      .limit(6)
       .onSnapshot((shot) => {
         // console.log('mounted');
         shot.forEach(doc => {
@@ -146,7 +150,8 @@ export const Crud = () => {
 
   return (
     <div className="mx-auto py-4">
-      <p>名簿作成</p>
+      <p>体重管理</p>
+      {/* <Graph /> */}
       <div>
         <div className="d-inline-block mx-5">
           <label>名前：</label>

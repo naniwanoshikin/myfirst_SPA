@@ -227,10 +227,14 @@ footer p a:hover {
 }
 
 .work .modal-in {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #f56f6f;
   position: fixed;
   z-index: 10;
-  top: 20%;
+  top: 15%;
   right: 0;
   left: 0;
   width: 90%;

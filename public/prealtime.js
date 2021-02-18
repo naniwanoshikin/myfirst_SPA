@@ -1,4 +1,4 @@
-// 公式によると RealDatabase の使用は非推奨のため使用中止中
+// 書籍 Realtime Databaseより。公式によるとcloud Firestoreの方を推奨しているので未使用
 import React from 'react';
 import firebase from 'firebase/app'
 import 'firebase/app'

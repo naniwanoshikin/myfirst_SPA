@@ -1,0 +1,123 @@
+自分用ノート
+
+
+React.js
+目的：DOMを書き換える
+簡易的なWEBサーバーを使う：ajax通信（非同期）
+react ≠ SPA
+DB接続は非同期処理
+ライフサイクル内での非同期処理は「async付きの即時関数」を使う。DB接続処理をしっかり待ってから次の処理に進むこと。
+
+SPAとは「Single Page Appliction」
+1つのWebページによって１つのアプリを構築する。
+従来はサーバーからHTMLを受け取り全て更新する。
+SPAでは、最初にHTTPでロードしてHTML受け取った後は、必要なデータだけをAPIを通じて（非同期的に）サーバから差分（JSONデータ）を表示することで通信を最小限に抑えられる。
+メリット
+UIをリッチにできる。更新が早い。
+デメリット
+初期ローディングに時間がかかる。
+
+
+差分描画
+変更のあった部分だけを再描画できる。
+
+
+homebrew → nodebrew → node npm
+
+ファイル構成
+src: コンポーネントを作るJSファイル
+public: htmlファイルや設定ファイル
+build: 本番環境用ファイル
+
+create-react-appなら１発で構築ができる。これをしなければバンドラー（webpack）とかトランスパイラー（babel）が必要になる。
+
+pwa: ホーム画面に追加
+
+npm run build
+トランスパイル（JSXをJSの構文に置き換える） + src, publicを１つのファイルにまとめる（バンドル）
+
+npm start
+ローカルサーバを起動
+
+npm run eject
+webpackやbabelの設定を変更したい場合
+
+
+2つのUIがある。
+コンポーネント＝見た目（View） + 機能（Controller）
+コンポーネントのメリット
+・再利用できる
+・分割統治しやすい
+・変更しやすい
+”アトミックデザイン”
+
+Class Component: なるべく使いたくない
+React.Componentを継承
+ライフサイクルやstateを持つ
+propsにはthisを持つ
+通常、上位のComponentに使用
+
+Functional Component: こちらをできるだけ使う
+stateを持てない
+propsを引数にもつ
+JSXをreturn
+
+
+stateとは
+・Component内で管理する変数（ローカルステートと呼ばれる）（this.state.key）
+・「props」として子のComponentに渡せる。
+・render()内では値を変更してはいけない。constructorで宣言し、setState()で値を変更（再レンダー）
+
+
+ライフサイクル class Componentでしか扱えない
+・なぜ使う？
+関数の外に影響を与える関数を記述するため（DOM変更、API通信、ログ出力、setState...）
+・Mounting：Componentが配置される（生まれる）期間
+constructor()で初期化→render()でVDOM描画→componentDidMount()でリスナー設定やAPI通信が行われる
+・Updating: Componentが変更される（成長する）期間
+render()→componentDidUpdate()で再レンダー後に呼ばれる。chatbotのスクロールイベントなど
+・unMounting：Componentが破棄される（死ぬ）期間
+componentWillUnmount()でリソースを解放する(リスナー解除など)
+
+
+・名前付きexport
+export function Foo() {}
+export const Bar = () => {}
+※classはできない
+→関数ごとのimport（名前付きexportされたモジュールより）
+import {Foo, Bar} from "./FooBar";
+
+
+★こちらが推奨されている（１ファイルで１モジュールを徹底する！！）
+・名前なし（default）export
+export default function Foo() {}
+const Bar = () => {} → export default Bar
+export default class Hoge extends Fuga{}
+
+→モジュール全体のimport（名前なしdefault exportより）
+import React from 'react';
+import Article from './Article';
+
+→別名（エイリアス）import（名前なしdefault exportより？）
+モジュール全体→ import * as AnotherName from "./Article";
+モジュール一部→ import {Foo as MyFoo} from "./FooBar";
+
+
+React Hooks
+class機能（stateやライフサイクル）をfunctional Componentでも使える
+100%後方互換（小さく導入できる）
+下位のComponentでもstateを管理しやすくできる
+なぜ使うか？
+・シンプルさを保つため
+
+
+
+フロントエンドエンジニアやるべきこと by トラはっく
+① HTML CSS
+② JS ECM2016
+③ npm
+④ Sass(CSSプリプロセッサ)
+⑤ ビルドツール(webpack)：webページの高速化
+⑥ フレームワーク(react vue angular) SPA 開発速度向上
+⑦ テストツール JEST
+⑧ サーバーサイドレンダリング（Next.js）：サーバー側でHTMLを作ってそれをそのままブラウザに送る。サーバー側で作ったほうがSEO的にもよい。

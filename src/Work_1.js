@@ -12,7 +12,7 @@ const workLists = [
     name: "Todoリスト",
     link: "https://myfirstlp.web.app",
     intro: "お手軽に管理できるTodoリストを作成。一応LPです。",
-    intro2: "Html, Sass, JavaScript, Firestore, jQuery, Chart.js\nHosting: Firebase",
+    intro2: "HtmlCss, Sass, JavaScript, Firestore, jQuery, Chart.js\nHosting: Firebase",
     img: photo1,
     date: "2020.9-",
     // recharts
@@ -76,7 +76,7 @@ const workLists = [
 /**
  * https://... を<a href="">に格納 + 改行
  * @params  str
- * @return {String} 文字列"<a><br>"
+ * @return {String} 文字列"<a>...<br>"
  */
 const strTag = (string) => {
   const pattern = /,\s?(.+)(https?:\/\/[\w\d/%#$&?()~_.=+-]+)/g;
@@ -102,13 +102,13 @@ export const MyWork = () => {
             <TheWork
               key={i}
               id={i}
+              date={list.date}
               name={list.name}
               link={list.link}
               img={list.img}
               intro={strTag(((list.intro)))} // 文字列
               intro2={newLineHtml(list.intro2)} // html要素
-              date={list.date}
-              skill={list.skill} // recharts
+              skill={list.skill}
             />
           )
         })}
