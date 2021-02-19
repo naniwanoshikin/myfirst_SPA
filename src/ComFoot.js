@@ -19,7 +19,7 @@ const Links = [
   },
 ];
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="pt-5 pb-3 text-center">
       <ul className="d-inline-flex pl-3">
@@ -39,3 +39,5 @@ export const Footer = () => {
     </footer>
   );
 }
+
+export default Footer;

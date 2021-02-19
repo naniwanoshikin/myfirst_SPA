@@ -26,13 +26,13 @@ const workLists = [
     name: "本サイト",
     link: "https://spapf-24842.web.app/",
     intro: "Reactで作成！！",
-    intro2: "Html, Sass, Bootstrap, React\nSlack, Firebase",
+    intro2: "React, Bootstrap\nFirebase, Slack",
     img: photo2,
     date: "2020.12-",
     skill: [
-      { name: '2020.12', Html: 70, Sass: 55, Bootstrap: 35, React: 40 },
-      { name: '2021.01', Html: 75, Sass: 55, Bootstrap: 40, React: 45 },
-      { name: '2021.02', Html: 80, Sass: 60, Bootstrap: 45, React: 50 },
+      { name: '2020.12', React: 20, Bootstrap: 25, firebase: 15, },
+      { name: '2021.01', React: 30, Bootstrap: 40, firebase: 20, },
+      { name: '2021.02', React: 40, Bootstrap: 45, firebase: 30, },
     ],
   },
   {
@@ -92,10 +92,9 @@ const newLineHtml = (string) => {
   return string.split('\n').map((x, i) => (<p className="mb-0" key={i}>{x}</p>));
 }
 
-
-export const MyWork = () => {
+const MyWork = () => {
   return (
-    <div className="container px-0 py-4">
+    <div className="work container px-0 py-4">
       <div className="row mx-auto">
         {workLists.map((list, i) => {
           return (
@@ -116,3 +115,5 @@ export const MyWork = () => {
     </div>
   );
 }
+
+export default MyWork;

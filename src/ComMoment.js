@@ -1,15 +1,8 @@
 import React from 'react';
 import posed from 'react-pose';
-// import Paper from './Paper'; // class
+import Block from './ComBlock';
 
-const style = {
-  display: "inline-block",
-  position: "relative",
-  zIndex: "5",
-  fontSize: "30px",
-  color: "#fffac2",
-  fontFamily: "Boogaloo",
-}
+
 const Box = posed.div({
   hidden: { // 表示前
     opacity: 0.1,
@@ -42,10 +35,27 @@ export default class Pose extends React.Component {
     clearTimeout(this.handle);
   }
   render() {
+    const style = {
+      display: "inline-block",
+      position: "relative",
+      zIndex: "3",
+      fontFamily: "Boogaloo",
+    }
     return (
-      <Box pose={this.state.isVisible ? 'visible' : 'hidden'}>
-        {/* <Paper style={style} x="10%" y="4%" w="" h="" o="0.2" fs="100px" bc="" m={this.props.comment} /> */}
-        <p className="mb-1" style={style} >{this.props.comment}</p>
+      <Box style={style} pose={this.state.isVisible ? 'visible' : 'hidden'}>
+        <Block
+          m={this.props.comment}
+          x={this.props.x}
+          y={this.props.y}
+          w={this.props.w}
+          h={this.props.h}
+          o={this.props.o}
+          fs={this.props.fs}
+          r={this.props.r}
+          bc={this.props.bc}
+          c={this.props.c}
+          deg={this.props.deg}
+        />
       </Box>
     );
   }

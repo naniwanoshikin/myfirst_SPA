@@ -32,7 +32,7 @@ const Box = ({ position, args }) => {
   );
 };
 
-export const Anime2 = () => {
+export const Falling = () => {
   return (
     <div style={{
       width: "100%",
@@ -65,3 +65,5 @@ export const Anime2 = () => {
     </div>
   );
 };
+
+export default Falling;

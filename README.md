@@ -35,10 +35,11 @@ Validation
 # Future Tasks
 * NAVコンポーネント UI整える
 * ABOUTコンポーネント 綺麗にする
-* DBコンポーネント API
+* DBコンポーネント timestampのグラフ化
 
 <!-- * firebase（cloud functions） -->
 <!-- # 苦労したところ -->
 <!-- homeのblockの改行（正規表現） -->
 <!-- workのz-index（親にも設定しないと子要素に効かない）、仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
-<!-- contactのblock要素、inline要素。ラジオボタンのcheckbox。 -->
+<!-- contactのラジオボタンの保持。 -->
+<!-- contactのblock要素、inline要素。 -->

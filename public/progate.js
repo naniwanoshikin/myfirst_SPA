@@ -1,5 +1,8 @@
 // progate 未使用
-import React from 'react';
+import React from 'react'; // classコンポーネント
+import { BrowserRouter, Route } from 'react-router-dom'; // constコンポーネント
+import logo from './img/logo.svg'; // ロゴ
+
 
 // Counter情報を管理
 class Progate extends React.Component {
@@ -28,6 +31,7 @@ class Progate extends React.Component {
         <h1>{this.state.name}が{this.state.count}匹</h1>
         <button onClick={() => { this.handleClick('ひつじ仙人') }}>ひつじ仙人</button>
         <button onClick={() => { this.handleClick('忍者わんこ') }}>にんじゃわんこ</button>
+        <img src={logo} className="App-logo" alt="logo" />
       </div>
       // ブラウザはJSXを理解できない為、JSX→JS に翻訳する（トランスパイラ）
       // （TypeScript, Babelなどもそう）

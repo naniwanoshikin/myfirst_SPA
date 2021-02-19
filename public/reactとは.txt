@@ -86,6 +86,9 @@ export const Bar = () => {}
 ※classはできない
 →関数ごとのimport（名前付きexportされたモジュールより）
 import {Foo, Bar} from "./FooBar";
+実際、exportされた名前をimportで使用ないとエラーが出た（→自由度が小さいということかも？）
+
+
 
 
 ★こちらが推奨されている（１ファイルで１モジュールを徹底する！！）
@@ -103,12 +106,6 @@ import Article from './Article';
 モジュール一部→ import {Foo as MyFoo} from "./FooBar";
 
 
-React Hooks
-class機能（stateやライフサイクル）をfunctional Componentでも使える
-100%後方互換（小さく導入できる）
-下位のComponentでもstateを管理しやすくできる
-なぜ使うか？
-・シンプルさを保つため
 
 
 
@@ -121,3 +118,23 @@ class機能（stateやライフサイクル）をfunctional Componentでも使�
 ⑥ フレームワーク(react vue angular) SPA 開発速度向上
 ⑦ テストツール JEST
 ⑧ サーバーサイドレンダリング（Next.js）：サーバー側でHTMLを作ってそれをそのままブラウザに送る。サーバー側で作ったほうがSEO的にもよい。
+
+
+Cloud Functions by 前田剛
+※課金必須
+バックエンドのプログラムを実装できる
+APIとして共通をまとめた場合、
+APIサーバー（Cloud Functions）
+全アプリ（Web, ios）共通処理まとめる。
+
+Youtbe #11~14を見る。
+
+
+
+
+直下のパッケージ確認
+npm ls --depth=0
+
+
+グローバルのやつ確認
+npm ls -g

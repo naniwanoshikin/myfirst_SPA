@@ -163,7 +163,7 @@ export default class Contactform extends React.Component {
         <p className="error-message">※アドレスが未入力です</p>
       );
     }
-    if (this.state.mail && !ad(this.state.mail)) { // 入力していても形式が違う時、
+    if (this.state.mail && !ad(this.state.mail)) { // 入力形式が違う時、
       MailError = (
         <p className="error-message">※正しい形式にしてください</p>
       );
@@ -177,7 +177,6 @@ export default class Contactform extends React.Component {
       RadioError = (
         <p className="error-message">※直近の状況を選択してください</p>
       );
-      // console.log('radio not selected');
     }
     if (this.state.hasContentError) {
       ContentError = (

@@ -76,7 +76,7 @@ const theme = {
   width: "330px",
   height: "330px",
 }
-export const PaperAnime = () => {
+const PaperAnime = () => {
   return (
     <div style={theme}>
       <Canvas camera={{ position: [0, 0, 1000] }}>
@@ -90,3 +90,5 @@ export const PaperAnime = () => {
     </div>
   );
 };
+
+export default PaperAnime;

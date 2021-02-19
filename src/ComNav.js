@@ -10,9 +10,9 @@ const style = {
   transform: "rotate(1deg)",
 }
 
-export const Nav = () => {
+const Nav = () => {
   return (
-    <nav className="mt-4 mb-3 mx-sm-5">
+    <nav className="mt-4 mb-4 mx-sm-5">
       <div className="container">
         <menu className="row mx-0 pb-0" style={style}>
           <Link id="nav-home" className="nav-item col-3" to="/">Home</Link>
@@ -27,9 +27,11 @@ export const Nav = () => {
         left: "90%",
         top: "14px",
       }} to="/db2">
-        <i className="fas fa-lg fa-database"></i>
+        <i className="fas fa-lg fa-weight text-light"></i>
       </Link>
       <div className="snow">✳</div>
     </nav>
   );
 }
+
+export default Nav;

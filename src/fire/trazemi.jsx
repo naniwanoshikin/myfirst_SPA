@@ -1,4 +1,8 @@
 // トラゼミ入門（#8, 9 Hooks）
+// class機能（stateやライフサイクル）をfunctional Componentでも使える
+// 100%後方互換（小さく導入できる）
+// 下位のComponentでもstateを管理しやすくできる
+// なぜ使うか？ シンプルさを保つため
 import React, { useState, useEffect } from 'react';
 
 // わからなかったこと：警告が消えない（count, countUpの依存関係がない）
@@ -11,7 +15,7 @@ const LikeButton = () => {
   const [limit, release] = useState(true)
 
   const countUp = () => {
-    counter(count + 1) // →countUp警告出る
+    counter(count + 1) // →countUp警告あり
   }
   // useEffect：ライフサイクルメソッドの代替（優秀！）。機能ベースでかく。
   // ★第二引数の配列を入れると、値を前回レンダーと今回レンダーで比較される。
