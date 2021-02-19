@@ -12,12 +12,13 @@ const collection = db.collection('scales');
 
 const Weightness = () => {
 
-  // 追加（お試し）
+  // 追加（練習用お試し）
   const handleClickFetch = async () => {
     await collection
-      .doc('1')
+      .doc('2')
       .set({ // 手動でid名を指定
-        created_at: firebase.firestore.FieldValue.serverTimestamp(),
+        created_at: firebase.firestore.Timestamp.now(), // Timestamp型：こちらがいいかも？？
+        // created_at: firebase.firestore.FieldValue.serverTimestamp(), // Map型：→エラー出る
         weight: 60,
         height: 160,
         bmi: 21,
@@ -47,7 +48,7 @@ const Weightness = () => {
       return;
     }
     await collection.add({
-      created_at: firebase.firestore.FieldValue.serverTimestamp(), // timestamp
+      created_at: firebase.firestore.Timestamp.now(), // Timestamp型
       height: userHeight, // cm
       weight: parsedWeight, // kg
       bmi: parsedWeight / (userHeight / 100) ** 2, // 指数
@@ -86,7 +87,7 @@ const Weightness = () => {
   useEffect(() => {
     const unsubscribe = collection
       .orderBy('created_at', 'asc')
-      .limit(8)
+      // .limit(8)
       .onSnapshot((queryShot) => { // 検知
         // 自動で取得
         const _user = queryShot.docs.map(doc => {
@@ -95,7 +96,7 @@ const Weightness = () => {
             userId: doc.id,
             weight: dd.weight,
             height: dd.height,
-            bmi: dd.bmi.toFixed(2),
+            bmi: dd.bmi.toFixed(1),
             comment: dd.comment,
             created_at: dd.created_at.toDate().getTime(), // UnixTime → rechartsで変換
             // ...doc.data(),
@@ -110,32 +111,32 @@ const Weightness = () => {
   }, []); // ★★[]と書いたらreturn内がunmountedされた。
 
   return (
-    <div className="weightness">
-      <h1>masahiroの体型管理</h1>
+    <div className="weightness pt-4">
+      <h1>私の体型管理</h1>
       <div>
         <label>身長：</label>
         <input type="text" placeholder="160" autoComplete="off" value={userHeight}
           onChange={e => { setUserHeight(e.target.value) }}
         /> cm<br />
-        {!userHeight &&
-          <p className="text-warning">※身長(cm)を入力してください</p>
-        }
         <label>体重：</label>
         <input type="text" placeholder="50" autoComplete="off" value={userWeight}
           onChange={e => { setWeight(e.target.value) }}
         /> kg<br />
-        {!userWeight &&
-          <p className="text-warning">※体重(kg)を入力してください</p>
-        }
         <label>感想：</label><br />
         <textarea placeholder="痩せた" autoComplete="off" value={Comment}
           onChange={e => { setComment(e.target.value) }}
         /><br />
+        {!userHeight &&
+          <p className="text-warning">※身長(cm)を入力してください</p>
+        }
+        {!userWeight &&
+          <p className="text-warning">※体重(kg)を入力してください</p>
+        }
         {!Comment &&
           <p className="text-warning">※感想を入力してください</p>
         }
 
-        <div className="btn btn-light py-0 px-2" onClick={handleAdd}>記録</div>
+        <div className="btn btn-warning py-0 px-2" onClick={handleAdd}>記録</div>
       </div>
 
 
@@ -153,22 +154,21 @@ const Weightness = () => {
           <thead>
             <tr bgcolor="Coral">
               <th>日時</th>
-              <th>身長</th>
-              <th>体重</th>
-              <th>BMI指数</th>
+              <th>身長cm</th>
+              <th>体重Kg</th>
+              <th>BMI</th>
+              <th>感想</th>
             </tr>
           </thead>
           <tbody>
             {users.map((user) => {
               return (
                 <tr key={user.userId}>
-                  <td>{user.created_at}</td>
+                  <td>'{new Date(user.created_at).toLocaleDateString().slice(2)}</td>
                   <td>{user.height}</td>
                   <td>{user.weight}</td>
-                  <td>
-                    {user.bmi}<br />
-                    {/* {user.userId} */}
-                  </td>
+                  <td>{user.bmi}</td>
+                  <td>{user.comment}</td>
                 </tr>
               );
             })}

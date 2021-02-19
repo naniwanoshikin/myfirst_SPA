@@ -6,7 +6,7 @@ import Block from './ComBlock'; // 浮き文字
 import Moment from './ComMoment'; // 浮かび上がる文字
 import PaperAnime from './PaperBoxAnime'; // 動いている物体
 import PaperClick from './PaperClick';
-import MyFalling from './animeFall'; // 落ちていく物体
+import MyFalling from './animeFall_1'; // 落ちていく物体
 import MyWork from './Work_1';
 import MyContact from './Contact';
 // import MyCrud from './fire/tsuyopon';
@@ -90,7 +90,7 @@ const Work = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Portfolio"} x="-13rem" y="-5rem" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" deg="-5deg" />
+      <Moment comment={"Portfolio"} x="-13rem" y="-7rem" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" deg="-5deg" />
       <MyWork />
       <MyFooter />
     </div>
@@ -102,7 +102,7 @@ const Contact = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Callme"} x="-9rem" y="-10rem" w="0" h="0" o="0.1" fs="110px" r="" bc="" c="" deg="-1deg" />
+      <Moment comment={"Callme"} x="-9rem" y="-9rem" w="0" h="0" o="0.2" fs="110px" r="" bc="" c="" deg="-1deg" />
       <MyContact />
       <MyFooter />
     </div>
@@ -116,17 +116,15 @@ const Weight = props => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Weightne" + id + ""} x="-9rem" y="-7rem" fs="70px" o="0.1" w="100%"/>
-      <div style={{ backgroundColor: "Teal", }}>
-        {/* グラフ作成予定 */}
-        <MyWeight />
-        {/* ツヨポン */}
-        {/* <MyCrud /> */}
-        {/* いいねボタン */}
-        {/* <Likelist /> */}
-        {/* ？ */}
-        {/* <PoseList /> */}
-      </div>
+      <Moment comment={"Weightne" + id + ""} x="-9rem" y="-6rem" fs="70px" o="0.1" w="100%" />
+      {/* 体重管理 */}
+      <MyWeight />
+      {/* ツヨポン */}
+      {/* <MyCrud /> */}
+      {/* いいねボタン */}
+      {/* <Likelist /> */}
+      {/* ？ */}
+      {/* <PoseList /> */}
       <MyFooter />
     </div>
   )

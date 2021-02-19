@@ -16,7 +16,7 @@ export default class TheWork extends React.Component {
   }
   render() {
     return (
-      <div className="mb-5 mx-auto px-0 col-sm-5">
+      <div className="mb-4 mx-auto px-0 col-sm-5">
         {/* アイテム */}
         <div className="work-item pb-4 mx-auto">
           <p className="px-4 pb-0 pt-2 pb-1 my-0 text-right">{this.props.date}</p>

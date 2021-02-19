@@ -1,7 +1,7 @@
 import React from 'react';
 import * as CANNON from 'cannon';
 import { Canvas } from 'react-three-fiber';
-import { useCannon, Provider } from './anime2Cannon';
+import { useCannon, Provider } from './animeFall_2';
 
 // 背景色
 const color = "#fff56c";

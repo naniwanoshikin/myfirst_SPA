@@ -25,7 +25,7 @@ const Nav = () => {
         position: "absolute",
         zIndex: "5",
         left: "90%",
-        top: "14px",
+        top: "20px",
       }} to="/db2">
         <i className="fas fa-lg fa-weight text-light"></i>
       </Link>

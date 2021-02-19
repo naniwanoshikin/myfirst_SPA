@@ -8,22 +8,24 @@ export default class App extends Component {
         <ResponsiveContainer>
           <ComposedChart margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
             data={this.props.scale} >
-            {/* <Bar type="monotone" dataKey="height" barSize={20} fill="skyblue" unit="cm" /> */}
-            <Line type="monotone" dataKey="weight" stroke="purple" unit="kg" />
-            <Area type="monotone" dataKey="bmi" fill="#8884d8" stroke="blue" />
-            <Area type="monotone" dataKey="comment" fill="#8884d8" stroke="pink" />
-            <XAxis dataKey="created_at" stroke="blue"
-              domain={['dataMin', 'dataMax']}
-              tickFormatter={(unixTime) => new Date(unixTime).toLocaleDateString()}
-              type='number'
+            <Bar type="monotone" name="身長" dataKey="height" barSize={20} fill="skyblue" unit="cm" />
+            <Line type="monotone" name="体重" dataKey="weight" stroke="purple" unit="kg" />
+            <Area type="monotone" name="BMI" dataKey="bmi" fill="#8884d8" stroke="blue" />
+            <Area type="monotone" name="感想" dataKey="comment" fill="#8884d8" stroke="pink" />
+            <XAxis dataKey="created_at" stroke="white"
+              domain={['dataMin', 'dataMax']} // min max
+              type='number' // 正しい時系列に
+              tickFormatter={(unixTime) => "'" + new Date(unixTime).toLocaleDateString().slice(2)} // Y/M/D変換
             />
-            <YAxis />
+            <YAxis stroke="#ccc"/>
             {/* 破線 */}
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
             {/* 判例 */}
-            <Legend />
+            <Legend verticalAlign="top" height={36} />
             {/* ホバー判例 */}
-            <Tooltip />
+            <Tooltip cursor={{ stroke: 'red', strokeWidth: 1 }}
+              labelFormatter={(unixTime) => new Date(unixTime).toLocaleTimeString()}
+            />
           </ComposedChart>
         </ResponsiveContainer>
       </div>

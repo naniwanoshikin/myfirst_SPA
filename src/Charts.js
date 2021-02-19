@@ -16,7 +16,9 @@ export default class App extends Component {
             <Bar type="monotone" dataKey="React" barSize={20} fill="skyblue" />
             <Bar type="monotone" dataKey="Laravel" barSize={20} fill="brown" />
             <Line type="monotone" dataKey="Bootstrap" stroke="red" />
+            <Line type="monotone" dataKey="recharts" stroke="red" />
             <Area type="monotone" dataKey="firebase" fill="#8884d8" stroke="blue" />
+            <Area type="monotone" dataKey="firestore" fill="#8884d8" stroke="blue" />
             <Area type="monotone" dataKey="Heroku" fill="#8884d8" stroke="blue" />
             <Line type="monotone" dataKey="Fresco" stroke="pink" />
             <XAxis dataKey="name" stroke="#8884d8" />

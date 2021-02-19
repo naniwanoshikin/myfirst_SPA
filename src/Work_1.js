@@ -1,10 +1,11 @@
 import React from 'react';
+import TheWork from './Work_2';
 import photo1 from './img/LP.jpg';
 import photo2 from './img/spa.jpg';
 import photo3 from './img/CHAT.jpg';
 import photo4 from './img/Blog.jpg';
 import photo5 from './img/sai.jpg';
-import TheWork from './Work_2';
+import photo6 from './img/weight.png';
 
 // 値
 const workLists = [
@@ -60,14 +61,27 @@ const workLists = [
   },
   {
     name: "サイドン",
-    link: "#",
-    intro: "少し描いてみました。",
+    link: "#!",
+    intro: "サイ",
     intro2: "Adobe Fresco",
     img: photo5,
     date: "2021.02-",
     skill: [
       { name: '2020.06', Fresco: 5 },
       { name: '2021.01', Fresco: 20 },
+    ],
+
+  },
+  {
+    name: "体重管理",
+    link: "/db3",
+    intro: "右上のアイコンを押してください🙇‍♂️",
+    intro2: "recharts Cloud firestore",
+    img: photo6,
+    date: "2021.02-",
+    skill: [
+      { name: '2021.02', recharts: 5, firestore: 5 },
+      { name: '2021.03', recharts: 20, firestore: 10 },
     ],
 
   },
@@ -94,7 +108,7 @@ const newLineHtml = (string) => {
 
 const MyWork = () => {
   return (
-    <div className="work container px-0 py-4">
+    <div className="work container px-0 py-2">
       <div className="row mx-auto">
         {workLists.map((list, i) => {
           return (

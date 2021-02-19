@@ -11,7 +11,7 @@ const Box = posed.div({
   visible: { // 表示後
     opacity: 1,
     // x: 0,
-    y: 0,
+    y: '-45%',
     transition: {
       ease: 'easeIn',
       duration: 700
