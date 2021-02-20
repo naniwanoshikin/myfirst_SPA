@@ -20,7 +20,7 @@ const LikeButton = () => {
   // useEffect：ライフサイクルメソッドの代替（優秀！）。機能ベースでかく。
   // ★第二引数の配列を入れると、値を前回レンダーと今回レンダーで比較される。
   // →変更があればcallback関数を実行。
-  useEffect(() => { // callBack関数でかく（レンダー毎に呼ばれる）。毎回mount, unmoutされる。
+  useEffect(() => { // callBack関数でかく。レンダー毎に実行。毎回mount, unmoutされる。
     console.log('mount, Render');
     document.getElementById('counter').addEventListener('click', countUp) // １いいね増やす
     if (count > 10) {

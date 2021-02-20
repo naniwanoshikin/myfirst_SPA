@@ -2,6 +2,10 @@ import React from 'react';
 import posed from 'react-pose';
 import Block from './ComBlock';
 
+const rand1 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
+const rand2 = (Math.floor(Math.random() * 5) - 3) * 2;
+console.log(rand1);
+console.log(rand2);
 
 const Box = posed.div({
   hidden: { // 表示前
@@ -11,8 +15,8 @@ const Box = posed.div({
   },
   visible: { // 表示後
     opacity: 0,
-    x: ({ offset }) => offset * 5,
-    y: ({ offset }) => offset * -5,
+    x: ({ offset }) => offset * rand1,
+    y: ({ offset }) => offset * rand2,
     // y: '45%', // なぜかできん。。
     transition: {
       ease: 'easeIn',

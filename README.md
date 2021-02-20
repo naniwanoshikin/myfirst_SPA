@@ -33,8 +33,10 @@ Validation
 - recharts
 
 # Future Tasks
-* NAVコンポーネント three.js
-* ABOUTコンポーネント 綺麗にする
+* NAVコンポーネント pose 回転
+* Weightコンポーネント グラフ判例
+* Weightコンポーネント Hooks バリデーション
+* ABOUTコンポーネント UI整える
 
 <!-- * firebase（cloud functions） -->
 <!-- # 苦労したところ -->
@@ -43,4 +45,4 @@ Validation
 <!-- work: 仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
 <!-- contact: ラジオボタンの保持。 -->
 <!-- contact: block要素、inline要素。 -->
-<!-- weightness: timestamp, new Date() -->
+<!-- weightness: firebaseのtimestamp → new Date() -->

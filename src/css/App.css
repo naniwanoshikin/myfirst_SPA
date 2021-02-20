@@ -65,6 +65,89 @@ nav .nav-item:before {
   background: #d8ca51;
 }
 
+nav .balloon {
+  position: relative;
+  color: white;
+}
+
+nav .balloon:hover {
+  color: #25d9df;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+nav .balloon:hover span {
+  display: inline;
+}
+
+nav .balloon span {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: -160px;
+  bottom: -85px;
+  text-decoration: none;
+  background: #fff0c6;
+  -webkit-animation: sample2Anime 1s linear;
+          animation: sample2Anime 1s linear;
+  display: none;
+  color: black;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+nav .balloon span:before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 12px;
+  left: 140px;
+  bottom: 60px;
+  text-decoration: none;
+  background: #fff0c6;
+  -webkit-animation: sample2Anime 1s linear;
+          animation: sample2Anime 1s linear;
+  border-radius: 50%;
+}
+
+nav .balloon span:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  left: 120px;
+  bottom: 40px;
+  text-decoration: none;
+  background: #fff0c6;
+  -webkit-animation: sample2Anime 1s linear;
+          animation: sample2Anime 1s linear;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes sample2Anime {
+  50% {
+    background: rgba(255, 127, 127, 0.75);
+  }
+  0% {
+    background: rgba(255, 127, 127, 0.25);
+  }
+  100% {
+    background: #fff0c6;
+  }
+}
+
+@keyframes sample2Anime {
+  50% {
+    background: rgba(255, 127, 127, 0.75);
+  }
+  0% {
+    background: rgba(255, 127, 127, 0.25);
+  }
+  100% {
+    background: #fff0c6;
+  }
+}
+
 nav .snow {
   color: snow;
   font-size: 18px;
@@ -341,9 +424,14 @@ footer p a:hover {
 }
 
 .weightness input[type="text"] {
-  width: 45px;
+  width: 60px;
   padding: 2px 5px;
   text-align: center;
+  border-radius: 5px;
+}
+
+.weightness textarea {
+  padding: 2px 5px;
   border-radius: 5px;
 }
 

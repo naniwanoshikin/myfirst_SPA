@@ -74,8 +74,8 @@ const workLists = [
   },
   {
     name: "体重管理",
-    link: "/db3",
-    intro: "右上のアイコンを押してください🙇‍♂️",
+    link: "/db7",
+    intro: "右上のアイコンから入れます🙇‍♂️",
     intro2: "recharts Cloud firestore",
     img: photo6,
     date: "2021.02-",

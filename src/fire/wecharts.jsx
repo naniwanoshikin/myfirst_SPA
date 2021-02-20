@@ -15,7 +15,7 @@ export default class App extends Component {
             <XAxis dataKey="created_at" stroke="white"
               domain={['dataMin', 'dataMax']} // min max
               type='number' // 正しい時系列に
-              tickFormatter={(unixTime) => "'" + new Date(unixTime).toLocaleDateString().slice(2)} // Y/M/D変換
+              tickFormatter={(unixTime) => new Date(unixTime).toLocaleDateString().slice(5)} // Y/M/D変換
             />
             <YAxis stroke="#ccc"/>
             {/* 破線 */}

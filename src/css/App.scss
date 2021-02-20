@@ -80,6 +80,57 @@ nav {
       background: rgb(216, 202, 81);
     }
   }
+  // 体重計アイコン
+  .balloon {
+    position: relative;
+    color: white;
+    &:hover {
+      color:rgb(37, 217, 223);
+      transition: 1s;
+      & span {
+        display: inline;
+      }
+    }
+    @mixin bubble($w: 0, $h: 0, $left: 0, $bottom: 0) {
+      position: absolute;
+      width: $w;
+      height: $h;
+      left: $left;
+      bottom: $bottom;
+      text-decoration: none;
+      background: #fff0c6;
+      animation: sample2Anime 1s linear;
+    }
+    // 吹き出し
+    span {
+      @include bubble($w: auto, $h: auto, $left: -160px, $bottom: -85px);
+      display: none;
+      color: black;
+      padding: 10px;
+      border-radius: 15px;
+      &:before {
+        content: "";
+        @include bubble($w: 13px, $h: 12px, $left: 140px, $bottom: 60px);
+        border-radius: 50%;
+      }
+      &:after {
+        content: "";
+        @include bubble($w: 20px, $h: 18px, $left: 120px, $bottom: 40px);
+        border-radius: 50%;
+      }
+      @keyframes sample2Anime {
+        50% {
+          background: rgba(255, 127, 127, 0.75);
+        }
+        0% {
+          background: rgba(255, 127, 127, 0.25);
+        }
+        100% {
+          background: #fff0c6;
+        }
+      }
+    }
+  }
   // 雪
   .snow {
     color: snow;
@@ -186,14 +237,14 @@ footer {
     border: 3px groove white;
     h5 {
       @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
-      background:rgb(121, 149, 168);
+      background: rgb(121, 149, 168);
       border-radius: 10px;
       display: inline-block;
       cursor: pointer;
     }
     img {
       width: 100%;
-      height:280px;
+      height: 280px;
       cursor: pointer;
     }
     // urlを格納した文字列としてのタグ
@@ -302,9 +353,13 @@ footer {
 .weightness {
   background: Teal;
   input[type="text"] {
-    width: 45px;
+    width: 60px;
     padding: 2px 5px;
     text-align: center;
+    border-radius: 5px;
+  }
+  textarea {
+    padding: 2px 5px;
     border-radius: 5px;
   }
 }

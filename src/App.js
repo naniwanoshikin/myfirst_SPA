@@ -3,17 +3,15 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import MyNav from './ComNav';
 import MyFooter from './ComFoot';
 import Block from './ComBlock'; // 浮き文字
-import Moment from './ComMoment'; // 浮かび上がる文字
-import PaperAnime from './PaperBoxAnime'; // 動いている物体
+import Moment from './ComMoment'; // アニメ文字
 import PaperClick from './PaperClick';
+import PaperAnime from './PaperBoxAnime'; // 回転物体
 import MyFalling from './animeFall_1'; // 落ちていく物体
 import MyWork from './Work_1';
 import MyContact from './Contact';
-// import MyCrud from './fire/tsuyopon';
 import MyWeight from './fire/weightness';
-// import PoseList from './fire/poselist';
+// import MyCrud from './fire/tsuyopon';
 // import Likelist from './fire/trazemi';
-// import Translate from './fire/translater';
 import './css/App.css';
 
 // Routing
@@ -54,7 +52,7 @@ const About = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Profile"} x="-12rem" y="-10rem" w="" h="" o="0.2" fs="120px" r="" bc="" c="" deg="-5deg" offset="5" />
+      <Moment comment={"Profile"} x="-12rem" y="-10rem" o="0.2" fs="120px" r="" bc="" c="" deg="-5deg" offset="-5" />
       <div className="about">
         <div className="container py-4">
           <p className="mt-2">自己紹介です</p>
@@ -91,7 +89,7 @@ const Work = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Portfolio"} x="-13rem" y="-7rem" w="" h="" o="0.2" fs="100px" r="" bc="blue" c="" deg="-5deg" offset="-5"/>
+      <Moment comment={"Portfolio"} x="-13rem" y="-7rem" o="0.2" fs="100px" r="5px" bc="blue" c="" deg="-5deg" offset="5"/>
       <MyWork />
       <MyFooter />
     </div>
@@ -103,7 +101,7 @@ const Contact = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Callme"} x="-9rem" y="-9rem" w="0" h="0" o="0.2" fs="110px" r="" bc="" c="" deg="-1deg" offset="-2"/>
+      <Moment comment={"Callme"} x="-9rem" y="-9rem" o="0.2" fs="110px" r="" bc="" c="" deg="-1deg" offset="-5"/>
       <MyContact />
       <MyFooter />
     </div>
@@ -117,15 +115,11 @@ const Weight = props => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Weightne" + id + ""} x="-9rem" y="-6rem" fs="70px" o="0.2" w="100%" offset="-5"/>
+      <Moment comment={"Weightne" + id + ""} x="-9rem" y="-6rem" fs="90px" o="0.2" w="100%" offset="-5"/>
       {/* 体重管理 */}
       <MyWeight />
       {/* ツヨポン */}
       {/* <MyCrud /> */}
-      {/* いいねボタン */}
-      {/* <Likelist /> */}
-      {/* ？ */}
-      {/* <PoseList /> */}
       <MyFooter />
     </div>
   )

@@ -12,36 +12,43 @@ const collection = db.collection('scales');
 
 const Weightness = () => {
 
-  // 追加機能（練習用お試し）
-  const handleClickFetch = async () => {
-    await collection
-      .doc('2')
-      .set({ // 手動でid名を指定
-        created_at: firebase.firestore.Timestamp.now(), // Timestamp型：こちらがいいかも？？
-        // created_at: firebase.firestore.FieldValue.serverTimestamp(), // Map型：→エラー出る
-        weight: 60,
-        height: 160,
-        bmi: 21,
-        comment: 'お試し',
-      }, { merge: true });
-    // const doc = await collection.doc('1').get();
-    // console.log(doc.data().created_at.toDate());
-  }
+  // 追加機能（お試し用）
+  // const handleClickFetch = async () => {
+  //   await collection
+  //     .doc('2')
+  //     .set({ // 手動でid名を指定
+  //       created_at: firebase.firestore.Timestamp.now(), // Timestamp型：こちらがいいかも？？
+  //       // created_at: firebase.firestore.FieldValue.serverTimestamp(), // Map型：→エラー出る
+  //       weight: 60,
+  //       height: 160,
+  //       bmi: 21,
+  //       comment: 'お試し',
+  //     }, { merge: true });
+  //   // const doc = await collection.doc('1').get();
+  //   // console.log(doc.data().created_at.toDate());
+  // }
 
-  // 追加機能
+  // 入力情報
   const [userHeight, setUserHeight] = useState(''); // 身長
-  const [userWeight, setWeight] = useState(''); // 体重
-  const [Comment, setComment] = useState(''); // 感想
+  const [userWeight, setUserWeight] = useState(''); // 体重
+  const [userComment, setUserComment] = useState(''); // 感想
+  // エラー情報
+  const [heightError, setErrorHeight] = useState(false); // 身長
+  const [weightError, setErrorWeight] = useState(false); // 体重
+  const [commentError, setErrorComment] = useState(false); // 感想
+  // 追加機能
   const handleAdd = async () => {
     if (!userHeight) {
-      console.log('身長が空です');
+      setErrorHeight({ heightError: true });
     }
     if (!userWeight) {
-      console.log('体重が空です');
+      setErrorWeight({ weightError: true });
     }
-    // formには数字で入力していてもstring型としてみなされている→int型に変更
+    if (!userComment) {
+      setErrorComment({ commentError: true });
+    }
     const parsedWeight = parseInt(userWeight, 10);
-    if (userWeight && isNaN(parsedWeight)) { // 半角にできない（＝ true）
+    if (userWeight && isNaN(parsedWeight)) {
       console.log('体重は半角でお願いします');
     }
     if (!userHeight || isNaN(parsedWeight)) {
@@ -52,17 +59,16 @@ const Weightness = () => {
       height: userHeight, // cm
       weight: parsedWeight, // kg
       bmi: parsedWeight / (userHeight / 100) ** 2, // 指数
-      comment: Comment, // 感想
+      comment: userComment, // 感想
     });
-    setUserHeight(''); // フォームを空にする
-    setWeight('');
-    setComment('');
+    setUserHeight('');
+    setUserWeight('');
+    setUserComment('');
   }
 
-  // 更新機能
-  const [docId, setDocId] = useState(''); // id で更新・削除
 
   // 削除機能
+  const [docId, setDocId] = useState(''); // id で更新・削除
   const handleDelete = async () => {
     if (!docId) {
       console.log('Idが空です');
@@ -71,8 +77,8 @@ const Weightness = () => {
     try {
       await collection.doc(docId).delete();
       setUserHeight('');
-      setWeight('');
-      setComment('');
+      setUserWeight('');
+      setUserComment('');
       setDocId('');
       console.log(docId, 'delete!')
     } catch (error) {
@@ -88,7 +94,7 @@ const Weightness = () => {
     const unsubscribe = collection
       .orderBy('created_at', 'asc')
       // .limit(8)
-      .onSnapshot((queryShot) => { // 検知
+      .onSnapshot((queryShot) => {
         // 自動で取得
         const _user = queryShot.docs.map(doc => {
           const dd = doc.data();
@@ -112,30 +118,29 @@ const Weightness = () => {
 
   return (
     <div className="weightness pt-4">
-      <h1>私の体型管理</h1>
+      <h1>体型メモ</h1>
       <div>
         <label>身長：</label>
-        <input type="text" placeholder="160" autoComplete="off" value={userHeight}
+        <input type="text" placeholder="160.1" autoComplete="off" value={userHeight}
           onChange={e => { setUserHeight(e.target.value) }}
         /> cm<br />
         <label>体重：</label>
-        <input type="text" placeholder="50" autoComplete="off" value={userWeight}
-          onChange={e => { setWeight(e.target.value) }}
+        <input type="text" placeholder="48.3" autoComplete="off" value={userWeight}
+          onChange={e => { setUserWeight(e.target.value) }}
         /> kg<br />
-        <label>感想：</label><br />
-        <textarea placeholder="痩せた" autoComplete="off" value={Comment}
-          onChange={e => { setComment(e.target.value) }}
+        <label>感想：</label>
+        <textarea placeholder="痩せた" autoComplete="off" value={userComment} cols="25" rows="1"
+          onChange={e => { setUserComment(e.target.value) }}
         /><br />
-        {!userHeight &&
-          <p className="text-warning">※身長(cm)を入力してください</p>
+        {heightError &&
+          <p className="text-warning">※身長を入力してください</p>
         }
-        {!userWeight &&
-          <p className="text-warning">※体重(kg)を入力してください</p>
+        {weightError &&
+          <p className="text-warning">※体重を入力してください</p>
         }
-        {!Comment &&
+        {commentError &&
           <p className="text-warning">※感想を入力してください</p>
         }
-
         <div className="btn btn-warning py-0 px-2" onClick={handleAdd}>記録</div>
       </div>
 
@@ -155,12 +160,12 @@ const Weightness = () => {
             <tr bgcolor="Coral">
               <th>日時</th>
               <th>身長cm</th>
-              <th>体重Kg</th>
+              <th>体重kg</th>
               <th>BMI</th>
               <th>感想</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody bgcolor="sandybrown">
             {users.map((user) => {
               return (
                 <tr key={user.userId}>

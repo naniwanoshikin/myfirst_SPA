@@ -27,7 +27,9 @@ const Nav = () => {
         left: "90%",
         top: "20px",
       }} to="/db2">
-        <i className="fas fa-lg fa-weight text-light"></i>
+        <i className="balloon fas fa-lg fa-weight">
+          <span>体重を知ろう！</span>
+        </i>
       </Link>
       <div className="snow">✳</div>
     </nav>
