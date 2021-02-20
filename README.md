@@ -33,13 +33,14 @@ Validation
 - recharts
 
 # Future Tasks
-* NAVコンポーネント UI整える
+* NAVコンポーネント three.js
 * ABOUTコンポーネント 綺麗にする
-* DBコンポーネント timestampのグラフ化
 
 <!-- * firebase（cloud functions） -->
 <!-- # 苦労したところ -->
-<!-- homeのblockの改行（正規表現） -->
-<!-- workのz-index（親にも設定しないと子要素に効かない）、仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
-<!-- contactのラジオボタンの保持。 -->
-<!-- contactのblock要素、inline要素。 -->
+<!-- home: text改行（正規表現） -->
+<!-- work: z-index（親に設定しないと子要素に効かない） -->
+<!-- work: 仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
+<!-- contact: ラジオボタンの保持。 -->
+<!-- contact: block要素、inline要素。 -->
+<!-- weightness: timestamp, new Date() -->

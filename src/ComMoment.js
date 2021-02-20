@@ -5,17 +5,19 @@ import Block from './ComBlock';
 
 const Box = posed.div({
   hidden: { // 表示前
-    opacity: 0.1,
-    y: '-15%',
+    opacity: 1,
+    x: 0,
+    y: 0,
   },
   visible: { // 表示後
-    opacity: 1,
-    // x: 0,
-    y: '-45%',
+    opacity: 0,
+    x: ({ offset }) => offset * 5,
+    y: ({ offset }) => offset * -5,
+    // y: '45%', // なぜかできん。。
     transition: {
       ease: 'easeIn',
-      duration: 700
-    }
+      duration: 2000
+    },
   },
   draggable: true,
 })
@@ -42,7 +44,7 @@ export default class Pose extends React.Component {
       fontFamily: "Boogaloo",
     }
     return (
-      <Box style={style} pose={this.state.isVisible ? 'visible' : 'hidden'}>
+      <Box style={style} pose={this.state.isVisible ? 'visible' : 'hidden'} offset={this.props.offset} >
         <Block
           m={this.props.comment}
           x={this.props.x}

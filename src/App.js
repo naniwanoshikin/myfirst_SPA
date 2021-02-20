@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Hello"} x="-10rem" y="-8rem" w="" h="" o="0.2" fs="100px" r="" bc="" c="pink" />
+      <Moment comment={"Hello"} x="-10rem" y="-8rem" w="" h="" o="0.2" fs="100px" r="" bc="" c="pink" offset="4"/>
       <div className="home">
         <div className="stroke">
           <Block m={"The\nStart\nOf\n2021"} x="8%" y="28%" w="0px" h="" o="0.2" fs="65px" r="" bc="" c="" />
@@ -54,7 +54,7 @@ const About = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Profile"} x="-12rem" y="-10rem" w="" h="" o="0.1" fs="120px" r="" bc="" c="" deg="-5deg" />
+      <Moment comment={"Profile"} x="-12rem" y="-10rem" w="" h="" o="0.2" fs="120px" r="" bc="" c="" deg="-5deg" offset="5" />
       <div className="about">
         <div className="container py-4">
           <p className="mt-2">自己紹介です</p>
@@ -85,12 +85,13 @@ const About = () => {
     </div>
   )
 }
+
 // Work
 const Work = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Portfolio"} x="-13rem" y="-7rem" w="0" h="0" o="0.2" fs="100px" r="" bc="" c="" deg="-5deg" />
+      <Moment comment={"Portfolio"} x="-13rem" y="-7rem" w="" h="" o="0.2" fs="100px" r="" bc="blue" c="" deg="-5deg" offset="-5"/>
       <MyWork />
       <MyFooter />
     </div>
@@ -102,7 +103,7 @@ const Contact = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Callme"} x="-9rem" y="-9rem" w="0" h="0" o="0.2" fs="110px" r="" bc="" c="" deg="-1deg" />
+      <Moment comment={"Callme"} x="-9rem" y="-9rem" w="0" h="0" o="0.2" fs="110px" r="" bc="" c="" deg="-1deg" offset="-2"/>
       <MyContact />
       <MyFooter />
     </div>
@@ -116,7 +117,7 @@ const Weight = props => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Weightne" + id + ""} x="-9rem" y="-6rem" fs="70px" o="0.1" w="100%" />
+      <Moment comment={"Weightne" + id + ""} x="-9rem" y="-6rem" fs="70px" o="0.2" w="100%" offset="-5"/>
       {/* 体重管理 */}
       <MyWeight />
       {/* ツヨポン */}

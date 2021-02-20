@@ -3,7 +3,7 @@ import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/firestore'
 import config from './config';
-import Graph from './conscale';
+import Graph from './wecharts';
 
 firebase.initializeApp(config);
 const db = firebase.firestore();
@@ -12,7 +12,7 @@ const collection = db.collection('scales');
 
 const Weightness = () => {
 
-  // 追加（練習用お試し）
+  // 追加機能（練習用お試し）
   const handleClickFetch = async () => {
     await collection
       .doc('2')
@@ -24,8 +24,8 @@ const Weightness = () => {
         bmi: 21,
         comment: 'お試し',
       }, { merge: true });
-    const doc = await collection.doc('1').get();
-    console.log(doc.data().created_at.toDate());
+    // const doc = await collection.doc('1').get();
+    // console.log(doc.data().created_at.toDate());
   }
 
   // 追加機能
@@ -147,7 +147,7 @@ const Weightness = () => {
           <input type="text" autoComplete="off" value={docId}
             onChange={e => { setDocId(e.target.value) }}
           />
-          <div className="btn btn-light py-0 px-2 mr-2" onClick={handleClickFetch}>試行</div>
+          {/* <div className="btn btn-light py-0 px-2 mr-2" onClick={handleClickFetch}>試行</div> */}
           <div className="btn btn-light py-0 px-2" onClick={handleDelete}>削除</div>
         </div>
         <table className="table table-striped d-inline">
