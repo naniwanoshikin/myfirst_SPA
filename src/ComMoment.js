@@ -2,8 +2,8 @@ import React from 'react';
 import posed from 'react-pose';
 import Block from './ComBlock';
 
-const rand1 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
-const rand2 = (Math.floor(Math.random() * 5) - 3) * 2;
+const rand1 = (Math.floor(Math.random() * 5) - 3) * 2; //  ±6
+const rand2 = (Math.floor(Math.random() * 5) - 2) * 2;
 console.log(rand1);
 console.log(rand2);
 

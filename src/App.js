@@ -27,11 +27,12 @@ const App = () => (
   </BrowserRouter>
 )
 
-const rand3 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
-const rand4 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
-const rand5 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
-const rand6 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
-const rand7 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
+const rand3 = (Math.floor(Math.random() * 5) - 3) * 3; //  ±6
+const rand4 = (Math.floor(Math.random() * 5) - 3) * 3; //  ±6
+const rand5 = (Math.floor(Math.random() * 5) - 3) * 3; //  ±6
+const rand6 = (Math.floor(Math.random() * 5) - 3) * 3; //  ±6
+const rand7 = (Math.floor(Math.random() * 5) - 3) * 3; //  ±6
+console.log(rand3)
 
 // Home
 const Home = () => {

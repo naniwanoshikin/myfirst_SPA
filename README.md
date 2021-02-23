@@ -8,7 +8,7 @@ SPAポートフォリオを作成しました。
 各ページに飛びます。季節感を出しました。
 
 # Hosting
-* firebase 9.2.2
+* firebase 9.5.0
 * URL: https://spapf-24842.web.app/
 
 # 実装機能
@@ -33,9 +33,9 @@ Validation
 - recharts
 
 # Future Tasks
-* NAVコンポーネント pose 回転
 * Weightコンポーネント グラフ判例
 * Weightコンポーネント Hooks バリデーション
+* Weightコンポーネント Hooks ログイン機能
 * ABOUTコンポーネント UI整える
 
 <!-- * firebase（cloud functions） -->
