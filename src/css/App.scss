@@ -190,8 +190,8 @@ footer {
 .home {
   user-select: none;
   @include bcr($b: rgb(243, 223, 181), $c: rgb(51, 45, 45), $r: 0px);
-  height: 61vh;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  // height: 100%;
   // font-size: calc(10px + 2vmin);
   // text ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
   .stroke {

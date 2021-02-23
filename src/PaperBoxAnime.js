@@ -23,6 +23,7 @@ const handleClick = () => {
     return document.getElementById(word.id).textContent = word.japanese;
   })
   document.getElementById("nav-home").style.color = boxColor;
+  document.querySelector(".stroke").style.color = "orange";
 }
 const handleHover = () => {
   boxColor = "red";
@@ -30,7 +31,7 @@ const handleHover = () => {
   document.getElementById("nav-home").style.color = boxColor;
 }
 const handleUnHover = () => {
-  // boxSize = [100, 50, 300];
+  boxSize = [100, 50, 300];
   document.getElementById("nav-home").style.color = boxColor;
 }
 
@@ -70,8 +71,8 @@ const Thing = () => {
 // スタイル
 const theme = {
   position: "absolute",
-  zIndex: "4",
-  top: "35%",
+  zIndex: "3",
+  top: "48%",
   left: "0px",
   width: "330px",
   height: "330px",

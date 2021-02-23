@@ -35,7 +35,7 @@ const Footer = () => {
           )
         })}
       </ul>
-      <p><a href="/">© shikitti-Portfolio.2020</a></p>
+      <p><a href="#!">© shikitti-Portfolio.2020</a></p>
     </footer>
   );
 }

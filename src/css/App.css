@@ -92,8 +92,6 @@ nav .balloon span {
           animation: sample2Anime 1s linear;
   display: none;
   color: black;
-  padding: 10px;
-  border-radius: 15px;
 }
 
 nav .balloon span:before {
@@ -225,7 +223,6 @@ footer p a:hover {
   background: #f3dfb5;
   color: #332d2d;
   border-radius: 0px;
-  height: 61vh;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
