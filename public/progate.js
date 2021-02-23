@@ -1,10 +1,10 @@
 // progate 未使用
-import React from 'react'; // classコンポーネント
-import { BrowserRouter, Route } from 'react-router-dom'; // constコンポーネント
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom'; // 関数コンポーネント
 import logo from './img/logo.svg'; // ロゴ
 
 
-// Counter情報を管理
+// classコンポーネント
 class Progate extends React.Component {
   constructor(props) {
     super(props);

@@ -67,7 +67,6 @@ nav .nav-item:before {
 
 nav .balloon {
   position: relative;
-  color: white;
 }
 
 nav .balloon:hover {

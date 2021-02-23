@@ -1,20 +1,21 @@
-// 書籍 Realtime Databaseより。公式によるとcloud Firestoreの方を推奨しているので未使用
+// Realtime Database 未使用 （書籍より）
+// （cloud Firestoreの方を推奨：公式）
 import React from 'react';
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/database'
 
 // ナビ構成
-export default class Bookdb extends React.Component {
+export default class Bpp extends React.Component {
   style = {
     fontSize: "70px",
   }
   constructor(props) {
     super(props);
     this.state = {
-      data: [], // ステート
+      data: [],
     }
-    this.getFireData = this.getFireData.bind(this); // ないとエラー出る
+    this.getFireData = this.getFireData.bind(this); // ないとエラー
   }
   // firebaseにアクセスし、データ取得。
   getFireData() {

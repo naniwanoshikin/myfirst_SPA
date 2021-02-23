@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/firestore'
-import config from './config';
+import config from '../src/weight/config';
 
 // firebase使用
 firebase.initializeApp(config);

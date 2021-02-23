@@ -10,7 +10,6 @@ import MyFalling from './animeFall_1'; // 落ちていく物体
 import MyWork from './Work_1';
 import MyContact from './Contact';
 import MyWeight from './weight/weightness';
-// import MyCrud from './fire/tsuyopon';
 import './css/App.css';
 
 // Routing
@@ -22,6 +21,7 @@ const App = () => (
       <Route path="/blog" component={Work} />
       <Route path="/contact" component={Contact} />
       <Route path="/db:id" component={Weight} />
+      <Route path="/login" component={Login} />
     </div>
   </BrowserRouter>
 )
@@ -124,8 +124,18 @@ const Weight = props => {
       <Moment comment={"Weight" + id} x="-13rem" y="-7rem" fs="90px" o="0.2" w="100%" c="yellow" offset={rand7} />
       {/* 体重管理 */}
       <MyWeight />
-      {/* ツヨポン */}
-      {/* <MyCrud /> */}
+      <MyFooter />
+    </div>
+  )
+}
+
+// Login
+const Login = () => {
+  return (
+    <div className="text-center">
+      <MyNav />
+      <p>作成中</p>
+      <Moment comment={"Login"} x="-13rem" y="-7rem" fs="90px" o="0.2" w="100%" c="yellow" offset={rand7} />
       <MyFooter />
     </div>
   )
