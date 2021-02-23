@@ -27,12 +27,18 @@ const App = () => (
   </BrowserRouter>
 )
 
+const rand3 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
+const rand4 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
+const rand5 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
+const rand6 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
+const rand7 = (Math.floor(Math.random() * 5) - 3) * 2; //  -6 ~ 6
+
 // Home
 const Home = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Hello"} x="-10rem" y="-8rem" w="" h="" o="0.2" fs="100px" r="" bc="" c="pink" offset="4"/>
+      <Moment comment={"Hello"} x="-10rem" y="-8rem" o="0.3" fs="110px" bc="" c="pink" offset={rand3} />
       <div className="home">
         <div className="stroke">
           <Block m={"The\nStart\nOf\n2021"} x="8%" y="28%" w="0px" h="" o="0.2" fs="65px" r="" bc="" c="" />
@@ -52,10 +58,10 @@ const About = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Profile"} x="-12rem" y="-10rem" o="0.2" fs="120px" r="" bc="" c="" deg="-5deg" offset="-5" />
+      <Moment comment={"Profile"} x="-12rem" y="-10rem" o="0.2" fs="120px" bc="skyblue" c="" deg="-5deg" offset={rand4} />
       <div className="about">
         <div className="container py-4">
-          <p className="mt-2">自己紹介です</p>
+          <p className="mt-2">About</p>
           <table className="table table-sm table-hover w-75 w-sm-50 mb-5 mx-auto">
             <tbody>
               <tr>
@@ -75,6 +81,7 @@ const About = () => {
           <ul className="pl-5">
             <li>2020/6 プログラミング開始</li>
             <li>2020/8 ポートフォリオ作成開始</li>
+            <li>2020/12 本サイト作成開始</li>
           </ul>
         </div>
         <MyFalling />
@@ -89,7 +96,7 @@ const Work = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Portfolio"} x="-13rem" y="-7rem" o="0.2" fs="100px" r="5px" bc="blue" c="" deg="-5deg" offset="5"/>
+      <Moment comment={"Portfolio"} x="-13rem" y="-7rem" o="0.2" fs="100px" r="5px" bc="blue" c="" deg="-5deg" offset={rand5}/>
       <MyWork />
       <MyFooter />
     </div>
@@ -101,7 +108,7 @@ const Contact = () => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Callme"} x="-9rem" y="-9rem" o="0.2" fs="110px" r="" bc="" c="" deg="-1deg" offset="-5"/>
+      <Moment comment={"Callme"} x="-11rem" y="-9rem" o="0.2" fs="110px" r="10px" bc="green" c="" deg="-1deg" offset={rand6}/>
       <MyContact />
       <MyFooter />
     </div>
@@ -115,7 +122,7 @@ const Weight = props => {
   return (
     <div className="text-center">
       <MyNav />
-      <Moment comment={"Weightne" + id + ""} x="-9rem" y="-6rem" fs="90px" o="0.2" w="100%" offset="-5"/>
+      <Moment comment={"Weight" + id } x="-13rem" y="-7rem" fs="90px" o="0.2" w="100%" c="yellow" offset={rand7}/>
       {/* 体重管理 */}
       <MyWeight />
       {/* ツヨポン */}

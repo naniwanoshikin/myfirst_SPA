@@ -11,16 +11,18 @@ const Box = posed.div({
   hidden: { // 表示前
     opacity: 1,
     x: 0,
+    rotateX: 0,
     y: 0,
   },
   visible: { // 表示後
-    opacity: 0,
+    opacity: 0.3,
     x: ({ offset }) => offset * rand1,
+    rotateX: 90,
     y: ({ offset }) => offset * rand2,
     // y: '45%', // なぜかできん。。
     transition: {
       ease: 'easeIn',
-      duration: 2000
+      duration: 2500
     },
   },
   draggable: true,

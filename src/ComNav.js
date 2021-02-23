@@ -28,7 +28,7 @@ const Nav = () => {
         top: "20px",
       }} to="/db2">
         <i className="balloon fas fa-lg fa-weight">
-          <span>体重を知ろう！</span>
+          <span className="p-2 rounded-pill">know BodyShape!</span>
         </i>
       </Link>
       <div className="snow">✳</div>
