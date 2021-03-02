@@ -27,7 +27,7 @@ export default class Papers extends React.Component {
       height: "60px",
       backgroundColor: "#66f3",
       zIndex: "5",
-      border: "1px dashed Teal",
+      // border: "1px dashed Teal",
     };
     return <div style={s} key={i}></div>;
   }

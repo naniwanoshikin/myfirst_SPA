@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app'
-import 'firebase/app'
-import 'firebase/firestore'
-import config from './config';
+import { db, FirebaseTimestamp } from './index';
 import Graph from './wecharts';
 
-firebase.initializeApp(config);
-const db = firebase.firestore();
 const collection = db.collection('scales');
 
 
@@ -17,7 +12,7 @@ const Weightness = () => {
   //   await collection
   //     .doc('2')
   //     .set({ // 手動でid名を指定
-  //       created_at: firebase.firestore.Timestamp.now(), // Timestamp型：こちらがいいかも？？
+  //       created_at: FirebaseTimestamp.now(), // Timestamp型：こちらがいいかも。
   //       // created_at: firebase.firestore.FieldValue.serverTimestamp(), // Map型：→エラー出る
   //       weight: 60,
   //       height: 160,
@@ -55,7 +50,7 @@ const Weightness = () => {
       return;
     }
     await collection.add({
-      created_at: firebase.firestore.Timestamp.now(), // Timestamp型
+      created_at: FirebaseTimestamp.now(), // Timestamp型
       height: userHeight, // cm
       weight: parsedWeight, // kg
       bmi: parsedWeight / (userHeight / 100) ** 2, // 指数
@@ -147,14 +142,6 @@ const Weightness = () => {
 
       <div className="mt-4">
         <Graph scale={users} />
-        <div>
-          <label>ID：</label>
-          <input type="text" autoComplete="off" value={docId}
-            onChange={e => { setDocId(e.target.value) }}
-          />
-          {/* <div className="btn btn-light py-0 px-2 mr-2" onClick={handleClickFetch}>試行</div> */}
-          <div className="btn btn-light py-0 px-2" onClick={handleDelete}>削除</div>
-        </div>
         <table className="table table-striped d-inline">
           <thead>
             <tr bgcolor="Coral">
@@ -179,6 +166,14 @@ const Weightness = () => {
             })}
           </tbody>
         </table>
+        <div>
+          <label>ID：</label>
+          <input type="text" autoComplete="off" value={docId}
+            onChange={e => { setDocId(e.target.value) }}
+          />
+          {/* <div className="btn btn-light py-0 px-2 mr-2" onClick={handleClickFetch}>試行</div> */}
+          <div className="btn btn-light py-0 px-2" onClick={handleDelete}>削除</div>
+        </div>
       </div>
     </div>
   );

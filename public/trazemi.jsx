@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 
 // わからなかったこと：警告が消えない（count, countUpの依存関係がない）
-
+// 関数名がtheLogin, userLoginだとエラー出るのが謎。App, Login, useLoginだと消えた。
 
 const LikeButton = () => {
   // [state変数, state変更関数] = （初期値）

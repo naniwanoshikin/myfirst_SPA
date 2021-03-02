@@ -1,6 +1,12 @@
-// progate 未使用
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'; // 関数コンポーネント
+// 未使用 progate
+/** js Doc
+ * Ⅰ カウントアップ機能
+ * Ⅱ props
+ * Ⅲ モーダル
+ * Ⅳ お問い合わせフォーム onSubmit, onChangeで画面切替
+ */
+
+// import React from 'react';
 import logo from './img/logo.svg'; // ロゴ
 
 
@@ -8,6 +14,7 @@ import logo from './img/logo.svg'; // ロゴ
 class Progate extends React.Component {
   constructor(props) {
     super(props);
+    // state: ユーザの動きに合わせて変わる値のこと。
     this.state = { // ①stateの定義（初期値）（一番大事）
       name: "忍者わんこ",
       count: 0,
@@ -18,7 +25,7 @@ class Progate extends React.Component {
     this.setState({ count: this.state.count + 1 }); // ③stateの変更
   }
   render() {
-    // ここがVirtual DOM（仮想DOM: ブラウザのレンダリングに影響を与えない操作）
+    // ここがVirtual(仮想) DOM: ブラウザのレンダリングに影響を与えない操作
     // JSXをreturn。ブラウザのレンダリングと別管理→効率よくDOM操作できる
     // returnの外はJSでかける。（constはクラスの外でもかける）
     console.log(this.state);

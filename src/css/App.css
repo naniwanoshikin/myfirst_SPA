@@ -172,7 +172,11 @@ nav .snow {
 }
 
 footer {
-  background: #c7dee9;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: #5a645a;
 }
 
 footer ul li {
@@ -202,7 +206,8 @@ footer ul li a:hover {
 }
 
 footer p a {
-  color: #1b4e28;
+  color: #1b354e;
+  color: #d8dac8;
   font-size: 20px;
 }
 
@@ -429,6 +434,15 @@ footer p a:hover {
 .weightness textarea {
   padding: 2px 5px;
   border-radius: 5px;
+}
+
+.login input[type="text"],
+.login input[type="email"],
+.login input[type="password"] {
+  width: 220px;
+  padding: 2px 5px;
+  margin-left: 8px;
+  border-radius: 8px;
 }
 
 .App-logo {

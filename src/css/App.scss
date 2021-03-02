@@ -153,7 +153,8 @@ nav {
 $backnav: rgb(199, 222, 233);
 // フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 footer {
-  background: $backnav;
+  user-select: none;
+  background: rgb(90, 100, 90);
   ul {
     li {
       padding-right: 20px;
@@ -179,7 +180,8 @@ footer {
   }
   p {
     a {
-      @include acolor($c: rgb(27, 78, 40), $bh: #fff, $ch: blueviolet);
+      @include acolor($c: rgb(27, 53, 78), $bh: #fff, $ch: blueviolet);
+      color: rgb(216, 218, 200);
       font-size: 20px;
     }
   }
@@ -358,6 +360,18 @@ footer {
   textarea {
     padding: 2px 5px;
     border-radius: 5px;
+  }
+}
+// login ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.login {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]
+   {
+    width: 220px;
+    padding: 2px 5px;
+    margin-left: 8px;
+    border-radius: 8px;
   }
 }
 

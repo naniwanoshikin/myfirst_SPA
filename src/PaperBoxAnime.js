@@ -8,31 +8,42 @@ const words = [
   { id: "nav-about", japanese: "紹介", english: "about" },
   { id: "nav-work", japanese: "作品", english: "work" },
   { id: "nav-contact", japanese: "連絡", english: "contact" },
-  // { id: "home", japanese: "ホーム", english: "honest" },
-  // { id: "construction", japanese: "工事してます", english: "construct!!!" },
 ];
-// boxの色
+
+// boxの色（初期値）
 let boxColor = "green";
-// boxの大きさ
+// boxの大きさ（初期値）
 let boxSize = [50, 300, 400];
 
+// RGB 0～255の値
+const myColor = () => {
+  let color = { r: 0, g: 0, b: 0 };
+  for (let i in color) {
+    color[i] = Math.floor(Math.random() * 256);
+  }
+  return "rgb(" + color.r + ", " + color.g + ", " + color.b + ")";
+}
+
 const handleClick = () => {
-  boxColor = "black";
+  boxColor = myColor();
   boxSize = [50, 800, 200];
   words.map(word => {
-    return document.getElementById(word.id).textContent = word.japanese;
+    return (
+      document.getElementById(word.id).textContent = word.japanese,
+      document.getElementById(word.id).style.color = myColor()
+    );
   })
-  document.getElementById("nav-home").style.color = boxColor;
-  document.querySelector(".stroke").style.color = "orange";
+  document.querySelector(".stroke").style.color = myColor();
 }
 const handleHover = () => {
-  boxColor = "red";
+  boxColor = "black";
   boxSize = [70, 800, 800];
-  document.getElementById("nav-home").style.color = boxColor;
+  document.getElementById("nav-home").style.color = "red";
 }
 const handleUnHover = () => {
+  boxColor = "blue";
   boxSize = [100, 50, 300];
-  document.getElementById("nav-home").style.color = boxColor;
+  document.getElementById("nav-home").style.color = "pink";
 }
 
 const Thing = () => {

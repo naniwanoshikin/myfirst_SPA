@@ -1,14 +1,10 @@
 // 前田剛Youtube firebaseとの連携
 import React, { useState, useEffect } from 'react';
-import firebase from 'firebase/app'
-import 'firebase/app'
-import 'firebase/firestore'
-import config from '../src/weight/config';
+// Initialize Firebase: プロジェクト設定
+import { db } from '../src/weight/config';
 
-// firebase使用
-firebase.initializeApp(config);
-const db = firebase.firestore();
 const collection = db.collection('users');
+
 
 const App = () => {
 
@@ -27,7 +23,7 @@ const App = () => {
     snapshot.forEach(doc => {
       _users.push({
         userId: doc.id, // userId定義
-        ...doc.data(), // スプレッド演算子で collectionを全て取得
+        ...doc.data(), // collectionを全て取得（スプレッド演算子）
       });
       console.log('Fetch!', doc.id, ':', doc.data());
     });
@@ -39,14 +35,16 @@ const App = () => {
   const [userName, setUserName] = useState('');
   const [age, setAge] = useState('');
   const handleAdd = async () => {
+    // 手動でid名を指定
     // await collection
     //   .doc('1')
-    //   .set({ // 手動でid名を指定しないといけない
+    //   .set({
     //     name: 'Dummy',
     //     age: 99
     //   }, { merge: true }); // 情報更新したものだけ上書き
 
-    // collection.add({ // 自動的にid名をふれる
+    // 自動的にid名を指定
+    // collection.add({
     //     name: '田中',
     //     age: 100
     //   }).then(ref => { // then がある = promise = async awaitが使える

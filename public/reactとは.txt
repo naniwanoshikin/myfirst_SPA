@@ -57,7 +57,7 @@ React.Componentを継承
 propsにはthisを持つ
 通常、上位のComponentに使用
 
-Functional Component: こちらをできるだけ使う
+Functional(関数) Component: こちらをできるだけ使う
 stateを持てない
 propsを引数にもつ
 JSXをreturn
@@ -96,6 +96,9 @@ import {Foo, Bar} from "./FooBar";
 export default function Foo() {}
 const Bar = () => {} → export default Bar
 export default class Hoge extends Fuga{}
+
+※export defaultは１モジュールにつき、１回のみ。じゃないとエラー
+
 
 →モジュール全体のimport（名前なしdefault exportより）
 import React from 'react';

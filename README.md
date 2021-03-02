@@ -1,21 +1,23 @@
 # SPA_portfolio
 ```
-SPAポートフォリオを作成しました。
+SPAを作成しました。各ページに飛びます。
+季節感を出しました。
 ```
 ![spa](https://user-images.githubusercontent.com/67915047/103504093-bd6e0900-4e99-11eb-842d-2c0e86ab7dc8.jpg)
 
 # description
-各ページに飛びます。季節感を出しました。
+```
+各コンポーネントを作成。
+Home:
+About:
+Work: グラフ
+Contact: Validation, slack
+Weight: firebase cloud functions
+Login: 作成中..
+```
 
 # Hosting
-* firebase 9.5.0
-* URL: https://spapf-24842.web.app/
-
-# 実装機能
-```
-グラフのコンポーネント化
-Validation
-```
+→ https://spapf-24842.web.app/
 
 # 使用技術
 - HTML & CSS
@@ -26,6 +28,7 @@ Validation
 - React 16.13.1
 - Git, Github
 - Slack
+- firebase 9.5.0
 
 # 使用ライブラリ
 - react-pose
@@ -33,16 +36,17 @@ Validation
 - recharts
 
 # Future Tasks
-* Weightコンポーネント グラフ判例
-* Weightコンポーネント Hooks バリデーション
-* Weightコンポーネント Hooks ログイン機能
-* ABOUTコンポーネント UI整える
+* ABOUT UI整える
+* Weight グラフ判例 クリック Hooks バリデーション
+* Login ログイン機能
 
-<!-- * firebase（cloud functions） -->
-<!-- # 苦労したところ -->
+<!-- Nav: Pose -->
 <!-- home: text改行（正規表現） -->
-<!-- work: z-index（親に設定しないと子要素に効かない） -->
-<!-- work: 仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
-<!-- contact: ラジオボタンの保持。 -->
-<!-- contact: block要素、inline要素。 -->
-<!-- weightness: firebaseのtimestamp → new Date() -->
+<!-- work: -->
+<!-- ・z-index（親に設定しないと子要素に効かない） -->
+<!-- ・仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
+<!-- contact: -->
+<!-- ・ラジオボタンの保持 -->
+<!-- ・block要素、inline要素。 -->
+<!-- weightness: 誰でも手軽に管理できる体重管理アプリ -->
+<!-- ・firebaseのtimestamp → new Date() -->

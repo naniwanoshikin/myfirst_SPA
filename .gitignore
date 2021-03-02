@@ -10,8 +10,11 @@
 
 # production
 /build
-# firebase added!!!!
+# firebase 追加!!!!
 /firebase
+# うまくいかない
+config.js
+
 
 # misc
 .DS_Store

@@ -35,7 +35,7 @@ const Nav = () => {
             <span className="p-2 rounded-pill">know BodyShape!</span>
           </i>
         </Link>
-        <Link to="/login" className="ml-3">
+        <Link to="/signin" className="ml-3">
           <i className="fas fa-lg fa-key text-light"></i>
         </Link>
       </div>
