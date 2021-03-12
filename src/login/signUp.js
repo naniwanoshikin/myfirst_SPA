@@ -3,7 +3,7 @@ import { signupWithEmailAndPassword, } from '../weight/index';
 import { Link, } from 'react-router-dom';
 
 // 登録フォーム
-const useSign = () => {
+const SignUpView = () => {
 
   // 登録情報
   const [userName, setName] = useState(''),
@@ -25,7 +25,7 @@ const useSign = () => {
 
   return (
     <div className="login my-0 py-4 bg-warning">
-      <h2>新規登録</h2>
+      <h2>Sign up</h2>
       <form onSubmit={signUp}>
         <label>Name
           <input type="text" name="" placeholder="Taro"
@@ -58,4 +58,4 @@ const useSign = () => {
   )
 }
 
-export default useSign;
+export default SignUpView;

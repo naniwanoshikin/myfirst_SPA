@@ -39,7 +39,7 @@ export default class Pose extends React.Component {
     }, 100);
     // console.log('mount')
   }
-  componentWillUnmount() {
+  componentWillUnmount() { // リソース開放
     clearTimeout(this.handle);
   }
   render() {

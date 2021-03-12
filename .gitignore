@@ -12,8 +12,8 @@
 /build
 # firebase 追加!!!!
 /firebase
-# うまくいかない
-config.js
+# envファイル
+.env
 
 
 # misc

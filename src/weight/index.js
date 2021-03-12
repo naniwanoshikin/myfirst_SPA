@@ -14,12 +14,13 @@ export const FirebaseTimestamp = firebase.firestore.Timestamp;
 
 const collection = db.collection('loginUsers');
 
+
 // ユーザ登録
 export const signupWithEmailAndPassword = async (name, email, password) => {
   try {
-    // 認証登録
+    // Auth登録
     const user = await auth.createUserWithEmailAndPassword(email, password);
-    // Mailに送信(emailVerified)
+    // Mail送信
     // await auth.currentUser.sendEmailVerification();
 
     // firestore登録
@@ -35,7 +36,6 @@ export const signupWithEmailAndPassword = async (name, email, password) => {
       }
       collection.doc(uid).set(userInitialData, { merge: true });
     }
-
     console.log('登録成功');
     return user;
   } catch (error) {
@@ -54,16 +54,17 @@ export const signinWithEmailAndPassword = async (email, password) => {
     if (user) {
       const uid = user.user.uid
       const snapshot = await collection.doc(uid).get();
+      console.log('snapshot');
       console.log(snapshot);
-      const _users = [];
-      snapshot.forEach(doc => {
-        _users.push({
-          userId: doc.id, // userId定義
-          ...doc.data(), // collectionを全て取得
-        });
-        console.log('Fetch!', doc.id, ':', doc.data());
-      });
-      console.log(_users);
+      // const _users = [];
+      // snapshot.forEach(doc => {
+      //   _users.push({
+      //     userId: doc.id, // userId定義
+      //     ...doc.data(), // collectionを全て取得
+      //   });
+      //   console.log('Fetch!', doc.id, ':', doc.data());
+      // });
+      // console.log(_users);
     }
 
     console.log('ログイン成功');

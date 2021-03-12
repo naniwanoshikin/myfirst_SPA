@@ -1,6 +1,5 @@
 // 前田剛Youtube firebaseとの連携
 import React, { useState, useEffect } from 'react';
-// Initialize Firebase: プロジェクト設定
 import { db } from '../src/weight/config';
 
 const collection = db.collection('users');
@@ -51,7 +50,7 @@ const App = () => {
     //     console.log('Add with ID: ', ref.id);
     //   });
 
-    // hooksの変数
+    // 変数
     if (!userName) {
       console.log('名前が空です');
     }
@@ -119,8 +118,6 @@ const App = () => {
     }
   }
 
-
-  // 自動検知
   useEffect(() => {
     const unsubscribe = collection
       .orderBy('age', 'desc')

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { signinWithEmailAndPassword } from '../weight/index';
 import { Link, } from 'react-router-dom';
-
+import Hooks from './hooks';
 
 // ログインフォーム
 const useSign = () => {
@@ -49,6 +49,8 @@ const useSign = () => {
       <Link to="./signup">新規登録はこちら</Link>
       <br />
       <Link to="./home">Home</Link>
+      <br/>
+      <Hooks color="green" />
     </div>
   )
 }

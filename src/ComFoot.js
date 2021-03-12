@@ -6,17 +6,21 @@ const Links = [
     i: "fab fa-2x fa-github faa-tada",
   },
   {
-    link: "https://twitter.com/intent/tweet?text=LGTM恵んでください🙇‍♂️&url=https://twitter.com/power_of_shikin/status/1346568577843773441",
-    i: "fab fa-2x fa-twitter faa-passing",
+    link: "https://qiita.com/power_of_shikin",
+    i: "fas fa-2x fa-search faa-spin",
   },
-  {
-    link: "http://instagram.com/shikitch_pk",
-    i: "fab fa-2x fa-instagram fa-flip-horizontal faa-spin",
-  },
-  {
-    link: "https://www.youtube.com/channel/UCyydUwy-0x2Tc-FcCWBQncw?view_as=subscriber",
-    i: "fab fa-2x fa-youtube faa-ring",
-  },
+  // {
+  //   link: "https://twitter.com/intent/tweet?text=LGTM恵んでください🙇‍♂️&url=https://twitter.com/power_of_shikin/status/1346568577843773441",
+  //   i: "fab fa-2x fa-twitter faa-passing",
+  // },
+  // {
+  //   link: "http://instagram.com/shikitch_pk",
+  //   i: "fab fa-2x fa-instagram fa-flip-horizontal faa-spin",
+  // },
+  // {
+  //   link: "https://www.youtube.com/channel/UCyydUwy-0x2Tc-FcCWBQncw?view_as=subscriber",
+  //   i: "fab fa-2x fa-youtube faa-ring",
+  // },
 ];
 
 const Footer = () => {

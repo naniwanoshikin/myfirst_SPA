@@ -162,6 +162,9 @@ footer {
         .fa-github {
           color: black;
         }
+        .fa-search {
+          color: rgb(106, 240, 128);
+        }
         .fa-twitter {
           color: rgb(106, 202, 240);
         }
@@ -180,7 +183,6 @@ footer {
   }
   p {
     a {
-      @include acolor($c: rgb(27, 53, 78), $bh: #fff, $ch: blueviolet);
       color: rgb(216, 218, 200);
       font-size: 20px;
     }

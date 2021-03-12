@@ -1,12 +1,13 @@
 自分用ノート
-
-
 React.js
+
 目的：DOMを書き換える
 簡易的なWEBサーバーを使う：ajax通信（非同期）
 react ≠ SPA
 DB接続は非同期処理
 ライフサイクル内での非同期処理は「async付きの即時関数」を使う。DB接続処理をしっかり待ってから次の処理に進むこと。
+変数名は全てキャメルケースでかこう。
+
 
 SPAとは「Single Page Appliction」
 1つのWebページによって１つのアプリを構築する。
@@ -64,20 +65,29 @@ JSXをreturn
 
 
 stateとは
+・ユーザの動きに合わせて変わる値。
 ・Component内で管理する変数（ローカルステートと呼ばれる）（this.state.key）
 ・「props」として子のComponentに渡せる。
 ・render()内では値を変更してはいけない。constructorで宣言し、setState()で値を変更（再レンダー）
 
+JSXとは
+・JS内でHTMLを簡単に記述するためのJSの拡張言語（JSではない）
+・return直下の<div>で囲まれた部分。→可読性が高くなる
+・ブラウザはJSXを理解できない為、JSX→JS に翻訳する（トランスパイラ）（TypeScript, Babelなどもそう）
+・JSXをreturn。ブラウザのレンダリングと別管理→効率よくDOM操作できる
+
+
 
 ライフサイクル class Componentでしか扱えない
-・なぜ使う？
-関数の外に影響を与える関数を記述するため（DOM変更、API通信、ログ出力、setState...）
+・なぜ使う？→関数の外に影響を与える関数を記述するため（DOM変更、API通信、ログ出力、setState...）
 ・Mounting：Componentが配置される（生まれる）期間
-constructor()で初期化→render()でVDOM描画→componentDidMount()でリスナー設定やAPI通信が行われる
+constructor()で初期化→render()でVDOM描画→componentDidMount()でリスナー設定やAPI通信が行われる。
+コンポーネントがDOM に挿入された直後に呼び出される。
+
 ・Updating: Componentが変更される（成長する）期間
 render()→componentDidUpdate()で再レンダー後に呼ばれる。chatbotのスクロールイベントなど
 ・unMounting：Componentが破棄される（死ぬ）期間
-componentWillUnmount()でリソースを解放する(リスナー解除など)
+componentWillUnmount()でリスナーを解除
 
 
 ・名前付きexport
@@ -132,7 +142,11 @@ APIサーバー（Cloud Functions）
 
 Youtbe #11~14を見る。
 
-
+progate
+Ⅰ カウントアップ機能
+Ⅱ props
+Ⅲ モーダル
+Ⅳ お問い合わせフォーム onSubmit, onChangeで画面切替
 
 
 直下のパッケージ確認
@@ -141,3 +155,27 @@ npm ls --depth=0
 
 グローバルのやつ確認
 npm ls -g
+
+
+
+Hooksとは
+・class機能（stateやライフサイクル）をfunctional Componentで使える
+・100%後方互換（小さく導入できる）
+・なぜ使うか：シンプルさ
+・下位のComponentでもstateを管理しやすくできる
+・分割代入の構文, useState = ステートフック
+・[state変数, state変更関数] = useState（初期値）
+
+★useEffect：ライフサイクルメソッドの代替。機能ベースでかく。
+・関数コンポーネントではライフサイクルメソッドは使えないため、これをで代替できる。callBack関数でかく。
+・第1引数の処理（副作用）は、レンダリング直後に毎回実行される（自動検知）。
+・第2引数（依存変数）を使って特定の値が変化した時のみ実行もできる。
+・第2引数の配列を入れると、値を前回レンダーと今回レンダーで比較される。変更があれば実行。
+・return クリーンアップ関数（callback関数でかく）: remove（リスナー解除）（無駄なイベントを減らし、サーバー負荷を減らす）
+
+★useContext
+・子コンポーネントへのpropsのバケツリレーを簡潔にできる。
+
+
+★useReducer
+・？？

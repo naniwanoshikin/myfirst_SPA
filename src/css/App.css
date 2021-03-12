@@ -187,6 +187,10 @@ footer ul li a .fa-github {
   color: black;
 }
 
+footer ul li a .fa-search {
+  color: #6af080;
+}
+
 footer ul li a .fa-twitter {
   color: #6acaf0;
 }
@@ -206,17 +210,8 @@ footer ul li a:hover {
 }
 
 footer p a {
-  color: #1b354e;
   color: #d8dac8;
   font-size: 20px;
-}
-
-footer p a:hover {
-  background: #fff;
-  color: blueviolet;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
-  text-decoration: none;
 }
 
 .home {
