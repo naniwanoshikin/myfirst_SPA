@@ -1,4 +1,5 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+
 
 # dependencies
 /node_modules
@@ -10,8 +11,9 @@
 
 # production
 /build
-# firebase 追加!!!!
+# firebase 追加！
 /firebase
+
 # envファイル
 .env
 

@@ -1,17 +1,22 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import MyNav from './ComNav';
-import MyFooter from './ComFoot';
-import Moment from './ComMoment'; // アニメ文字
-import MyHome from './Home';
-import MyAbout from './About';
-import MyWork from './Work_1';
-import MyContact from './Contact';
-import MyWeight from './weight/weightness';
-import Auth from './login/privateRoute'; // 認証
-import myhome from './login/home';
-import Login from './login/Login';
-import SignUp from './login/SignUp';
+// 共通
+import MyNav from './Nav';
+import MyFooter from './Foot';
+import Moment from './Moment'; // Nav上で動いて消え倒れる文字
+// 各項目
+import MyHome from './js/Home/Home';
+import MyAbout from './js/About/About';
+import MyWork from './js/Work/Work1';
+import MyContact from './js/Contact/Contact';
+// 体重管理
+import MyWeight from './js/Weight/weightness';
+import { AuthProvider } from "./js/Weight/index";
+// ログイン
+import PrivateRoute from './js/login/privateRoute'; // 認証
+import myhome from './js/login/home';
+import Login from './js/login/Login';
+import SignUp from './js/login/SignUp';
 import './css/App.css';
 
 // Routing
@@ -73,7 +78,6 @@ const Contact = () => {
   )
 }
 
-// 体重管理
 const Weight = props => {
   const { id } = props.match.params
   return (
@@ -88,17 +92,18 @@ const MyLogin = () => {
   return (
     <>
       <Moment comment={"Login"} x="-13rem" y="-7rem" fs="90px" o="0.2" w="100%" c="yellow" offset={rand7} />
-      <BrowserRouter>
-        <div>
-          <Auth>
-            <Route exact path="/home" component={myhome} />
-          </Auth>
-          {/* ログイン */}
-          <Route exact path="/signin" component={Login} />
-          {/* 新規登録 */}
-          <Route exact path="/signup" component={SignUp} />
-        </div>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <div>
+            {/* ログイン */}
+            <Route exact path="/signin" component={Login} />
+            {/* 新規登録 */}
+            <Route exact path="/signup" component={SignUp} />
+            {/* マイページ（認証後） */}
+            <PrivateRoute exact path="/home" component={myhome} />
+          </div>
+        </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }

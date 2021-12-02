@@ -75,7 +75,7 @@ nav {
       left: 50%;
       width: 65px; /*線の長さ*/
       height: 3px; /*線の太さ*/
-      transform: translateX(-50%); /*位置調整*/
+      transform: translateX(-50%);
       border-radius: 50%; /*線の丸み*/
       background: rgb(216, 202, 81);
     }
@@ -293,7 +293,7 @@ footer {
   }
   // テキスト枠
   .textline {
-    padding: 10px;
+    padding: 5px 8px;
     border-radius: 8px;
   }
   // 未入力
@@ -326,7 +326,7 @@ footer {
       @include bcr($b: rgb(255, 255, 255), $r: 30%);
       @include wh($w: 18px, $h: 18px);
       position: absolute;
-      top: 2px; /* 上からの位置 */
+      top: 2px;
       left: 4px;
       border: solid 2px #727983;
       /* 選択時に重ねる内円（透明にしておく） */
@@ -366,12 +366,13 @@ footer {
 }
 // login ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .login {
+  color: black;
   input[type="text"],
   input[type="email"],
   input[type="password"]
    {
     width: 220px;
-    padding: 2px 5px;
+    padding: 2px 8px;
     margin-left: 8px;
     border-radius: 8px;
   }

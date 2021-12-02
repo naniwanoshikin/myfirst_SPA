@@ -1,13 +1,10 @@
 # SPA_portfolio
-```
 SPAを作成しました。各ページに飛びます。
-季節感を出しました。
-```
 ![spa](https://user-images.githubusercontent.com/67915047/103504093-bd6e0900-4e99-11eb-842d-2c0e86ab7dc8.jpg)
 
 # description
 ```
-各コンポーネントを作成。
+各コンポーネントを作成
 Home:
 About:
 Work: グラフ
@@ -17,28 +14,28 @@ Login: 作成中..
 ```
 
 # Hosting
-→ https://spapf-24842.web.app/
+[Webページ](https://spapf-24842.web.app/)を公開中。
 
 # 使用技術
 - HTML & CSS
 - Sass
 - Bootstrap 4.5.0
-- node.js 14.8.0
-- npm 7.5.4
+- node.js 14.16.0
+- npm 6.14.11
 - React 16.13.1
 - Git, Github
 - Slack
-- firebase 9.5.0
+- firebase 9.23.0
 
 # 使用ライブラリ
 - react-pose
 - react-three-fiber
 - recharts
 
-# Future Tasks
-* ABOUT UI整える
-* Weight グラフ判例 クリック Hooks バリデーション
-* Login ログイン機能
+<!-- # Future Tasks -->
+<!-- - ABOUT UI整える -->
+<!-- - Weight グラフ判例 クリック Hooks バリデーション -->
+<!-- - Login ログイン機能 状態管理 -->
 
 <!-- Nav: Pose -->
 <!-- home: text改行（正規表現） -->
@@ -50,3 +47,12 @@ Login: 作成中..
 <!-- ・block要素、inline要素。 -->
 <!-- weightness: 誰でも手軽に管理できる体重管理アプリ -->
 <!-- ・firebaseのtimestamp → new Date() -->
+<!-- Login: -->
+<!-- ・useContext -->
+
+
+
+<!-- 2020.12.5 作成 -->
+<!-- 2021.12.3 修正 READE.md -->
+<!-- 2021.12.3 リファクタ Work 配列にまとめる -->
+<!-- 2021.12.3 ディレクトリ名整理 js -->
