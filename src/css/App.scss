@@ -13,12 +13,12 @@
   @content;
 }
 // リンクの色
-@mixin acolor($c: #ccc, $bh: #eee, $ch: #fff) {
+@mixin link_color($c: #ccc, $hbc: #eee, $hc: #fff) {
   color: $c;
+  transition: 0.7s;
   &:hover {
-    background: $bh;
-    color: $ch;
-    transition: 0.7s;
+    color: $hc;
+    background: $hbc;
     text-decoration: none;
   }
 }
@@ -43,15 +43,15 @@ body {
 nav {
   // @include bcr($b: rgb(121, 61, 61), $r: 10px);
   .nav-item {
-    @include acolor($c: rgb(241, 234, 234), $ch: rgb(38, 38, 233));
+    @include link_color($c: rgb(241, 234, 234), $hc: rgb(38, 38, 233));
     transform: rotate(3deg);
     padding: 10px 0;
     // border-bottom: 3px groove rgb(228, 193, 38);
+    border-radius: 10px;
     &:hover {
       top: 5px;
       color: #4eacff;
-      background-color: rgba(255, 255, 255, 0.685);
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.685);
       box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.7);
       transition: all 0.4s;
     }
@@ -237,9 +237,9 @@ footer {
     z-index: 1;
     border: 3px groove white;
     h5 {
-      @include acolor($c: rgb(189, 235, 203), $bh: rgb(255, 255, 255), $ch: blueviolet);
-      background: rgb(121, 149, 168);
-      border-radius: 10px;
+      @include link_color($c: blueviolet, $hbc: rgba(255, 255, 255, 0.473), $hc: blueviolet);
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
       display: inline-block;
       cursor: pointer;
     }

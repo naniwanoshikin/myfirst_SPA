@@ -1,15 +1,14 @@
-# SPA_portfolio
-SPAを作成しました。各ページに飛びます。
+# MainPage
+自身のメインサイトを作成。各ページに飛びます。
 ![spa](https://user-images.githubusercontent.com/67915047/103504093-bd6e0900-4e99-11eb-842d-2c0e86ab7dc8.jpg)
 
-# description
+# Description
 ```
-各コンポーネントを作成
-Home:
-About:
-Work: グラフ
-Contact: Validation, slack
-Weight: firebase cloud functions
+Home: クリックすると紙が出ます。物体が動いています。
+About: 自己紹介です。
+Work: 各ページに飛びます。グラフ。
+Contact: お問い合わせ。slack通知。
+Weight: cloud functions
 Login: 作成中..
 ```
 
@@ -32,11 +31,12 @@ Login: 作成中..
 - react-three-fiber
 - recharts
 
-<!-- # Future Tasks -->
-<!-- - ABOUT UI整える -->
-<!-- - Weight グラフ判例 クリック Hooks バリデーション -->
+# Future Tasks
+- ABOUT UI整える
+- Weight グラフ判例 クリック Hooks バリデーション
 <!-- - Login ログイン機能 状態管理 -->
 
+<!-- 各コンポーネント -->
 <!-- Nav: Pose -->
 <!-- home: text改行（正規表現） -->
 <!-- work: -->
@@ -44,7 +44,7 @@ Login: 作成中..
 <!-- ・仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
 <!-- contact: -->
 <!-- ・ラジオボタンの保持 -->
-<!-- ・block要素、inline要素。 -->
+<!-- ・block要素, inline要素 -->
 <!-- weightness: 誰でも手軽に管理できる体重管理アプリ -->
 <!-- ・firebaseのtimestamp → new Date() -->
 <!-- Login: -->
@@ -53,6 +53,8 @@ Login: 作成中..
 
 
 <!-- 2020.12.5 作成 -->
-<!-- 2021.12.3 修正 READE.md -->
-<!-- 2021.12.3 リファクタ Work 配列にまとめる -->
-<!-- 2021.12.3 ディレクトリ名整理 js -->
+<!-- 2021 -->
+<!-- 12/03: 修正 READE リンクなど -->
+<!-- 12/03: リファクタ Work 配列にまとめる -->
+<!-- 12/03: ディレクトリ名整理 js -->
+<!-- 12/30: 修正 README 専門用語使わない -->

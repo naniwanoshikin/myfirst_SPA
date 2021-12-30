@@ -43,7 +43,7 @@ const skills = [
   // ],
   [
     "Twitter APP", "https://shikintutrial.herokuapp.com/",
-    "ツイッターアプリを作成しました。呟いたり、いいねができます。",
+    "ツイッターアプリをrailsで作成。\n呟いたり、いいねしましょう。",
     "ruby on rails, Sass, JavaScript, jQuery, \nHosting: Heroku",
     photo5, "2021.07-", [
       { name: '2021.06', rails: 5, ajax: 15, },

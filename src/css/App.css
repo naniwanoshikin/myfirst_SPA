@@ -22,24 +22,24 @@ body a {
 
 nav .nav-item {
   color: #f1eaea;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
   -webkit-transform: rotate(3deg);
           transform: rotate(3deg);
   padding: 10px 0;
+  border-radius: 10px;
 }
 
 nav .nav-item:hover {
-  background: #eee;
   color: #2626e9;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
+  background: #eee;
   text-decoration: none;
 }
 
 nav .nav-item:hover {
   top: 5px;
   color: #4eacff;
-  background-color: rgba(255, 255, 255, 0.685);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.685);
   -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.7);
           box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.7);
   -webkit-transition: all 0.4s;
@@ -268,18 +268,18 @@ footer p a {
 }
 
 .work .work-item h5 {
-  color: #bdebcb;
-  background: #7995a8;
-  border-radius: 10px;
+  color: blueviolet;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
   display: inline-block;
   cursor: pointer;
 }
 
 .work .work-item h5:hover {
-  background: white;
   color: blueviolet;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
+  background: rgba(255, 255, 255, 0.473);
   text-decoration: none;
 }
 
