@@ -2,11 +2,11 @@ import React from 'react';
 
 const Links = [
   {
-    link: "https://github.com/naniwanoshikin/shikichanpower.github.io/blob/master/index.html",
+    link: "https://github.com/naniwanoshikin/myfirst_SPA",
     i: "fab fa-2x fa-github faa-tada",
   },
   {
-    link: "https://qiita.com/power_of_shikin",
+    link: "https://qiita.com/power_of_shikin/items/5e38e1908f6e2b07d3b7",
     i: "fas fa-2x fa-search faa-spin",
   },
   // {
@@ -39,7 +39,7 @@ const Footer = () => {
           )
         })}
       </ul>
-      <p><a href="#!">© shikitti-Portfolio.2021</a></p>
+      <p><a href="#!">© shikitti-page.2021</a></p>
     </footer>
   );
 }

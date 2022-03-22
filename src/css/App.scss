@@ -22,7 +22,7 @@
     text-decoration: none;
   }
 }
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ------------------------------------
 /* small screen */
 body {
   @include bcr($b: #ce604def, $c: rgb(245, 235, 235), $r: 0px);
@@ -39,7 +39,7 @@ body {
   }
 }
 
-// Nav ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// Nav ------------------------------------
 nav {
   // @include bcr($b: rgb(121, 61, 61), $r: 10px);
   .nav-item {
@@ -151,7 +151,7 @@ nav {
 }
 // 背景色
 $backnav: rgb(199, 222, 233);
-// フッター ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
 footer {
   user-select: none;
   background: rgb(90, 100, 90);
@@ -184,19 +184,23 @@ footer {
   p {
     a {
       color: rgb(216, 218, 200);
-      font-size: 20px;
+      font-size: 18px;
+      &:hover {
+        color: rgb(216, 218, 200);
+        text-decoration: none;
+      }
     }
   }
 }
 
-// HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// HOME ------------------------------------
 .home {
   user-select: none;
   @include bcr($b: rgb(243, 223, 181), $c: rgb(51, 45, 45), $r: 0px);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   // height: 100%;
   // font-size: calc(10px + 2vmin);
-  // text ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  // text ------------------------------------
   .stroke {
     color: rgba(50, 197, 75, 0.39);
     letter-spacing: 0.7em;
@@ -204,7 +208,7 @@ footer {
     -webkit-text-stroke: 1px #555555;
   }
 }
-// ABOUT ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ABOUT ------------------------------------
 .about {
   user-select: none;
   & > .container {
@@ -227,9 +231,9 @@ footer {
     }
   }
 }
-// WORKs ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// WORKs ------------------------------------
 .work {
-  // アイテム
+  // div
   .work-item {
     @include bcr($b: rgb(87, 94, 74), $c: white, $r: 10px);
     width: 90%;
@@ -238,17 +242,17 @@ footer {
     border: 3px groove white;
     h5 {
       @include link_color($c: blueviolet, $hbc: rgba(255, 255, 255, 0.473), $hc: blueviolet);
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 5px;
       display: inline-block;
       cursor: pointer;
     }
     img {
       width: 100%;
-      height: 280px;
+      height: 290px;
       cursor: pointer;
     }
-    // urlを格納した文字列としてのタグ
+    // urlを格納した文字列
     a {
       color: rgb(37, 217, 223);
     }
@@ -275,7 +279,7 @@ footer {
     width: 90%;
   }
 }
-// Constact ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// Constact ------------------------------------
 .contact {
   @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 0px);
   user-select: none;
@@ -350,7 +354,7 @@ footer {
     }
   }
 }
-// weightness ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// weightness ------------------------------------
 .weightness {
   background: Teal;
   input[type="text"] {
@@ -364,7 +368,7 @@ footer {
     border-radius: 5px;
   }
 }
-// login ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// login ------------------------------------
 .login {
   color: black;
   input[type="text"],
@@ -378,7 +382,7 @@ footer {
   }
 }
 
-// img ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// img ------------------------------------
 .App-logo {
   height: 100px;
 }
@@ -395,7 +399,7 @@ footer {
     transform: rotate(360deg);
   }
 }
-// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+// ------------------------------------
 /* medium screen */
 @media (min-width: 576px) {
   nav {
@@ -422,16 +426,16 @@ footer {
     }
   }
 }
-// iPad限定（縦向きのみ）
+// iPad限定 縦向きのみ
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  // NAV ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  // NAV ------------------------------------
   nav {
     .nav-item {
       font-size: 36px;
       color: #b3e9c0;
     }
   }
-  // HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  // HOME ------------------------------------
   .home {
     header {
       height: 66vh;
@@ -445,15 +449,15 @@ footer {
     }
   }
 }
-// iPad Pro限定（縦向きのみ）
+// iPad Pro限定 縦向きのみ
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
-  // NAV ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  // NAV ------------------------------------
   nav {
     .nav-item {
       font-size: 44px;
     }
   }
-  // HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  // HOME ------------------------------------
   .home {
     header {
       height: 74vh;
@@ -467,9 +471,9 @@ footer {
     }
   }
 }
-// iPad Pro 11 2020（縦向きのみ）
+// iPad Pro 11 2020 縦向きのみ
 @media only screen and (min-device-width: 1688px) and (max-device-width: 2388px) and (orientation: portrait) {
-  // HOME ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+  // HOME ------------------------------------
   .home {
     header {
       height: auto;

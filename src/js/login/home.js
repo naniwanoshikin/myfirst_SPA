@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { AuthContext, collection, db, FirebaseTimestamp } from '../Weight/index';
+import { AuthContext } from '../Weight/index';
 // import Graph from '../weight/wecharts';
 
 
 const Home = () => {
-  const { signout, signin } = useContext(AuthContext);
+  const { signout } = useContext(AuthContext);
 
 
   // 入力情報

@@ -21,6 +21,7 @@ export default class App extends Component {
             <Area type="monotone" dataKey="firestore" fill="#8884d8" stroke="blue" />
             <Area type="monotone" dataKey="Heroku" fill="#8884d8" stroke="blue" />
             <Area type="monotone" dataKey="ajax" fill="#8884d8" stroke="blue" />
+            <Area type="monotone" dataKey="api" fill="#8884d8" stroke="blue" />
             <Line type="monotone" dataKey="rails" stroke="pink" />
             <XAxis dataKey="name" stroke="#8884d8" />
             <YAxis />

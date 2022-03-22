@@ -1,6 +1,10 @@
-# MainPage
-自身のメインサイトを作成。各ページに飛びます。
+# マイページ
+    メインサイトを作成。各ページに飛びます。
+
+[こちら](https://spapf-24842.web.app/)で公開しています。
+
 ![spa](https://user-images.githubusercontent.com/67915047/103504093-bd6e0900-4e99-11eb-842d-2c0e86ab7dc8.jpg)
+
 
 # Description
 ```
@@ -9,52 +13,24 @@ About: 自己紹介です。
 Work: 各ページに飛びます。グラフ。
 Contact: お問い合わせ。slack通知。
 Weight: cloud functions
-Login: 作成中..
 ```
 
-# Hosting
-[Webページ](https://spapf-24842.web.app/)を公開中。
-
 # 使用技術
-- HTML & CSS
-- Sass
+- HTML/CSS/Sass
 - Bootstrap 4.5.0
 - node.js 14.16.0
 - npm 6.14.11
 - React 16.13.1
 - Git, Github
 - Slack
-- firebase 9.23.0
+# Hosting
+- firebase 10.0.1
 
 # 使用ライブラリ
 - react-pose
 - react-three-fiber
 - recharts
 
-# Future Tasks
+# 今後の課題
 - ABOUT UI整える
 - Weight グラフ判例 クリック Hooks バリデーション
-<!-- - Login ログイン機能 状態管理 -->
-
-<!-- 各コンポーネント -->
-<!-- Nav: Pose -->
-<!-- home: text改行（正規表現） -->
-<!-- work: -->
-<!-- ・z-index（親に設定しないと子要素に効かない） -->
-<!-- ・仮想DOMの文字列→HTML変換、グラフのコンポーネント化 -->
-<!-- contact: -->
-<!-- ・ラジオボタンの保持 -->
-<!-- ・block要素, inline要素 -->
-<!-- weightness: 誰でも手軽に管理できる体重管理アプリ -->
-<!-- ・firebaseのtimestamp → new Date() -->
-<!-- Login: -->
-<!-- ・useContext -->
-
-
-
-<!-- 2020.12.5 作成 -->
-<!-- 2021 -->
-<!-- 12/03: 修正 READE リンクなど -->
-<!-- 12/03: リファクタ Work 配列にまとめる -->
-<!-- 12/03: ディレクトリ名整理 js -->
-<!-- 12/30: 修正 README 専門用語使わない -->
