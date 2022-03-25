@@ -54,7 +54,7 @@ const skills = [
   ],
   [
     "pkmap", "https://pk-map.herokuapp.com/",
-    "パルクール専用サイトを作成しました。\n地図でスポットを探して、外で動きましょう！",
+    "パルクールアプリを作成しました。\n地図でスポットを探して、外で動きましょう！",
     "Ruby on Rails, JavaScript, jQuery, \nGoogle Maps API \nHeroku ",
     photo5, "2022.02-", [
       { name: '2022.02', rails: 5, api: 5, },
