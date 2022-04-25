@@ -1,6 +1,6 @@
 import React from 'react';
 import posed from 'react-pose';
-import Block from './js/Home/Block';
+import Block from './Home/Block';
 
 const rand1 = (Math.floor(Math.random() * 5) - 2) * 3; //  ±6
 const rand2 = (Math.floor(Math.random() * 5) - 2) * 3;

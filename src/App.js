@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 // 共通
-import MyNav from './Nav';
-import MyFooter from './Foot';
-import Moment from './Moment'; // Nav上で動いて消え倒れる文字
-// 各項目
+import MyNav from './js/Nav';
+import MyFooter from './js/Foot';
+import Moment from './js/Moment'; // Nav上で動いて消え倒れる文字
+// 各サイト
 import MyHome from './js/Home/Home';
 import MyAbout from './js/About/About';
 import MyWork from './js/Work/Work1';
@@ -19,8 +19,9 @@ import Login from './js/login/Login';
 import SignUp from './js/login/SignUp';
 import './css/App.css';
 
-// Routing
+// index.js
 const App = () => (
+  // Routing
   <BrowserRouter>
     <div className="text-center">
       <MyNav />

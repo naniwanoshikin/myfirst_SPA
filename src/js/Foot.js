@@ -9,6 +9,14 @@ const Links = [
     link: "https://qiita.com/power_of_shikin/items/5e38e1908f6e2b07d3b7",
     i: "fas fa-2x fa-search faa-spin",
   },
+  {
+    link: "./db2",
+    i: "fas fa-2x fa-weight faa-spin text-light",
+  },
+  // {
+  //   link: "./signin",
+  //   i: "fas fa-2x fa-key text-light faa-spin",
+  // },
   // {
   //   link: "https://twitter.com/intent/tweet?text=LGTM恵んでください🙇‍♂️&url=https://twitter.com/power_of_shikin/status/1346568577843773441",
   //   i: "fab fa-2x fa-twitter faa-passing",
@@ -25,7 +33,7 @@ const Links = [
 
 const Footer = () => {
   return (
-    <footer className="pt-5 pb-3 text-center">
+    <footer className="pt-4 pb-3 text-center">
       <ul className="d-inline-flex pl-3">
         {Links.map((list, i) => {
           return (

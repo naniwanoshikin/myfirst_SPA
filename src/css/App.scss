@@ -39,7 +39,7 @@ body {
   }
 }
 
-// Nav ------------------------------------
+// ------------------------------------
 nav {
   // @include bcr($b: rgb(121, 61, 61), $r: 10px);
   .nav-item {
@@ -155,6 +155,7 @@ $backnav: rgb(199, 222, 233);
 footer {
   user-select: none;
   background: rgb(90, 100, 90);
+  height: 17vh;
   ul {
     li {
       padding-right: 20px;
@@ -193,7 +194,7 @@ footer {
   }
 }
 
-// HOME ------------------------------------
+// ------------------------------------
 .home {
   user-select: none;
   @include bcr($b: rgb(243, 223, 181), $c: rgb(51, 45, 45), $r: 0px);
@@ -208,12 +209,12 @@ footer {
     -webkit-text-stroke: 1px #555555;
   }
 }
-// ABOUT ------------------------------------
+// ------------------------------------
 .about {
   user-select: none;
   & > .container {
     $textcolor: rgb(73, 66, 66);
-    @include bcr($b: #c29f73ef, $c: $textcolor, $r: 20px 20px 0 0);
+    @include bcr($b: #c29f73ef, $c: $textcolor, $r: 0);
     // プロフィール
     table th,
     table td {
@@ -231,7 +232,7 @@ footer {
     }
   }
 }
-// WORKs ------------------------------------
+// ------------------------------------
 .work {
   // div
   .work-item {
@@ -279,7 +280,7 @@ footer {
     width: 90%;
   }
 }
-// Constact ------------------------------------
+// ------------------------------------
 .contact {
   @include bcr($b: rgb(230, 230, 180), $c: rgb(44, 43, 43), $r: 0px);
   user-select: none;
@@ -354,7 +355,7 @@ footer {
     }
   }
 }
-// weightness ------------------------------------
+// ------------------------------------
 .weightness {
   background: Teal;
   input[type="text"] {
@@ -368,7 +369,7 @@ footer {
     border-radius: 5px;
   }
 }
-// login ------------------------------------
+// ------------------------------------
 .login {
   color: black;
   input[type="text"],
@@ -451,13 +452,13 @@ footer {
 }
 // iPad Pro限定 縦向きのみ
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
-  // NAV ------------------------------------
+  // ------------------------------------
   nav {
     .nav-item {
       font-size: 44px;
     }
   }
-  // HOME ------------------------------------
+  // ------------------------------------
   .home {
     header {
       height: 74vh;
@@ -473,7 +474,7 @@ footer {
 }
 // iPad Pro 11 2020 縦向きのみ
 @media only screen and (min-device-width: 1688px) and (max-device-width: 2388px) and (orientation: portrait) {
-  // HOME ------------------------------------
+  // ------------------------------------
   .home {
     header {
       height: auto;

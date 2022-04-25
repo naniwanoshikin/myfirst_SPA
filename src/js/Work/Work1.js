@@ -4,14 +4,14 @@ import photo1 from '../../img/1 LP.jpg';
 // import photo2 from '../../img/2 SPA.jpg';
 import photo3 from '../../img/3 CHAT.jpg';
 import photo5 from '../../img/5 pkmap.jpg';
-import photo51 from '../../img/5 tweet.jpg';
+// import photo51 from '../../img/5 tweet.jpg';
 // import photo6 from '../../img/6 weight.png';
 
 // 値: (name, link, intro, intro2, img, date, skill)
 const skills = [
   [
     "Todoリスト", "https://myfirstlp.web.app",
-    "初回の作品。",
+    "初回の作品。\nHelloWorld",
     "HTML, CSS, Sass, JavaScript, Firestore, jQuery, Chart.js\nFirebase", photo1, "2020.9-", [
       { name: '2020.09', Html: 55, Sass: 30, JS: 30, jQuery: 10 },
       { name: '2020.10', Html: 60, Sass: 35, JS: 40, jQuery: 20 },
@@ -42,16 +42,22 @@ const skills = [
   //     { name: '2021.03', Laravel: 30, Bootstrap: 45, Heroku: 15 },
   //   ],
   // ],
-  [
-    "Twitter APP", "https://shikintweet.herokuapp.com/",
-    "railsチュートリアルの単なる延長です。\n呟きで世界は変わる。",
-    "Ruby on Rails, JavaScript, jQuery, \nHeroku",
-    photo51, "2021.07-", [
-      { name: '2021.06', rails: 5, ajax: 15, },
-      { name: '2021.07', rails: 20, ajax: 20, },
-      { name: '2021.08', rails: 30, ajax: 25, },
-    ],
-  ],
+  // [
+  //   "Twitter APP", "https://shikintweet.herokuapp.com/",
+  //   "railsチュートリアルの延長です。\n呟きで世界は変わる。",
+  //   "Ruby on Rails, JavaScript, jQuery, \nHeroku",
+  //   photo51, "2021.07-", [
+  //     { name: '2021.06', rails: 5, ajax: 15, },
+  //     { name: '2021.07', rails: 20, ajax: 20, },
+  //     { name: '2021.08', rails: 30, ajax: 25, },
+  //   ],
+  // ],
+  // [
+  //   "体重管理", "/db7", "右上のアイコンから入れます🙇‍♂️", "recharts Cloud firestore", photo6, "2021.02-", [
+  //     { name: '2021.02', recharts: 5, firestore: 5 },
+  //     { name: '2021.03', recharts: 20, firestore: 10 },
+  //   ]
+  // ],
   [
     "pkmap", "https://pk-map.herokuapp.com/",
     "パルクールアプリを作成しました。\n地図でスポットを探して、外で動きましょう！",
@@ -59,14 +65,9 @@ const skills = [
     photo5, "2022.02-", [
       { name: '2022.02', rails: 5, api: 5, },
       { name: '2022.03', rails: 20, api: 20, },
+      { name: '2022.04', rails: 30, api: 25, },
     ],
   ],
-  // [
-  //   "体重管理", "/db7", "右上のアイコンから入れます🙇‍♂️", "recharts Cloud firestore", photo6, "2021.02-", [
-  //     { name: '2021.02', recharts: 5, firestore: 5 },
-  //     { name: '2021.03', recharts: 20, firestore: 10 },
-  //   ]
-  // ],
 ]
 
 // -> 配列にオブジェクトを入れる

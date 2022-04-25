@@ -1,7 +1,13 @@
 import React from 'react';
+import { requestStates } from './constants';
+import { useSkills } from './customHooks/useSkills';
+import Circle from 'react-circle';
 import MyFalling from './animeFall_1'; // 落ちていく物体
 
 const About = () => {
+  // カスタムフックス
+  const [sortedLanguageList, fetchRequestState, converseCountToPercentage] = useSkills();
+
   return (
     <div className="about">
       <div className="container py-4">
@@ -17,7 +23,7 @@ const About = () => {
             </tr>
             <tr>
               <td>Hobby</td>
-              <td>Picture<br />Running</td>
+              <td>Picture</td>
             </tr>
           </tbody>
         </table>
@@ -26,6 +32,31 @@ const About = () => {
           <li>2020/8 ポートフォリオ作成開始</li>
           <li>2020/12 本サイト作成開始</li>
         </ul>
+        <div className="skills-container d-flex flex-wrap justify-content-around">
+          {
+            fetchRequestState === requestStates.loading && (
+              <p className="description">取得中...</p>
+            )
+          }
+          {
+            fetchRequestState === requestStates.success && (
+              sortedLanguageList().map((item, index) => (
+                <div className="skill-item" key={index}>
+                  <p className="description"><strong>{item.language}</strong></p>
+                  <Circle
+                    animate // アニメーションが走る
+                    progress={converseCountToPercentage(item.count)}
+                  />
+                </div>
+              ))
+            )
+          }
+          {
+            fetchRequestState === requestStates.error && (
+              <p className="description">エラーが発生しました</p>
+            )
+          }
+        </div>
       </div>
       <MyFalling />
     </div>

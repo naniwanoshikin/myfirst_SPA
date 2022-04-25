@@ -176,6 +176,7 @@ footer {
       -ms-user-select: none;
           user-select: none;
   background: #5a645a;
+  height: 17vh;
 }
 
 footer ul li {
@@ -246,7 +247,7 @@ footer p a:hover {
 .about > .container {
   background: #c29f73ef;
   color: #494242;
-  border-radius: 20px 20px 0 0;
+  border-radius: 0;
 }
 
 .about > .container table th,
